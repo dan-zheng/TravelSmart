@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    if !user
+        div.main.unauth
+            h1 Travel 
+                span.emph virus-free
+                | .
+            hr
+            p Virus Tracker helps you make informed travel decisions so you can avoid viruses.
+            a.btn.btn-primary(href='/login', role='button') Sign up
+    else
+        div.main.auth
+            if user.profile.firstName
+                h1 Welcome, #{user.profile.firstName}!
+            else
+                h1 Welcome!
