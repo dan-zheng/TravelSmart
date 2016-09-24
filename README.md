@@ -3,7 +3,7 @@
 *Note: this project is in progress. More updates are on the way!*
 
 ## Description
-This is a web app that helps people make informed decisions that reduce risk of a viral infection when traveling.
+This is a web app that helps people make informed travel decisions and focuses on reducing risk of viral infections.
 
 Users input a starting location, a destination, and possible modes of travel. The app then performs calculations based on the datasets and compares the risks of viral infection of the various modes of travel. The user can then decide if it is safe enough to travel, and if so, what method of travel is most safe.
 
