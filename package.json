@@ -1,0 +1,27 @@
+{
+  "name": "virus-tracker",
+  "version": "1.0.0",
+  "description": "A virus tracker.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackironhack/2016blackironhack-danzheng.git"
+  },
+  "keywords": [
+    "node.js",
+    "d3",
+    "data",
+    "mashup",
+    "ironhack"
+  ],
+  "author": "Dan Zheng <zheng321@purdue.edu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blackironhack/2016blackironhack-danzheng/issues"
+  },
+  "homepage": "https://github.com/blackironhack/2016blackironhack-danzheng#readme"
+}
