@@ -8,7 +8,8 @@ This is a web app that helps people make informed travel decisions and focuses o
 Users input a starting location, a destination, and possible modes of travel. The app then performs calculations based on the datasets and compares the risks of viral infection of the various modes of travel. The user can then decide if it is safe enough to travel, and if so, what method of travel is most safe.
 
 ## Datasets
-*to be determined*
+- Global Climate Network: [GHCN Daily Summaries for West Lafayette](http://www.ncdc.noaa.gov/cdo-web/datasets/GHCND/locations/CITY:US180006/detail)
+*more to be determined*
 
 ## Requirements
 - Node
