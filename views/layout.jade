@@ -15,17 +15,15 @@ html
             include partials/header
             block content
             include partials/footer
+        script(src='/js/lib/jquery-2.2.0.min.js')
+        script(src='/js/lib/bootstrap.min.js') 
         script(src='/js/main.js')
         script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB25869j0yLHkbkcxHeWU4njUz_l4Z5fYU&callback=initMap")
     else
         body
             include partials/header
-            .container
-                block content
-            include partials/footer
-
-    script(src='/js/lib/jquery-2.2.0.min.js')
-    script(src='/js/lib/bootstrap.min.js')        
+            block content
+            include partials/footer       
 
     script.
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
