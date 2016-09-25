@@ -9,178 +9,25 @@
 // Scaffolding
 // -------------------------
 
-html {
-    position: relative;
-    min-height: 100%;
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-body {
-    padding-top: $navbar-height + 10px;
-    margin-bottom: 75px;
-}
-
-.purple {
-    background: linear-gradient(to bottom, rgba(255, 201, 221, 0.1), rgba(255, 201, 221, 0)), linear-gradient(to right, #79589F, #6e5da8);
-    background-image: linear-gradient(rgba(255, 201, 221, 0.0980392), rgba(255, 201, 221, 0)), linear-gradient(to right, rgb(121, 88, 159), rgb(110, 93, 168));
-    background-position-x: initial, initial;
-    background-position-y: initial, initial;
-    background-size: initial, initial;
-    background-repeat-x: initial, initial;
-    background-repeat-y: initial, initial;
-    background-attachment: initial, initial;
-    background-origin: initial, initial;
-    background-clip: initial, initial;
-    background-color: initial;
-    color: #fff;
-}
-
-.pink {
-    color: #f77380;
-}
-
-.black {
-    color: $gray-darker;
-}
-
-.main {
-
-}
-
-.unauth {
-    h1 {
-        text-align: center;
-        font-family: $title-font-family;
-        font-weight: bold;
-        padding: $title-font-size * 0.5 * 0.3 0px;
-        font-size: $title-font-size * 0.3;
-        @media (min-width: $screen-xs-min) {
-            font-size: $title-font-size * 0.5;
-            padding: $title-font-size * 0.5 * 0.5 0px;
-        }
-        @media (min-width: $screen-sm-min) {
-            font-size: $title-font-size * 0.58;
-            padding: $title-font-size * 0.5 * 0.58 0px;
-        }
-        @media (min-width: $screen-md-min) {
-            font-size: $title-font-size * 0.75;
-            padding: $title-font-size * 0.5 * 0.75 0px;
-        }
-        @media (min-width: $screen-lg-min) {
-            font-size: $title-font-size * 0.93;
-            padding: $title-font-size * 0.5 * 0.93 0px;
-        }
-        .emph {
-            font-style: italic;
-        }
-    }
-    p {
-        text-align: center;
-        font-family: $subtitle-font-family;
-        font-weight: lighter;
-        padding: $subtitle-font-size * 0.5 * 0.6 0px;
-        font-size: $subtitle-font-size * 0.6;
-        @media (min-width: $screen-sm-min) {
-            font-size: $subtitle-font-size * 0.7;
-            padding: $subtitle-font-size * 0.5 * 0.7 0px;
-        }
-        @media (min-width: $screen-lg-min) {
-            font-size: $subtitle-font-size;
-            padding: $subtitle-font-size * 0.5 0px;
-        }
-        .emph {
-            font-style: italic;
-        }
-    }
-    .btn {
-        font-family: "Roboto";
-        font-size: 20px;
-        font-weight: 300;
-        width: 240px;
-        display: block;
-        margin: 30px auto;
-    }
-}
-
-.auth {
-    h1 {
-        font-family: "Roboto";
-        font-weight: 300;
-        .emph {
-            font-style: italic;
-        }
-    }
-    p {
-        font-family: "Roboto";
-        font-weight: 100;
-        .emph {
-                font-style: italic;
-        }
-    }
-}
-
-.about {
-    h1 {
-        text-align: center;
-        font-family: $title-font-family;
-        font-weight: bold;
-        padding: $title-font-size * 0.5 * 0.3 0px;
-        font-size: $title-font-size * 0.3;
-        @media (min-width: $screen-xs-min) {
-            font-size: $title-font-size * 0.5;
-            padding: $title-font-size * 0.5 * 0.5 0px;
-        }
-        @media (min-width: $screen-sm-min) {
-            font-size: $title-font-size * 0.7;
-            padding: $title-font-size * 0.5 * 0.7 0px;
-        }
-        @media (min-width: $screen-md-min) {
-            font-size: $title-font-size * 0.85;
-            padding: $title-font-size * 0.5 * 0.85 0px;
-        }
-        @media (min-width: $screen-lg-min) {
-            font-size: $title-font-size;
-            padding: $title-font-size * 0.5 0px;
-        }
-        .emph {
-            font-style: italic;
-        }
-    }
-    p {
-        font-family: "Roboto";
-        font-weight: normal;
-        padding: $subtitle-font-size * 0.5 * 0.6 0px;
-        font-size: $subtitle-font-size * 0.6;
-        @media (min-width: $screen-sm-min) {
-            font-size: $subtitle-font-size * 0.7;
-            padding: $subtitle-font-size * 0.5 * 0.7 0px;
-        }
-        @media (min-width: $screen-lg-min) {
-            font-size: $subtitle-font-size;
-            padding: $subtitle-font-size * 0.5 0px;
-        }
-        .emph {
-                font-style: italic;
-        }
-    }
-    .team-member {
-        img {
-            height: $about-image-height * 0.6;
-            width: $about-image-height * 0.6;
-            @media (min-width: $screen-sm-min) {
-                height: $about-image-height * 0.8;
-                width: $about-image-height * 0.8;
-            }
-            @media (min-width: $screen-lg-min) {
-                height: $about-image-height;
-                width: $about-image-height;
-            }
-            border: 5px solid $brand-primary;
-            border-radius: 50%;
-        }
-        p {
-            margin-top: 10px;
-        }
-    }
+#floating-panel {
+    position: absolute;
+    top: 70px;
+    left: 25%;
+    z-index: 5;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    text-align: center;
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
 }
 
 footer {
