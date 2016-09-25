@@ -45,7 +45,7 @@ app.use(sass({
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({
+/*app.use(session({
     resave: true,
     saveUninitialized: true,
     secret: process.env.SESSION_SECRET,
@@ -53,7 +53,7 @@ app.use(session({
         url: process.env.MONGOLAB_URI || process.env.MONGODB_URI,
         autoReconnect: true
     })
-}));
+}));*/
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
