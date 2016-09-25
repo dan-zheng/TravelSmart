@@ -9,6 +9,7 @@ Users input a starting location, a destination, and possible modes of travel. Th
 
 ## Datasets
 - Global Climate Network: [GHCN Daily Summaries for West Lafayette](http://www.ncdc.noaa.gov/cdo-web/datasets/GHCND/locations/CITY:US180006/detail)
+
 *more to be determined*
 
 ## Requirements
@@ -23,6 +24,9 @@ node app.js # start app on 'http://localhost:3000'
 ```
 
 I run my app using Google Chrome, but it should be compatible with most browsers. The app is not currently mobile friendly.
+
+## Technologies
+Google Maps, d3.js, Node.js
 
 ## Keywords
 disease, transportation, travel, safety, health
