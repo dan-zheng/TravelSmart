@@ -1,17 +1,34 @@
 extends layout
 
 block content
-    if !user
-        div.main.unauth
-            h1 Travel 
-                span.emph virus-free
-                | .
-            hr
-            p Virus Tracker helps you make informed travel decisions so you can avoid viruses.
-            a.btn.btn-primary(role='button') Sign up
-    else
-        div.main.auth
-            if user.profile.firstName
-                h1 Welcome, #{user.profile.firstName}!
-            else
-                h1 Welcome!
+    div#floating-panel
+        b Start: 
+        select#start
+            option(value='chicago, il') Chicago
+            option(value='st louis, mo') St Louis
+            option(value='joplin, mo') Joplin, MO
+            option(value='oklahoma city, ok') Oklahoma City
+            option(value='amarillo, tx') Amarillo
+            option(value='gallup, nm') Gallup, NM
+            option(value='flagstaff, az') Flagstaff, AZ
+            option(value='winona, az') Winona
+            option(value='kingman, az') Kingman
+            option(value='barstow, ca') Barstow
+            option(value='san bernardino, ca') San Bernardino
+            option(value='los angeles, ca') Los Angeles
+        b End: 
+        select#end
+            option(value='chicago, il') Chicago
+            option(value='st louis, mo') St Louis
+            option(value='joplin, mo') Joplin, MO
+            option(value='oklahoma city, ok') Oklahoma City
+            option(value='amarillo, tx') Amarillo
+            option(value='gallup, nm') Gallup, NM
+            option(value='flagstaff, az') Flagstaff, AZ
+            option(value='winona, az') Winona
+            option(value='kingman, az') Kingman
+            option(value='barstow, ca') Barstow
+            option(value='san bernardino, ca') San Bernardino
+            option(value='los angeles, ca') Los Angeles
+    div#map
+            
