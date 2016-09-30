@@ -1,34 +1,16 @@
 extends layout
 
 block content
-    div#floating-panel
-        b Start: 
-        select#start
-            option(value='west lafayette, in') West Lafayette
-            option(value='st louis, mo') St Louis
-            option(value='joplin, mo') Joplin, MO
-            option(value='oklahoma city, ok') Oklahoma City
-            option(value='amarillo, tx') Amarillo
-            option(value='gallup, nm') Gallup, NM
-            option(value='flagstaff, az') Flagstaff, AZ
-            option(value='winona, az') Winona
-            option(value='kingman, az') Kingman
-            option(value='barstow, ca') Barstow
-            option(value='san bernardino, ca') San Bernardino
-            option(value='los angeles, ca') Los Angeles
-        b End: 
-        select#end
-            option(value='chicago, il') Chicago
-            option(value='st louis, mo') St Louis
-            option(value='joplin, mo') Joplin, MO
-            option(value='oklahoma city, ok') Oklahoma City
-            option(value='amarillo, tx') Amarillo
-            option(value='gallup, nm') Gallup, NM
-            option(value='flagstaff, az') Flagstaff, AZ
-            option(value='winona, az') Winona
-            option(value='kingman, az') Kingman
-            option(value='barstow, ca') Barstow
-            option(value='san bernardino, ca') San Bernardino
-            option(value='los angeles, ca') Los Angeles
+    input#origin-input.controls(type='text', placeholder='Enter an origin')
+    input#destination-input.controls(type='text', placeholder='Enter a destination')
+
+    div#mode-selector.controls
+        input#changemode-walking(type='radio', name='type', checked='checked')
+        label(for='changemode-walking') Walking
+        input#changemode-transit(type='radio', name='type')
+        label(for='changemode-transit') Transit
+        input#changemode-driving(type='radio', name='type')
+        label(for='changemode-driving') Driving
+
     div#map
             
