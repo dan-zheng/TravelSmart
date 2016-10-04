@@ -57,6 +57,12 @@ function initMap() {
         new google.maps.places.Autocomplete(destination_input);
     destination_autocomplete.bindTo('bounds', map);
 
+    document.getElementById('mode').addEventListener('change', function() {
+        travel_mode = document.getElementById('mode').value;
+        route(origin_place_id, destination_place_id, travel_mode,
+            directionsService, directionsDisplay);
+    });
+
     // Sets a listener on a radio button to change the filter type on Places
     // Autocomplete.
     function setupClickListener(id, mode) {
@@ -65,9 +71,6 @@ function initMap() {
             travel_mode = mode;
         });
     }
-    setupClickListener('changemode-walking', 'WALKING');
-    setupClickListener('changemode-transit', 'TRANSIT');
-    setupClickListener('changemode-driving', 'DRIVING');
 
     function expandViewportToFitPlace(map, place) {
         if (place.geometry.viewport) {
@@ -129,4 +132,6 @@ function initMap() {
             }
         });
     }
+
+    $('.controls').show();
 }

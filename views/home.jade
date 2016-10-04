@@ -1,17 +1,6 @@
 extends layout
 
 block content
-    input#origin-input.controls(type='text', placeholder='Enter an origin')
-    input#destination-input.controls(type='text', placeholder='Enter a destination')
-
-    div#mode-selector.controls
-        input#changemode-walking(type='radio', name='type', checked='checked')
-        label(for='changemode-walking') Walking
-        input#changemode-transit(type='radio', name='type')
-        label(for='changemode-transit') Transit
-        input#changemode-driving(type='radio', name='type')
-        label(for='changemode-driving') Driving
-
     div#fullpage
         .section
             .container
@@ -28,6 +17,16 @@ block content
                 div#data.col-xs-4
                     // Button trigger modal
                     button.btn.btn-primary(type='button', data-toggle='modal', data-target='#myModal') Launch demo modal
+                    
+    input#origin-input.controls(type='text', placeholder='Enter an origin')
+    input#destination-input.controls(type='text', placeholder='Enter a destination')
+    div#mode-selector.controls
+        b Mode of Travel: 
+        select#mode
+            option(value='DRIVING') Driving
+            option(value='WALKING') Walking
+            option(value='BICYCLING') Bicycling
+            option(value='TRANSIT') Transit
 
     // Modal
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
