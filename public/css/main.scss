@@ -9,10 +9,94 @@
 // Scaffolding
 // -------------------------
 
-html, body {
-	height: 100%;
-	margin: 0;
-	padding: 0;
+#main {
+    display:flex;
+    justify-content: center;
+}
+
+.purple {
+    background: linear-gradient(to bottom, rgba(255, 201, 221, 0.1), rgba(255, 201, 221, 0)), linear-gradient(to right, #79589F, #6e5da8);
+    background-image: linear-gradient(rgba(255, 201, 221, 0.0980392), rgba(255, 201, 221, 0)), linear-gradient(to right, rgb(121, 88, 159), rgb(110, 93, 168));
+    background-position-x: initial, initial;
+    background-position-y: initial, initial;
+    background-size: initial, initial;
+    background-repeat-x: initial, initial;
+    background-repeat-y: initial, initial;
+    background-attachment: initial, initial;
+    background-origin: initial, initial;
+    background-clip: initial, initial;
+    background-color: initial;
+    color: #fff;
+}
+
+.unauth {
+    h1 {
+        text-align: center;
+        font-family: $title-font-family;
+        font-weight: bold;
+        padding: $title-font-size * 0.5 * 0.3 0px;
+        font-size: $title-font-size * 0.3;
+        @media (min-width: $screen-xs-min) {
+            font-size: $title-font-size * 0.5;
+            padding: $title-font-size * 0.5 * 0.5 0px;
+        }
+        @media (min-width: $screen-sm-min) {
+            font-size: $title-font-size * 0.7;
+            padding: $title-font-size * 0.5 * 0.7 0px;
+        }
+        @media (min-width: $screen-md-min) {
+            font-size: $title-font-size * 0.85;
+            padding: $title-font-size * 0.5 * 0.85 0px;
+        }
+        @media (min-width: $screen-lg-min) {
+            font-size: $title-font-size;
+            padding: $title-font-size * 0.5 0px;
+        }
+        .emph {
+            font-style: italic;
+        }
+    }
+    p {
+        text-align: center;
+        font-family: $subtitle-font-family;
+        font-weight: lighter;
+        padding: $subtitle-font-size * 0.5 * 0.6 0px;
+        font-size: $subtitle-font-size * 0.6;
+        @media (min-width: $screen-sm-min) {
+            font-size: $subtitle-font-size * 0.7;
+            padding: $subtitle-font-size * 0.5 * 0.7 0px;
+        }
+        @media (min-width: $screen-lg-min) {
+            font-size: $subtitle-font-size;
+            padding: $subtitle-font-size * 0.5 0px;
+        }
+        .emph {
+            font-style: italic;
+        }
+    }
+    .btn {
+        font-family: "Roboto";
+        font-size: 20px;
+        font-weight: 300;
+        width: 240px;
+        display: block;
+        margin: 30px auto;
+    }
+}
+
+#map {
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#data {
+    background-color: #eee;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding: 10px 0;
+    background-color: rgba(255, 255, 255, .7);
 }
 
 .controls {

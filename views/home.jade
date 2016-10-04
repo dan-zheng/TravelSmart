@@ -12,5 +12,33 @@ block content
         input#changemode-driving(type='radio', name='type')
         label(for='changemode-driving') Driving
 
-    div#map
-            
+    div#fullpage
+        .section
+            .container
+                div.main.unauth
+                    h1 Travelling made 
+                        span.emph smart
+                        |.
+                    hr
+                    p TravelSmart helps you make informed travel decisions so you can enjoy a safe journey.
+                    a#go-to-app.btn.btn-primary(role='button') Plan your trip
+        .section
+            div#main.text-center
+                div#map.col-xs-7
+                div#data.col-xs-4
+                    // Button trigger modal
+                    button.btn.btn-primary(type='button', data-toggle='modal', data-target='#myModal') Launch demo modal
+
+    // Modal
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') ×
+                    h4#myModalLabel.modal-title About
+                .modal-body
+                    | ...
+                .modal-footer
+                    button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+                    button.btn.btn-primary(type='button') Save changes

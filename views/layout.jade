@@ -6,9 +6,10 @@ html
         meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
         meta(name='theme-color' content='#58498e')
         meta(name='csrf-token', content=_csrf)
-        title #{title} - Virus Tracker
+        title TravelSmart
         link(rel='shortcut icon', href='/heart.png')
-        link(rel='stylesheet', href='/css/main.css')
+        link(rel='stylesheet', type='text/css', href='/css/main.css')
+        link(rel='stylesheet', type='text/css' href='/css/lib/jquery.fullPage.css')
 
     if (title=='Home')
         body.purple
@@ -17,6 +18,7 @@ html
             include partials/footer
         script(src='/js/lib/jquery-2.2.0.min.js')
         script(src='/js/lib/bootstrap.min.js') 
+        script(src='/js/lib/jquery.fullPage.js')
         script(src='/js/main.js')
         script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB25869j0yLHkbkcxHeWU4njUz_l4Z5fYU&libraries=places&callback=initMap")
     else
