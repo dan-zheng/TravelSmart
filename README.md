@@ -1,12 +1,12 @@
-# [Virus Tracker](http://ironhack-danzheng.herokuapp.com)
+# [TravelSmart](http://ironhack-danzheng.herokuapp.com)
 
 _Note: this project is in progress. More updates are on the way!_
 
 ## Description
 
-This is a web app that helps people make informed travel decisions and focuses on reducing risk of viral infections.
+This is a web app that helps people make informed travel decisions.
 
-Users input a starting location, a destination, and possible modes of travel. The app then performs calculations based on the datasets and compares the risks of viral infection of the various modes of travel. The user can then decide if it is safe enough to travel, and if so, what method of travel is most safe.
+Users input a starting location, a destination, and their mode of travel. The app then performs calculations based on the datasets and displays relevant information about the path of travel. User can make travel decisions based on the information.
 
 ## Datasets
 
