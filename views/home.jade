@@ -14,12 +14,15 @@ block content
         .section
             div#main.text-center
                 div#map.col-xs-7
-                div#data.col-xs-4
-                    // Button trigger modal
-                    button.btn.btn-primary(type='button', data-toggle='modal', data-target='#myModal') Launch demo modal
-                    
-    input#origin-input.controls(type='text', placeholder='Enter an origin')
-    input#destination-input.controls(type='text', placeholder='Enter a destination')
+                div#sidebar.col-xs-4
+                    div#info
+                        
+                    div#data
+                        // Button trigger modal
+                        button.btn.btn-primary(type='button', data-toggle='modal', data-target='#myModal') Launch demo modal
+    div#inputs
+        input#origin-input.controls(type='text', placeholder='Enter an origin')
+        input#destination-input.controls(type='text', placeholder='Enter a destination')
     div#mode-selector.controls
         b Mode of Travel: 
         select#mode

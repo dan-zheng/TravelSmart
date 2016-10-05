@@ -112,7 +112,12 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+#info {
+
+}
+
 #origin-input, #destination-input {
+    display: block;
 	background-color: #fff;
 	font-family: Roboto;
 	font-size: 15px;
@@ -121,7 +126,6 @@
 	padding: 0 11px 0 13px;
 	text-overflow: ellipsis;
 	width: 200px;
-    display: none;
 }
 
 #origin-input:focus,
@@ -130,13 +134,21 @@
 }
 
 #mode-selector {
-	background-color: #fff;
+    background-color: #fff;
+	font-family: Roboto;
+	font-size: 15px;
+	font-weight: 300;
+	margin-left: 12px;
+	padding: 0 11px 0 13px;
+	text-overflow: ellipsis;
+	/*background-color: #fff;
     border: 1px solid #999;
     text-align: center;
     font-family: 'Roboto','sans-serif';
 	margin-left: 12px;
 	padding: 5px 11px 0px 11px;
-    display: none;
+    width: 200px;
+    display: none;*/
 }
 
 footer {

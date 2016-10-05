@@ -7,16 +7,17 @@ $(document).ready(function() {
     var pad = 10;
     var pad2 = 20;
     var height = $(window).height() - $(".navbar").height() - $("footer").height() - pad2;
+    console.log($('#info').height());
     $("#map").height(height);
-    $("#data").height(height - pad2);
+    $("#data").height(height - $('#info').height() - pad2);
 });
 
 $(window).on('resize', function() {
     var pad = 10;
     var pad2 = 20;
-    var height = $(window).height() - $(".navbar").height() - $("footer").height() - pad;
+    var height = $(window).height() - $(".navbar").height() - $("footer").height() - pad2;
     $("#map").height(height);
-    $("#data").height(height - pad2);
+    $("#data").height(height - $('#info').height() - pad2);
 });
 
 $('#myModal').on('shown.bs.modal', function() {
@@ -43,25 +44,21 @@ function initMap() {
     var directionsDisplay = new google.maps.DirectionsRenderer;
     directionsDisplay.setMap(map);
 
+    var geocoder = new google.maps.Geocoder;
+
     var origin_input = document.getElementById('origin-input');
     var destination_input = document.getElementById('destination-input');
     var modes = document.getElementById('mode-selector');
 
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(origin_input);
-    map.controls[google.maps.ControlPosition.TOP_LEFT].push(destination_input);
+    var inputs = document.getElementById('inputs');
+
+    map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputs);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(modes);
 
     var origin_autocomplete = new google.maps.places.Autocomplete(origin_input);
     origin_autocomplete.bindTo('bounds', map);
-    var destination_autocomplete =
-        new google.maps.places.Autocomplete(destination_input);
+    var destination_autocomplete = new google.maps.places.Autocomplete(destination_input);
     destination_autocomplete.bindTo('bounds', map);
-
-    document.getElementById('mode').addEventListener('change', function() {
-        travel_mode = document.getElementById('mode').value;
-        route(origin_place_id, destination_place_id, travel_mode,
-            directionsService, directionsDisplay);
-    });
 
     // Sets a listener on a radio button to change the filter type on Places
     // Autocomplete.
@@ -88,6 +85,7 @@ function initMap() {
             return;
         }
         expandViewportToFitPlace(map, place);
+        geocodeAddress(place.formatted_address);
 
         // If the place has a geometry, store its place ID and route if we have
         // the other place ID
@@ -103,10 +101,17 @@ function initMap() {
             return;
         }
         expandViewportToFitPlace(map, place);
+        geocodeAddress(place.formatted_address);
 
         // If the place has a geometry, store its place ID and route if we have
         // the other place ID
         destination_place_id = place.place_id;
+        route(origin_place_id, destination_place_id, travel_mode,
+            directionsService, directionsDisplay);
+    });
+
+    document.getElementById('mode').addEventListener('change', function() {
+        travel_mode = document.getElementById('mode').value;
         route(origin_place_id, destination_place_id, travel_mode,
             directionsService, directionsDisplay);
     });
@@ -116,6 +121,7 @@ function initMap() {
         if (!origin_place_id || !destination_place_id) {
             return;
         }
+
         directionsService.route({
             origin: {
                 'placeId': origin_place_id
@@ -129,6 +135,23 @@ function initMap() {
                 directionsDisplay.setDirections(response);
             } else {
                 window.alert('Directions request failed due to ' + status);
+            }
+        });
+    }
+
+    function geocodeAddress(address) {
+        geocoder.geocode({
+            'address': address
+        }, function(results, status) {
+            if (status == 'OK') {
+                /*map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });*/
+                console.log(results[0].geometry.location.lat() + "," + results[0].geometry.location.lng());
+            } else {
+                alert('Geocode was not successful for the following reason: ' + status);
             }
         });
     }
