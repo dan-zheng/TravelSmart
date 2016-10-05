@@ -16,8 +16,22 @@ block content
                 div#map.col-xs-7
                 div#sidebar.col-xs-4
                     div#info
-                        
+                    
                     div#data
+                        ul#data-tabs.nav.nav-tabs.nav-justified
+                            li.active(role='presentation', data-toggle='tab')
+                                a(href='#route') Route
+                            li(role='presentation', data-toggle='tab')
+                                a(href='#weather') Weather
+                            li(role='presentation', data-toggle='tab')
+                                a(href='#viral-threat') Viral Threat
+                        div#route
+                        div#weather
+                            div#orig-weather
+                                p Hi
+                            div#dest-weather
+                                p Hi also
+                        div#viral-threat
                         // Button trigger modal
                         button.btn.btn-primary(type='button', data-toggle='modal', data-target='#myModal') Launch demo modal
     div#inputs

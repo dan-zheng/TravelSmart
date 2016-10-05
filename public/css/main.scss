@@ -97,8 +97,15 @@
     background-color: #eee;
     margin-left: 15px;
     margin-right: 15px;
-    padding: 10px 0;
     background-color: rgba(255, 255, 255, .7);
+}
+
+#data-tabs {
+    padding-top: 0;
+    padding-bottom: 10px;
+    *:focus {
+        outline: none;
+    }
 }
 
 .controls {
