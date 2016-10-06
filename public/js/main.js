@@ -347,7 +347,8 @@ function initMap() {
                     weather_range,
                     orig_temp.low,
                     orig_temp.high
-                ]
+                ],
+                type: 'spline'
             },
             axis: {
                 x: {
@@ -378,7 +379,8 @@ function initMap() {
                     weather_range,
                     dest_temp.low,
                     dest_temp.high
-                ]
+                ],
+                type: 'spline'
             },
             axis: {
                 x: {
