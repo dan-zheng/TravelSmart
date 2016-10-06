@@ -108,8 +108,10 @@
 #route-info {
     font-family: 'Roboto','sans-serif';
     line-height: 30px;
-    padding-left: 10px;
-    float: right;
+    padding-left: 6px;
+    padding-left: 6px;
+    float: left;
+    width: inherit;
     height: 100%;
     position: static;
     overflow: auto;
