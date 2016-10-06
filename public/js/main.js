@@ -19,7 +19,10 @@ var dest_temp = {
 };
 var orig_long_addr;
 var dest_long_addr;
-var orig_locality, orig_country, dest_locality, dest_country;
+var orig_locality;
+var orig_country;
+var dest_locality;
+var dest_country;
 
 var weather_range = [];
 
@@ -187,8 +190,11 @@ function initMap() {
         }, function(response, status) {
             if (status === 'OK') {
                 directionsDisplay.setDirections(response);
+                $('#route-error').hide();
             } else {
-                window.alert('Directions request failed due to ' + status);
+                $('#route-error').html('Route finding failed due to ' + status);
+                $('#route-error').show();
+                window.alert('Route finding failed due to ' + status);
             }
         });
     }
@@ -271,7 +277,7 @@ function initMap() {
     function weatherOrig() {
         var url;
         var orig_query;
-        if (orig_postal_code) {
+        if (orig_postal_code && orig_country == 'US') {
             orig_query = orig_postal_code;
             console.log("postal code: " + orig_query);
         } else if (orig_addr) {
@@ -281,8 +287,13 @@ function initMap() {
         if (orig_query) {
             url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + orig_query + ".json";
             httpGetAsync(url, null, function(data) {
-                orig_weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
-                console.log(orig_weather_data);
+                try {
+                    orig_weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
+                } catch(err) {
+                    console.log(err);
+                    $('#orig-weather-chart').hide();
+                    $('#orig-weather-info').html("No weather information found for " + orig_locality + ".");
+                }
 
                 orig_temp = {
                     low: ['low'],
@@ -305,7 +316,7 @@ function initMap() {
     function weatherDest() {
         var url;
         var dest_query;
-        if (dest_postal_code) {
+        if (dest_postal_code && orig_country == 'US') {
             dest_query = dest_postal_code;
             console.log("postal code: " + dest_query);
         } else if (dest_addr) {
@@ -315,7 +326,13 @@ function initMap() {
         if (dest_query) {
             url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + dest_query + ".json";
             httpGetAsync(url, null, function(data) {
-                dest_weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
+                try {
+                    dest_weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
+                } catch(err) {
+                    console.log(err);
+                    $('#dest-weather-chart').hide();
+                    $('#dest-weather-info').html("No weather information found for " + dest_locality + ".");
+                }
 
                 dest_temp = {
                     low: ['low'],
@@ -341,7 +358,7 @@ function initMap() {
         var chart = c3.generate({
             bindto: '#orig-weather-chart',
             title: {
-                text: 'Origin Info'
+                text: 'Origin Info (' + orig_locality+ ')'
             },
             data: {
                 x: 'days',
@@ -365,6 +382,7 @@ function initMap() {
                 }
             }
         });
+        $('#orig-weather-chart').show();
     }
 
     function weatherDestGraph() {
@@ -373,7 +391,7 @@ function initMap() {
         var chart = c3.generate({
             bindto: '#dest-weather-chart',
             title: {
-                text: 'Destination Info'
+                text: 'Destination Info (' + dest_locality + ')'
             },
             data: {
                 x: 'days',
@@ -397,6 +415,7 @@ function initMap() {
                 }
             }
         });
+        $('#dest-weather-chart').show();
     }
 
     function prcpInfoOrigin() {
@@ -479,64 +498,3 @@ var HttpClient = function() {
         xmlHttp.send(null);
     };
 };
-/*
-function httpGetAsync(url, headers, callback) {
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() {
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
-    };
-    xmlHttp.open("GET", url, true); // true for asynchronous
-    if (headers) {
-        console.log(headers);
-        for (var i = 0; i < headers.length; i++) {
-            console.log("header " + i);
-            xmlHttp.setRequestHeader(headers[i].key, headers[i].value);
-        }
-    }
-    xmlHttp.send(null);
-}*/
-
-orig_postal_code = "47907";
-dest_postal_code = "47304";
-
-function testOrigin() {
-    if (orig_postal_code) {
-        console.log("origin: " + orig_postal_code);
-        dateToday = moment().format('YYYY-MM-DD');
-        dateLastWeek = moment().subtract(7, 'days').format('YYYY-MM-DD');
-        console.log(dateToday + ", " + dateLastWeek);
-        url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + orig_postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=7&sortfield=date&sortorder=desc&includemetadata=false";
-        tokenHeader = [];
-        tokenHeader.push({
-            key: 'token',
-            value: 'QRWRVTBiNZNtlQSCkvELsaXCoLGAHRKm'
-        });
-        var aClient = new HttpClient();
-        aClient.get(url, tokenHeader, function(data) {
-            orig_prcp_data = JSON.parse(data);
-        });
-    }
-}
-
-function testDest() {
-    if (dest_postal_code) {
-        console.log("dest: " + dest_postal_code);
-        dateToday = moment().format('YYYY-MM-DD');
-        dateLastWeek = moment().subtract(7, 'days').format('YYYY-MM-DD');
-        url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + dest_postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=5&sortfield=date&sortorder=desc&includemetadata=false";
-        tokenHeader = [];
-        tokenHeader.push({
-            key: 'token',
-            value: 'QRWRVTBiNZNtlQSCkvELsaXCoLGAHRKm'
-        });
-        var aClient = new HttpClient();
-        aClient.get(url, tokenHeader, function(data) {
-            dest_prcp_data = JSON.parse(data);
-            console.log(dest_prcp_data);
-        });
-    }
-}
-
-//testOrigin();
-//testDest();
