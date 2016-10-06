@@ -14,9 +14,7 @@ block content
         .section
             div#main.text-center
                 div#map.col-xs-7
-                div#sidebar.col-xs-4
-                    div#info
-                    
+                div#sidebar.col-xs-4                    
                     div#data
                         ul#data-tabs.nav.nav-tabs.nav-justified
                             li.active(role='presentation', data-toggle='tab')
@@ -26,9 +24,10 @@ block content
                             li(role='presentation', data-toggle='tab')
                                 a(href='#viral-threat') Viral Threat
                         div#route
+                            h1#route-heading Route Info
                             div#route-info
                         div#weather
-                            h1 7-day Forecast
+                            h1#weather-heading 7-Day Forecast
                             div#orig-weather
                                 div#orig-weather-chart.chart
                                 span.no-info#orig-weather-info Please select an origin location.

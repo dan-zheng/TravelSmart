@@ -50,9 +50,10 @@ $(document).ready(function() {
     var pad = 20;
     var height = $(window).height() - $(".navbar").height() - $("footer").height() - pad;
     $("#map").height(height);
-    $("#data").height(height - $('#info').height() - pad);
-    var route_info_height = $("#data").height() - $("#data-tabs").height() - 10;
-    $("#route").height(route_info_height);
+    $("#sidebar").height(height);
+    var route_height = $("#data").height() - $("#data-tabs").height() - 10;
+    $("#route").height(route_height);
+    $("#route-info").height(route_height - $("#route-heading").height() - 10);
 
     $("#data").tabs();
 });
@@ -61,9 +62,10 @@ $(window).on('resize', function() {
     var pad = 20;
     var height = $(window).height() - $(".navbar").height() - $("footer").height() - pad;
     $("#map").height(height);
-    $("#data").height(height - $('#info').height() - pad);
-    var route_info_height = $("#route").height() - $("#data-tabs").height() - 10;
-    $("#route-info").height(route_info_height);
+    $("#sidebar").height(height);
+    var route_height = $("#data").height() - $("#data-tabs").height() - 10;
+    $("#route").height(route_height);
+    $("#route-info").height(route_height - $("#route-heading").height() - 10);
 });
 
 $('#myModal').on('shown.bs.modal', function() {
@@ -280,6 +282,7 @@ function initMap() {
             url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + orig_query + ".json";
             httpGetAsync(url, null, function(data) {
                 orig_weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
+                console.log(orig_weather_data);
 
                 orig_temp = {
                     low: ['low'],
