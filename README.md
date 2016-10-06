@@ -12,7 +12,7 @@ Users input a starting location, a destination, and their mode of travel. The ap
 
 - Global Climate Network: [CDO API for GHCN Daily Summaries](http://www.ncdc.noaa.gov/cdo-web/webservices/v2)
 - Wunderground: [10-Day Forecast API](https://www.wunderground.com/weather/api/)
-- Google Maps API: [Map and Directions services](https://developers.google.com/maps/documentation/javascript/3.exp/reference)
+- Google Maps JavaScript API: [Map and Directions services](https://developers.google.com/maps/documentation/javascript/3.exp/reference)
 
 _more to be determined_
 
