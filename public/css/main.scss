@@ -144,11 +144,14 @@
 }
 
 #data-tabs {
-    padding-top: 0;
-    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    border-bottom-width: 0;
 
     *:focus {
         outline: none;
+        border: none;
     }
 }
 
@@ -165,12 +168,6 @@
     height: 32px;
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-}
-
-#info {}
-
-.chart {
-    width: 90%;
 }
 
 #dest-input,
