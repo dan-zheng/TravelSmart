@@ -148,6 +148,7 @@
     font-weight: 700;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
     font-size: 15px;
+    text-shadow: 0 0px 1px rgba(0,0,0,.2);
 
     *:focus {
         outline: none;
@@ -165,8 +166,12 @@
     stroke-width: 3px;
 }
 
-.controls {
+#inputs {
     margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.controls {
     border: 1px solid transparent;
     border-radius: 2px 0 0 2px;
     box-sizing: border-box;
@@ -174,6 +179,7 @@
     height: 32px;
     outline: none;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    padding: 0 11px 0 13px;
 }
 
 #dest-input,
@@ -183,10 +189,12 @@
     font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
+    margin-top: 0px;
+    margin-bottom: 5px;
     margin-left: 12px;
-    padding: 0 11px 0 13px;
+    //padding: 0 11px 0 13px;
     text-overflow: ellipsis;
-    width: 200px;
+    width: 210px;
 }
 
 #dest-input:focus,
@@ -202,9 +210,23 @@
     font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
+    margin-top: 0px;
+    margin-bottom: 0px;
     margin-left: 11px;
-    padding: 0 11px 0 13px;
+    //padding: 0 11px 0 13px;
     text-overflow: ellipsis;
+    width: 210px;
+}
+
+#weather {
+    overflow: auto;
+}
+
+#weather-btn-group > .btn {
+    height: 20px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 footer {

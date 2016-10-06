@@ -17,37 +17,41 @@ block content
                 div#sidebar.col-xs-4                    
                     div#data
                         ul#data-tabs.nav.nav-tabs.nav-justified
-                            li.active(role='presentation', data-toggle='tab')
+                            li.data-tab.active(role='presentation', data-toggle='tab')
                                 a(href='#route') Route
-                            li(role='presentation', data-toggle='tab')
+                            li.data-tab(role='presentation', data-toggle='tab')
                                 a(href='#weather') Weather
-                            li(role='presentation', data-toggle='tab')
+                            li.data-tab(role='presentation', data-toggle='tab')
                                 a(href='#viral-threat') Viral Threat
                         div#route
-                            div#route-error
                             h1#route-heading Route Info
+                            div#route-error
                             div#route-info
                         div#weather
                             h1#weather-heading 7-Day Forecast
-                            div#orig-weather
-                                div#orig-weather-chart.chart
-                                span.no-info#orig-weather-info Please select an origin location.
-                            div#dest-weather
-                                div#dest-weather-chart.chart
-                                span.no-info#dest-weather-info Please select a destination location.
+                            #weather-btn-group.btn-group(role='group', aria-label='...')
+                                #weather-spline.btn.btn-primary.active(role='button') Spline
+                                #weather-bar.btn.btn-primary(role='button') Bar
+                            div#weather-info
+                                div#orig-weather
+                                    div#orig-weather-chart.chart
+                                    span.no-info#orig-weather-info Please select an origin location.
+                                div#dest-weather
+                                    div#dest-weather-chart.chart
+                                    span.no-info#dest-weather-info Please select a destination location.
                         div#viral-threat
                         // Button trigger modal
                         //button.btn.btn-primary(type='button', data-toggle='modal', data-target='#myModal') Launch demo modal
     div#inputs
         input#orig-input.controls(type='text', placeholder='Enter an origin')
         input#dest-input.controls(type='text', placeholder='Enter a destination')
-    div#mode-selector.controls
-        b Mode of Travel: 
-        select#mode
-            option(value='DRIVING') Driving
-            option(value='WALKING') Walking
-            option(value='BICYCLING') Bicycling
-            option(value='TRANSIT') Transit
+        div#mode-selector.controls
+            b Mode of Travel: 
+            select#mode
+                option(value='DRIVING') Driving
+                option(value='WALKING') Walking
+                option(value='BICYCLING') Bicycling
+                option(value='TRANSIT') Transit
 
     // Modal
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
