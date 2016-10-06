@@ -1,0 +1,662 @@
+{
+   "United States": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 3133
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 43
+      }
+   ],
+   "AL": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 24
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "AZ": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 29
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "AR": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 10
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "CA": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 224
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "CO": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 32
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "CT": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 58
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "DE": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 11
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "DC": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 17
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "FL": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 596
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 43
+      }
+   ],
+   "GA": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 78
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "HI": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 12
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "ID": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 3
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "IL": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 58
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "IN": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 32
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "IA": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 16
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "KS": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 13
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "KY": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 23
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "LA": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 29
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "ME": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 11
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "MD": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 95
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "MA": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 67
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "MI": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 52
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "MN": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 47
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "MS": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 21
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "MO": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 26
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "MT": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 7
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "NE": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 8
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "NV": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 14
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "NH": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 8
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "NJ": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 116
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "NM": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 6
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "NY": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 685
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "NC": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 61
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "ND": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 1
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "OH": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 36
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "OK": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 26
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "OR": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 23
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "PA": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 102
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "RI": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 29
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "SC": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 31
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "SD": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 1
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "TN": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 39
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "TX": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 181
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "UT": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 11
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "VT": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 7
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "VA": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 81
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "WI": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 29
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "WA": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 34
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "WV": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 11
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "WY": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 2
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 0
+      }
+   ],
+   "US Territories": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 65
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 17629
+      }
+   ],
+   "AS": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 0
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 49
+      }
+   ],
+   "PR": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 64
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 17315
+      }
+   ],
+   "VI": [
+      {
+         "indicator": "Travel",
+         "date": 2016,
+         "value": 1
+      },
+      {
+         "indicator": "Local",
+         "date": 2016,
+         "value": 265
+      }
+   ]
+}

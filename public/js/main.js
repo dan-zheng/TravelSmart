@@ -2,9 +2,8 @@ var test;
 var test2;
 var test3;
 
-var orig_prcp_data;
-var dest_prcp_data;
-
+var orig;
+var dest;
 var orig_addr;
 var dest_addr;
 var orig_weather_data;
@@ -22,9 +21,13 @@ var dest_temp = {
 var orig_long_addr;
 var dest_long_addr;
 var orig_locality;
+var orig_state;
 var orig_country;
 var dest_locality;
+var dest_state;
 var dest_country;
+var orig_prcp_data;
+var dest_prcp_data;
 
 var chart_weather_orig;
 var chart_weather_dest;
@@ -265,8 +268,10 @@ function initMap() {
                     if (status === 'OK') {
                         if (results[0]) {
                             if (type == 'origin') {
+                                orig = results[0];
                                 orig_long_addr = results[0].formatted_address;
                             } else if (type == 'destination') {
+                                dest = results[0];
                                 dest_long_addr = results[0].formatted_address;
                             }
                             var temp = results[0].address_components;
@@ -291,6 +296,14 @@ function initMap() {
                                         orig_locality = temp[c].short_name;
                                     } else {
                                         dest_locality = temp[c].short_name;
+                                    }
+                                } else if (temp[c].types[0] == 'administrative_area_level_1') {
+                                    if (type == 'origin') {
+                                        orig_state = temp[c].short_name
+                                        console.log(orig_state);
+                                    } else {
+                                        dest_state = temp[c].short_name;
+                                        console.log(dest_state);
                                     }
                                 } else if (temp[c].types[0] == 'country') {
                                     if (type == 'origin') {
@@ -323,6 +336,10 @@ function initMap() {
             }
         });
     }
+
+    $.getJSON("zika-data.json", function(json) {
+        console.log(json); // this will show the info it in firebug console
+    });
 
     function weatherOrig() {
         var url;
