@@ -147,11 +147,17 @@
     margin-bottom: 10px;
     font-weight: 700;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-    border-bottom-width: 0;
+    font-size: 15px;
 
     *:focus {
         outline: none;
         border: none;
+    }
+    li a {
+        overflow: hidden;
+        border-bottom-width: 0;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 }
 
