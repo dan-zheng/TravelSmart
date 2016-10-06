@@ -26,17 +26,21 @@ block content
                             li(role='presentation', data-toggle='tab')
                                 a(href='#viral-threat') Viral Threat
                         div#route
+                            div#route-info
                         div#weather
+                            h1 7-day Forecast
                             div#orig-weather
-                                p Hi
+                                div#orig-weather-chart.chart
+                                span.no-info#orig-weather-info Please select an origin location.
                             div#dest-weather
-                                p Hi also
+                                div#dest-weather-chart.chart
+                                span.no-info#dest-weather-info Please select a destination location.
                         div#viral-threat
                         // Button trigger modal
-                        button.btn.btn-primary(type='button', data-toggle='modal', data-target='#myModal') Launch demo modal
+                        //button.btn.btn-primary(type='button', data-toggle='modal', data-target='#myModal') Launch demo modal
     div#inputs
-        input#origin-input.controls(type='text', placeholder='Enter an origin')
-        input#destination-input.controls(type='text', placeholder='Enter a destination')
+        input#orig-input.controls(type='text', placeholder='Enter an origin')
+        input#dest-input.controls(type='text', placeholder='Enter a destination')
     div#mode-selector.controls
         b Mode of Travel: 
         select#mode

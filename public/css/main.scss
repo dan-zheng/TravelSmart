@@ -1,16 +1,13 @@
 @import "themes/modern/variables";
-
 @import "lib/bootstrap/bootstrap";
 @import "lib/bootstrap-social";
 @import "lib/font-awesome/font-awesome";
-
 @import "themes/modern/modern";
-
 // Scaffolding
 // -------------------------
 
 #main {
-    display:flex;
+    display: flex;
     justify-content: center;
 }
 
@@ -30,52 +27,56 @@
 
 .unauth {
     color: #fff;
-    text-shadow: 0 1px 3px rgba(0,0,0,.3),
-                 0 3px 5px rgba(0,0,0,.2);
+    text-shadow: 0 1px 3px rgba(0,0,0,.3), 0 3px 5px rgba(0,0,0,.2);
+
     h1 {
         text-align: center;
         font-family: $title-font-family;
         font-weight: bold;
-        padding: $title-font-size * 0.5 * 0.3 0px;
+        padding: $title-font-size * 0.5 * 0.3 0;
         font-size: $title-font-size * 0.3;
         @media (min-width: $screen-xs-min) {
             font-size: $title-font-size * 0.5;
-            padding: $title-font-size * 0.5 * 0.5 0px;
+            padding: $title-font-size * 0.5 * 0.5 0;
         }
         @media (min-width: $screen-sm-min) {
             font-size: $title-font-size * 0.7;
-            padding: $title-font-size * 0.5 * 0.7 0px;
+            padding: $title-font-size * 0.5 * 0.7 0;
         }
         @media (min-width: $screen-md-min) {
             font-size: $title-font-size * 0.85;
-            padding: $title-font-size * 0.5 * 0.85 0px;
+            padding: $title-font-size * 0.5 * 0.85 0;
         }
         @media (min-width: $screen-lg-min) {
             font-size: $title-font-size;
-            padding: $title-font-size * 0.5 0px;
+            padding: $title-font-size * 0.5 0;
         }
+
         .emph {
             font-style: italic;
         }
     }
+
     p {
         text-align: center;
         font-family: $subtitle-font-family;
         font-weight: lighter;
-        padding: $subtitle-font-size * 0.5 * 0.6 0px;
+        padding: $subtitle-font-size * 0.5 * 0.6 0;
         font-size: $subtitle-font-size * 0.6;
         @media (min-width: $screen-sm-min) {
             font-size: $subtitle-font-size * 0.7;
-            padding: $subtitle-font-size * 0.5 * 0.7 0px;
+            padding: $subtitle-font-size * 0.5 * 0.7 0;
         }
         @media (min-width: $screen-lg-min) {
             font-size: $subtitle-font-size;
-            padding: $subtitle-font-size * 0.5 0px;
+            padding: $subtitle-font-size * 0.5 0;
         }
+
         .emph {
             font-style: italic;
         }
     }
+
     .btn {
         font-family: "Roboto";
         font-size: 20px;
@@ -100,12 +101,45 @@
     background-color: rgba(255, 255, 255, .7);
 }
 
+#route {
+
+}
+
+#route-info {
+    font-family: 'Roboto','sans-serif';
+    line-height: 30px;
+    padding-left: 10px;
+    float: right;
+    height: 100%;
+    position: static;
+    overflow: auto;
+    text-align: left;
+}
+
+#route-info input,
+#route-info select {
+    font-size: 15px;
+}
+
+#route-info select {
+    width: 100%;
+}
+
+#route-info i {
+    font-size: 12px;
+}
+
 #data-tabs {
     padding-top: 0;
     padding-bottom: 10px;
+
     *:focus {
         outline: none;
     }
+}
+
+#chart .c3-chart-line {
+    stroke-width: 3px;
 }
 
 .controls {
@@ -119,159 +153,157 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-#info {
+#info {}
 
+.chart {
+    width: 90%;
 }
 
-#origin-input, #destination-input {
+#dest-input,
+#orig-input {
     display: block;
-	background-color: #fff;
-	font-family: Roboto;
-	font-size: 15px;
-	font-weight: 300;
-	margin-left: 12px;
-	padding: 0 11px 0 13px;
-	text-overflow: ellipsis;
-	width: 200px;
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 200px;
 }
 
-#origin-input:focus,
-#destination-input:focus {
-	border-color: #4d90fe;
+#dest-input:focus,
+#orig-input:focus {
+    border-color: #4d90fe;
 }
 
 #mode-selector {
     background-color: #fff;
-	font-family: Roboto;
-	font-size: 15px;
-	font-weight: 300;
-	margin-left: 12px;
-	padding: 0 11px 0 13px;
-	text-overflow: ellipsis;
-	/*background-color: #fff;
-    border: 1px solid #999;
-    text-align: center;
-    font-family: 'Roboto','sans-serif';
-	margin-left: 12px;
-	padding: 5px 11px 0px 11px;
-    width: 200px;
-    display: none;*/
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
 }
 
 footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	border-top: 1px solid #e7ebf3;
-	background-color: #fff;
-	color: #96a3b6;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #e7ebf3;
+    background-color: #fff;
+    color: #96a3b6;
 
-	.container {
-		padding-top: 14px;
-		padding-right: 14px;
-		vertical-align: middle;
-	}
-}
-
-.black {
-	color: #111;
+    .container {
+        padding-top: 14px;
+        padding-right: 14px;
+        vertical-align: middle;
+    }
 }
 
 .black {
     color: #111;
 }
 
+.black {
+    color: #111;
+}
 // Input Fields
 // -------------------------
 
 textarea {
-	resize: vertical;
+    resize: vertical;
 }
-
 // Navbar
 // -------------------------
-.navbar-default {
-	height: $navbar-height;
-	background-color: #fff;
-	.container {
-		height: inherit;
-	}
-	.navbar-header {
-		height: inherit !important;
-	}
-	.navbar-brand {
-		position: absolute;
-		padding-top: 0px;
-		padding-bottom: 0px;
-		color: #5c4b92;
-		font-family: $navbar-brand-font-family;
-		font-weight: bold;
-		font-size: $navbar-default-brand-size;
-		height: $navbar-height;
-		white-space: nowrap;
-		overflow: hidden;
-		// Brand logo
-		img {
-			display: inline-block;
-			vertical-align: middle;
-			padding-top: 12px;
-			padding-bottom: 12px;
-			padding-right: 12px;
-		}
-		.fa {
-			float: left;
-			display: inline-block;
-			vertical-align: middle;
-			padding-top: 18px;
-			padding-bottom: 18px;
-		}
-		// Brand title
-		span {
-			display: inline-block;
-			vertical-align: middle;
-			line-height: $navbar-default-brand-size;
-			padding-top: 20px;
-			padding-bottom: 16px;
-		}
-	}
-	.navbar-nav {
-		> li > a {
-			color: #444;
-		}
-		// Avatar
-		img {
-			height: 30px;
-			width: 30px;
-			margin: -15px 15px -15px;
-		}
-	}
-	.navbar-collapse {
-		background-color: #fff;
-	}
-	.navbar-toggle {
-		z-index: 1;
-	}
-}
 
+.navbar-default {
+    height: $navbar-height;
+    background-color: #fff;
+
+    .container {
+        height: inherit;
+    }
+
+    .navbar-header {
+        height: inherit !important;
+    }
+
+    .navbar-brand {
+        position: absolute;
+        padding-top: 0;
+        padding-bottom: 0;
+        color: #5c4b92;
+        font-family: $navbar-brand-font-family;
+        font-weight: bold;
+        font-size: $navbar-default-brand-size;
+        height: $navbar-height;
+        white-space: nowrap;
+        overflow: hidden;
+        // Brand logo
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-right: 12px;
+        }
+
+        .fa {
+            float: left;
+            display: inline-block;
+            vertical-align: middle;
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+        // Brand title
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: $navbar-default-brand-size;
+            padding-top: 20px;
+            padding-bottom: 16px;
+        }
+    }
+
+    .navbar-nav {
+        > li > a {
+            color: #444;
+        }
+        // Avatar
+        img {
+            height: 30px;
+            width: 30px;
+            margin: -15px 15px;
+        }
+    }
+
+    .navbar-collapse {
+        background-color: #fff;
+    }
+
+    .navbar-toggle {
+        z-index: 1;
+    }
+}
 // Alerts
 // -------------------------
 
 .alert {
-	margin-top: 20px;
+    margin-top: 20px;
 }
-
 // Thumbnails
 // -------------------------
 
 .thumbnail {
-	padding: 0;
-	border-radius: 0;
-	box-shadow: 0 0 5px #ccc, inset 0 0 0 #000;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: 0 0 5px #ccc, inset 0 0 0 #000;
 }
-
 // Font Icons
 // -------------------------
 
 .fa {
-	margin-right: 6px;
+    margin-right: 6px;
 }

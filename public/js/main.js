@@ -2,13 +2,36 @@ var test;
 var test2;
 var test3;
 
-var origin_prcp_data;
+var orig_prcp_data;
 var dest_prcp_data;
 
-var origin_weather_data;
+var orig_addr;
+var dest_addr;
+var orig_weather_data;
 var dest_weather_data;
-var origin_temp = [];
-var dest_temp = [];
+var orig_temp = {
+    low: ['low'],
+    high: ['high']
+};
+var dest_temp = {
+    low: ['low'],
+    high: ['high']
+};
+var orig_long_addr;
+var dest_long_addr;
+var orig_locality, orig_country, dest_locality, dest_country;
+
+var weather_range = [];
+
+var weather_len = 7; // orig_weather_data.length
+
+function getWeatherRange() {
+    weather_range = ['days'];
+    for (var i = 0; i < weather_len; i++) {
+        var temp_date = moment().add(i, 'days').format('MM-DD');
+        weather_range.push(temp_date);
+    }
+}
 
 var wunderground_key = "3510f4f7049cf703";
 tokenHeader = [];
@@ -22,11 +45,14 @@ $(document).ready(function() {
         anchors: ['start', 'app'],
         paddingTop: '64px',
         paddingBottom: '42px',
+        normalScrollElements: '#route-info'
     });
     var pad = 20;
     var height = $(window).height() - $(".navbar").height() - $("footer").height() - pad;
     $("#map").height(height);
     $("#data").height(height - $('#info').height() - pad);
+    var route_info_height = $("#data").height() - $("#data-tabs").height() - 10;
+    $("#route").height(route_info_height);
 
     $("#data").tabs();
 });
@@ -36,6 +62,8 @@ $(window).on('resize', function() {
     var height = $(window).height() - $(".navbar").height() - $("footer").height() - pad;
     $("#map").height(height);
     $("#data").height(height - $('#info').height() - pad);
+    var route_info_height = $("#route").height() - $("#data-tabs").height() - 10;
+    $("#route-info").height(route_info_height);
 });
 
 $('#myModal').on('shown.bs.modal', function() {
@@ -47,10 +75,12 @@ $('#go-to-app').on('click', function() {
 });
 
 function initMap() {
-    var origin_place_id = null;
+    var orig_place_id = null;
     var destination_place_id = null;
-    var origin_postal_code = null;
+
+    var orig_postal_code = null;
     var dest_postal_code = null;
+
     var travel_mode = 'WALKING';
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
@@ -63,11 +93,12 @@ function initMap() {
     var directionsService = new google.maps.DirectionsService();
     var directionsDisplay = new google.maps.DirectionsRenderer();
     directionsDisplay.setMap(map);
+    directionsDisplay.setPanel(document.getElementById('route-info'));
 
     var geocoder = new google.maps.Geocoder();
 
-    var origin_input = document.getElementById('origin-input');
-    var destination_input = document.getElementById('destination-input');
+    var orig_input = document.getElementById('orig-input');
+    var dest_input = document.getElementById('dest-input');
     var modes = document.getElementById('mode-selector');
 
     var inputs = document.getElementById('inputs');
@@ -75,10 +106,10 @@ function initMap() {
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(inputs);
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(modes);
 
-    var origin_autocomplete = new google.maps.places.Autocomplete(origin_input);
-    origin_autocomplete.bindTo('bounds', map);
-    var destination_autocomplete = new google.maps.places.Autocomplete(destination_input);
-    destination_autocomplete.bindTo('bounds', map);
+    var orig_autocomplete = new google.maps.places.Autocomplete(orig_input);
+    orig_autocomplete.bindTo('bounds', map);
+    var dest_autocomplete = new google.maps.places.Autocomplete(dest_input);
+    dest_autocomplete.bindTo('bounds', map);
 
     // Sets a listener on a radio button to change the filter type on Places
     // Autocomplete.
@@ -98,8 +129,8 @@ function initMap() {
         }
     }
 
-    origin_autocomplete.addListener('place_changed', function() {
-        var place = origin_autocomplete.getPlace();
+    orig_autocomplete.addListener('place_changed', function() {
+        var place = orig_autocomplete.getPlace();
         if (!place.geometry) {
             window.alert("Autocomplete's returned place contains no geometry");
             return;
@@ -110,13 +141,13 @@ function initMap() {
 
         // If the place has a geometry, store its place ID and route if we have
         // the other place ID
-        origin_place_id = place.place_id;
-        route(origin_place_id, destination_place_id, travel_mode,
+        orig_place_id = place.place_id;
+        route(orig_place_id, destination_place_id, travel_mode,
             directionsService, directionsDisplay);
     });
 
-    destination_autocomplete.addListener('place_changed', function() {
-        var place = destination_autocomplete.getPlace();
+    dest_autocomplete.addListener('place_changed', function() {
+        var place = dest_autocomplete.getPlace();
         if (!place.geometry) {
             window.alert("Autocomplete's returned place contains no geometry");
             return;
@@ -127,25 +158,25 @@ function initMap() {
         // If the place has a geometry, store its place ID and route if we have
         // the other place ID
         destination_place_id = place.place_id;
-        route(origin_place_id, destination_place_id, travel_mode,
+        route(orig_place_id, destination_place_id, travel_mode,
             directionsService, directionsDisplay);
     });
 
     document.getElementById('mode').addEventListener('change', function() {
         travel_mode = document.getElementById('mode').value;
-        route(origin_place_id, destination_place_id, travel_mode,
+        route(orig_place_id, destination_place_id, travel_mode,
             directionsService, directionsDisplay);
     });
 
-    function route(origin_place_id, destination_place_id, travel_mode,
+    function route(orig_place_id, destination_place_id, travel_mode,
         directionsService, directionsDisplay) {
-        if (!origin_place_id || !destination_place_id) {
+        if (!orig_place_id || !destination_place_id) {
             return;
         }
 
         directionsService.route({
             origin: {
-                'placeId': origin_place_id
+                'placeId': orig_place_id
             },
             destination: {
                 'placeId': destination_place_id
@@ -175,22 +206,51 @@ function initMap() {
                 }, function(results, status) {
                     if (status === 'OK') {
                         if (results[0]) {
+                            if (type == 'origin') {
+                                orig_long_addr = results[0].formatted_address;
+                            } else if (type == 'destination') {
+                                dest_long_addr = results[0].formatted_address;
+                            }
                             var temp = results[0].address_components;
+                            console.log(results[0]);
                             for (var c = 0; c < temp.length; c++) {
                                 if (temp[c].types[0] == 'postal_code') {
                                     var postal_code = temp[c].short_name;
                                     //console.log(postal_code);
                                     if (type == 'origin') {
-                                        origin_postal_code = postal_code;
-                                        test = origin_postal_code;
+                                        orig_postal_code = postal_code;
+                                        test = orig_postal_code;
                                         //prcpInfoOrigin();
-                                        weatherOrigin();
+                                        //callback();
                                     } else if (type == 'destination') {
                                         dest_postal_code = postal_code;
                                         test2 = dest_postal_code;
                                         //prcpInfoDest();
-                                        weatherDest();
+                                        //callback();
                                     }
+                                } else if (temp[c].types[0] == 'locality') {
+                                    if (type == 'origin') {
+                                        orig_locality = temp[c].short_name;
+                                    } else {
+                                        dest_locality = temp[c].short_name;
+                                    }
+                                } else if (temp[c].types[0] == 'country') {
+                                    if (type == 'origin') {
+                                        orig_country = temp[c].short_name;
+                                    } else {
+                                        dest_country = temp[c].short_name;
+                                    }
+                                }
+                            }
+                            if (type == 'origin') {
+                                if (orig_locality && orig_country) {
+                                    orig_addr = orig_country + "/" + orig_locality;
+                                    weatherOrig();
+                                }
+                            } else if (type == 'destination') {
+                                if (dest_locality && dest_country) {
+                                    dest_addr = dest_country + "/" + dest_locality;
+                                    weatherDest();
                                 }
                             }
                         } else {
@@ -206,55 +266,146 @@ function initMap() {
         });
     }
 
-    function weatherOrigin() {
+    function weatherOrig() {
         var url;
-        if (origin_postal_code) {
-            url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + origin_postal_code + ".json";
+        var orig_query;
+        if (orig_postal_code) {
+            orig_query = orig_postal_code;
+            console.log("postal code: " + orig_query);
+        } else if (orig_addr) {
+            orig_query = orig_addr;
+            console.log("addr: " + orig_query);
+        }
+        if (orig_query) {
+            url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + orig_query + ".json";
             httpGetAsync(url, null, function(data) {
-                origin_weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
-                for (var i = 0; i < origin_weather_data.length; i++) {
-                    origin_temp.push({
-                        low: origin_weather_data[i].low.fahrenheit,
-                        high: origin_weather_data[i].high.fahrenheit
-                    });
+                orig_weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
+
+                orig_temp = {
+                    low: ['low'],
+                    high: ['high']
+                };
+
+                for (var i = 0; i < weather_len; i++) {
+                    orig_temp.low.push(orig_weather_data[i].low.fahrenheit);
+                    orig_temp.high.push(orig_weather_data[i].high.fahrenheit);
                 }
-                console.log(origin_temp);
-                $('#orig-weather').html(JSON.stringify(origin_temp));
-                //console.log(origin_weather_data);
+
+                weatherOrigGraph();
             });
+        } else {
+            $('#orig-weather-chart').hide();
+            $('#orig-weather-info').html("No weather information found.");
         }
     }
 
     function weatherDest() {
         var url;
+        var dest_query;
         if (dest_postal_code) {
-            url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + dest_postal_code + ".json";
+            dest_query = dest_postal_code;
+            console.log("postal code: " + dest_query);
+        } else if (dest_addr) {
+            dest_query = dest_addr;
+            console.log("addr: " + dest_query);
+        }
+        if (dest_query) {
+            url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + dest_query + ".json";
             httpGetAsync(url, null, function(data) {
                 dest_weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
-                for (var i = 0; i < dest_weather_data.length; i++) {
-                    dest_temp.push({
-                        low: dest_weather_data[i].low.fahrenheit,
-                        high: dest_weather_data[i].high.fahrenheit
-                    });
+
+                dest_temp = {
+                    low: ['low'],
+                    high: ['high']
+                };
+
+                for (var i = 0; i < weather_len; i++) {
+                    dest_temp.low.push(dest_weather_data[i].low.fahrenheit);
+                    dest_temp.high.push(dest_weather_data[i].high.fahrenheit);
                 }
-                $('#dest-weather').html(JSON.stringify(dest_temp));
-                //console.log(dest_weather_data);
+
+                weatherDestGraph();
             });
+        } else {
+            $('#dest-weather-chart').hide();
+            $('#dest-weather-info').html("No weather information found.");
         }
+    }
+
+    function weatherOrigGraph() {
+        $('#orig-weather-info').hide();
+        getWeatherRange();
+        var chart = c3.generate({
+            bindto: '#orig-weather-chart',
+            title: {
+                text: 'Origin Info'
+            },
+            data: {
+                x: 'days',
+                xFormat: '%m-%d',
+                columns: [
+                    weather_range,
+                    orig_temp.low,
+                    orig_temp.high
+                ]
+            },
+            axis: {
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: '%m-%d'
+                    }
+                },
+                y: {
+                    label: 'Temperature (°F)'
+                }
+            }
+        });
+    }
+
+    function weatherDestGraph() {
+        $('#dest-weather-info').hide();
+        getWeatherRange();
+        var chart = c3.generate({
+            bindto: '#dest-weather-chart',
+            title: {
+                text: 'Destination Info'
+            },
+            data: {
+                x: 'days',
+                xFormat: '%m-%d',
+                columns: [
+                    weather_range,
+                    dest_temp.low,
+                    dest_temp.high
+                ]
+            },
+            axis: {
+                x: {
+                    type: 'timeseries',
+                    tick: {
+                        format: '%m-%d'
+                    }
+                },
+                y: {
+                    label: 'Temperature (°F)'
+                }
+            }
+        });
     }
 
     function prcpInfoOrigin() {
         var dateToday, dateLastWeek, url;
-        if (origin_postal_code) {
-            console.log("origin: " + origin_postal_code);
+        if (orig_postal_code) {
+            console.log("origin: " + orig_postal_code);
             dateToday = moment().format('YYYY-MM-DD');
             dateLastWeek = moment().subtract(7, 'days').format('YYYY-MM-DD');
             console.log(dateToday + ", " + dateLastWeek);
-            url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + origin_postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=5&sortfield=date&sortorder=desc&includemetadata=false";
+            url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + orig_postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=5&sortfield=date&sortorder=desc&includemetadata=false";
 
             httpGetAsync(url, tokenHeader, function(data) {
-                origin_prcp_data = JSON.parse(data);
-                console.log(origin_prcp_data);
+                orig_prcp_data = JSON.parse(data);
+                console.log(orig_prcp_data);
             });
         } else {
             console.log("origin fail");
@@ -341,16 +492,16 @@ function httpGetAsync(url, headers, callback) {
     xmlHttp.send(null);
 }*/
 
-origin_postal_code = "47907";
+orig_postal_code = "47907";
 dest_postal_code = "47304";
 
 function testOrigin() {
-    if (origin_postal_code) {
-        console.log("origin: " + origin_postal_code);
+    if (orig_postal_code) {
+        console.log("origin: " + orig_postal_code);
         dateToday = moment().format('YYYY-MM-DD');
         dateLastWeek = moment().subtract(7, 'days').format('YYYY-MM-DD');
         console.log(dateToday + ", " + dateLastWeek);
-        url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + origin_postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=7&sortfield=date&sortorder=desc&includemetadata=false";
+        url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + orig_postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=7&sortfield=date&sortorder=desc&includemetadata=false";
         tokenHeader = [];
         tokenHeader.push({
             key: 'token',
@@ -358,7 +509,7 @@ function testOrigin() {
         });
         var aClient = new HttpClient();
         aClient.get(url, tokenHeader, function(data) {
-            origin_prcp_data = JSON.parse(data);
+            orig_prcp_data = JSON.parse(data);
         });
     }
 }
