@@ -10,6 +10,17 @@ block content
                         |.
                     hr
                     p TravelSmart helps you make informed travel decisions so you can enjoy a safe journey.
+                    div.about
+                        div#about-1.col-xs-4
+                            h1 Route
+                            i.fa.fa-map-signs
+                            p We'll give you
+                        div#about-2.col-xs-4
+                            h1 Weather
+                            i.fa.fa-sun-o
+                        div#about-4.col-xs-4
+                            h1 Health
+                            i.fa.fa-medkit
                     a#go-to-app.btn.btn-primary(role='button') Plan your trip
         .section
             div#main.text-center
@@ -22,24 +33,36 @@ block content
                             li.data-tab(role='presentation', data-toggle='tab')
                                 a(href='#weather') Weather
                             li.data-tab(role='presentation', data-toggle='tab')
-                                a(href='#viral-threat') Viral Threat
+                                a(href='#zika-threat') Zika Threat
                         div#route
                             h1#route-heading Route Info
                             div#route-error
+                            div.no-info#orig-route-info Please select an origin location.
+                            div.no-info#dest-route-info Please select a destination location.
                             div#route-info
                         div#weather
                             h1#weather-heading 7-Day Forecast
                             #weather-btn-group.btn-group(role='group', aria-label='...')
                                 #weather-spline.btn.btn-primary.active(role='button') Spline
                                 #weather-bar.btn.btn-primary(role='button') Bar
+                                #weather-clouds.btn.btn-primary(role='button') Conditions
                             div#weather-info
+                                div#weather-clouds-chart.chart.text-center
                                 div#orig-weather
                                     div#orig-weather-chart.chart
                                     span.no-info#orig-weather-info Please select an origin location.
                                 div#dest-weather
                                     div#dest-weather-chart.chart
                                     span.no-info#dest-weather-info Please select a destination location.
-                        div#viral-threat
+                        div#zika-threat
+                            h1#zika-heading Zika Threat
+                            div#zika-info
+                                div#zika-chart.chart
+                                div#zika-pie-chart.chart
+                                div#orig-zika
+                                    span.no-info#orig-zika-info Please select an origin location.
+                                div#dest-zika
+                                    span.no-info#dest-zika-info Please select a destination location.
                         // Button trigger modal
                         //button.btn.btn-primary(type='button', data-toggle='modal', data-target='#myModal') Launch demo modal
     div#inputs

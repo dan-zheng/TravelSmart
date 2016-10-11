@@ -2,7 +2,7 @@ var test;
 var test2;
 var test3;
 
-var orig;
+
 var dest;
 var orig_addr;
 var dest_addr;
@@ -11,29 +11,46 @@ var dest_weather_data;
 var orig_temp = {
     low: ['low'],
     high: ['high'],
-    qpf_allday: ['rain']
+    qpf_allday: ['rain'],
+    conditions: ['conditions']
 };
 var dest_temp = {
     low: ['low'],
     high: ['high'],
-    qpf_allday: ['rain']
+    qpf_allday: ['rain'],
+    conditions: ['conditions']
 };
 var orig_long_addr;
 var dest_long_addr;
 var orig_locality;
 var orig_state;
+var orig_state_long;
 var orig_country;
 var dest_locality;
 var dest_state;
+var dest_state_long;
 var dest_country;
 var orig_prcp_data;
 var dest_prcp_data;
+var orig_zika = {
+    local: null,
+    travel: null
+};
+var dest_zika = {
+    local: null,
+    travel: null
+};
+var total_zika = {
+    local: null,
+    travel: null
+};
 
+var zika_chart;
+var zika_pie_chart;
 var chart_weather_orig;
 var chart_weather_dest;
 
 var weather_range = [];
-
 var weather_len = 7; // orig_weather_data.length
 
 function getWeatherRange() {
@@ -44,7 +61,14 @@ function getWeatherRange() {
     }
 }
 
-var wunderground_key = "3510f4f7049cf703";
+var zika_data;
+$.getJSON("zika-data.json", function(json) {
+    zika_data = json;
+    total_zika.travel = zika_data.total_us[0].value;
+    total_zika.local = zika_data.total_us[1].value;
+});
+
+var wunderground_key = "6901a5ba64a062c1";
 tokenHeader = [];
 tokenHeader.push({
     key: 'token',
@@ -65,8 +89,9 @@ $(document).ready(function() {
     var route_height = $("#data").height() - $("#data-tabs").height() - 10;
     $("#route").height(route_height);
     $("#weather").height(route_height);
-    $("#viral-threat").height(route_height);
+    $("#zika-threat").height(route_height);
     $("#route-info").height(route_height - $("#route-heading").height() - 10);
+    $('#weather-clouds-chart').hide();
     /*var maxHeight = Math.max.apply(null, $(".data-tab").map(function() {
         console.log($(this).height() );
         return $(this).height() - 16;
@@ -83,7 +108,7 @@ $(window).on('resize', function() {
     var route_height = $("#data").height() - $("#data-tabs").height() - 10;
     $("#route").height(route_height);
     $("#weather").height(route_height);
-    $("#viral-threat").height(route_height);
+    $("#zika-threat").height(route_height);
     $("#route-info").height(route_height - $("#route-heading").height() - 10);
     /*var maxHeight = Math.max.apply(null, $(".data-tab").map(function() {
         console.log($(this).height());
@@ -105,6 +130,9 @@ $('#go-to-app').on('click', function() {
 $('#weather-spline').on('click', function() {
     $('#weather-spline').addClass('active');
     $('#weather-bar').removeClass('active');
+    $('#orig-weather-chart').show();
+    $('#dest-weather-chart').show();
+    $('#weather-clouds-chart').hide();
     if (chart_weather_orig) {
         chart_weather_orig.transform('area-spline');
     }
@@ -116,6 +144,9 @@ $('#weather-spline').on('click', function() {
 $('#weather-bar').on('click', function() {
     $('#weather-bar').addClass('active');
     $('#weather-spline').removeClass('active');
+    $('#orig-weather-chart').show();
+    $('#dest-weather-chart').show();
+    $('#weather-clouds-chart').hide();
     if (chart_weather_orig) {
         chart_weather_orig.transform('bar');
     }
@@ -123,6 +154,8 @@ $('#weather-bar').on('click', function() {
         chart_weather_dest.transform('bar');
     }
 });
+
+
 
 /*$('#data-tabs').on('click', function() {
     console.log('hi');
@@ -132,6 +165,30 @@ $('#weather-bar').on('click', function() {
 });*/
 
 function initMap() {
+    $('#weather-clouds').on('click', function() {
+        if ($("#weather-clouds").hasClass('active')) {
+            $('#weather-clouds').removeClass('active');
+            $('#orig-weather-chart').show();
+            $('#dest-weather-chart').show();
+            $('#weather-clouds-chart').hide();
+        } else {
+            weatherCloudChart();
+            $('#weather-clouds').addClass('active');
+            $('#orig-weather-chart').hide();
+            $('#dest-weather-chart').hide();
+            $('#weather-clouds-chart').show();
+        }
+        /*
+        if (orig_temp.low.length >= weather_len + 1) {
+            weatherOrig();
+            if (dest_temp.low.length >= weather_len + 1) {
+                weatherDest();
+            }
+        } else if (dest_temp.low.length >= weather_len + 1) {
+            weatherDest();
+        }*/
+    });
+
     var orig_place_id = null;
     var destination_place_id = null;
 
@@ -192,8 +249,8 @@ function initMap() {
             return;
         }
         expandViewportToFitPlace(map, place);
-        console.log(place);
         geocodeAddress(place.formatted_address, 'origin');
+        $('#orig-route-info').hide();
 
         // If the place has a geometry, store its place ID and route if we have
         // the other place ID
@@ -210,6 +267,7 @@ function initMap() {
         }
         expandViewportToFitPlace(map, place);
         geocodeAddress(place.formatted_address, 'destination');
+        $('#dest-route-info').hide();
 
         // If the place has a geometry, store its place ID and route if we have
         // the other place ID
@@ -299,10 +357,12 @@ function initMap() {
                                     }
                                 } else if (temp[c].types[0] == 'administrative_area_level_1') {
                                     if (type == 'origin') {
-                                        orig_state = temp[c].short_name
+                                        orig_state = temp[c].short_name;
+                                        orig_state_long = temp[c].long_name;
                                         console.log(orig_state);
                                     } else {
                                         dest_state = temp[c].short_name;
+                                        dest_state_long = temp[c].long_name;
                                         console.log(dest_state);
                                     }
                                 } else if (temp[c].types[0] == 'country') {
@@ -317,11 +377,13 @@ function initMap() {
                                 if (orig_locality && orig_country) {
                                     orig_addr = orig_country + "/" + orig_locality;
                                     weatherOrig();
+                                    zikaOrig();
                                 }
                             } else if (type == 'destination') {
                                 if (dest_locality && dest_country) {
                                     dest_addr = dest_country + "/" + dest_locality;
                                     weatherDest();
+                                    zikaDest();
                                 }
                             }
                         } else {
@@ -337,9 +399,240 @@ function initMap() {
         });
     }
 
-    $.getJSON("zika-data.json", function(json) {
-        console.log(json); // this will show the info it in firebug console
-    });
+    function weatherCloudChart() {
+        getWeatherRange();
+        var cloud_title;
+        var conditions = [];
+        var columns = [];
+        var temp_weather_range = weather_range.slice();
+        temp_weather_range.shift();
+        console.log(weather_range);
+        console.log(temp_weather_range);
+        $('#orig-weather-chart').hide();
+        $('#dest-weather-chart').hide();
+        if (orig_zika.travel !== null && dest_zika.travel !== null) {
+            $('#orig-weather-info').hide();
+            $('#dest-weather-info').hide();
+            cloud_title = "Cloud Info: (" + orig_state_long + " vs " + dest_state_long + ")";
+            for (var i = 0; i < 7; i++) {
+                conditions.push({
+                    'date': temp_weather_range[i],
+                    'orig': orig_temp.conditions[i + 1],
+                    'dest': dest_temp.conditions[i + 1]
+                });
+            }
+            columns = [{
+                head: 'Date',
+                cl: 'center',
+                html: ƒ('date')
+            }, {
+                head: 'Origin',
+                cl: 'title',
+                html: ƒ('orig')
+            }, {
+                head: 'Destination',
+                cl: 'title',
+                html: ƒ('dest')
+            }];
+            //zikaPieChart();
+        } else if (orig_zika.travel !== null) {
+            $('#orig-weather-info').hide();
+            cloud_title = "Cloud Info: (" + orig_state_long + ")";
+            for (var j = 0; j < 7; j++) {
+                conditions.push({
+                    'date': temp_weather_range[j],
+                    'orig': orig_temp.conditions[j + 1]
+                });
+            }
+            columns = [{
+                head: 'Date',
+                cl: 'center',
+                html: ƒ('date')
+            }, {
+                head: 'Origin',
+                cl: 'title',
+                html: ƒ('orig')
+            }];
+        } else if (dest_zika.travel !== null) {
+            $('#dest-weather-info').hide();
+            cloud_title = "Cloud Info: (" + dest_state_long + ")";
+            for (var k = 0; k < 7; k++) {
+                conditions.push({
+                    'date': temp_weather_range[k],
+                    'dest': dest_temp.conditions[k + 1]
+                });
+            }
+            columns = [{
+                head: 'Date',
+                cl: 'center',
+                html: ƒ('date')
+            }, {
+                head: 'Destination',
+                cl: 'title',
+                html: ƒ('dest')
+            }];
+        }
+
+        d3.select('#weather-clouds-chart').select('table').remove();
+
+        cloudTable = d3.select('#weather-clouds-chart')
+            .append('table').style('margin', 'auto');
+
+        console.log(conditions);
+
+        // create table header
+        cloudTable.append('thead').append('tr')
+            .selectAll('th')
+            .data(columns).enter()
+            .append('th')
+            .attr('class', ƒ('cl'))
+            .text(ƒ('head'));
+
+        // create table body
+        cloudTable.append('tbody')
+            .selectAll('tr')
+            .data(conditions).enter()
+            .append('tr')
+            .selectAll('td')
+            .data(function(row, i) {
+                var test4 = columns.map(function(c) {
+                    var cell = {};
+                    d3.keys(c).forEach(function(k) {
+                        cell[k] = typeof c[k] == 'function' ? c[k](row, i) : c[k];
+                    });
+                    return cell;
+                });
+                console.log(test4);
+                return test4;
+            }).enter()
+            .append('td')
+            .html(ƒ('html'))
+            .attr('class', ƒ('cl'));
+
+        $('#weather-clouds-chart').show();
+    }
+
+    function zikaOrig() {
+        if (orig_country == 'US' && orig_state) {
+            if (zika_data[orig_state]) {
+                var zika = zika_data[orig_state];
+                orig_zika.travel = zika[0].value;
+                orig_zika.local = zika[1].value;
+                zikaChart();
+            } else {
+                orig_zika.travel = null;
+                orig_zika.local = null;
+            }
+        } else {
+            orig_zika.travel = null;
+            orig_zika.local = null;
+            $('#orig-zika-info').html("No Zika data found for " + orig_country + ". Only US data is available.");
+        }
+    }
+
+    function zikaDest() {
+        if (dest_country == 'US' && dest_state) {
+            if (zika_data[dest_state]) {
+                var zika = zika_data[dest_state];
+                dest_zika.travel = zika[0].value;
+                dest_zika.local = zika[1].value;
+                zikaChart();
+            } else {
+                dest_zika.travel = null;
+                dest_zika.local = null;
+            }
+        } else {
+            dest_zika.travel = null;
+            dest_zika.local = null;
+            $('#dest-zika-info').html("No Zika data found for " + dest_country + ". Only US data is available.");
+        }
+    }
+
+    function zikaChart() {
+        var zika_title;
+        var columns;
+        if (orig_zika.travel !== null && dest_zika.travel !== null) {
+            $('#orig-zika-info').hide();
+            $('#dest-zika-info').hide();
+            zika_title = "Zika Info: (" + orig_state_long + " vs " + dest_state_long + ")";
+            columns = [
+                ['type', 'Travel acquired', 'Locally acquired'],
+                ['origin', orig_zika.travel, orig_zika.local],
+                ['destination', dest_zika.travel, dest_zika.local],
+            ];
+            //zikaPieChart();
+        } else if (orig_zika.travel !== null) {
+            $('#orig-zika-info').hide();
+            zika_title = "Zika Info: (" + orig_state_long + ")";
+            columns = [
+                ['type', 'Travel acquired', 'Locally acquired'],
+                ['origin', orig_zika.travel, orig_zika.local],
+            ];
+        } else if (dest_zika.travel !== null) {
+            $('#dest-zika-info').hide();
+            zika_title = "Zika Info: (" + dest_state_long + ")";
+            columns = [
+                ['type', 'Travel acquired', 'Locally acquired'],
+                ['destination', dest_zika.travel, dest_zika.local],
+            ];
+        }
+        chart_zika = c3.generate({
+            bindto: '#zika-chart',
+            title: {
+                text: zika_title
+            },
+            data: {
+                x: 'type',
+                columns: columns,
+                type: 'bar',
+                labels: true
+            },
+            axis: {
+                x: {
+                    type: 'category',
+                    label: 'Method of acquisition'
+                },
+                y: {
+                    label: 'Number of recorded cases'
+                }
+            }
+        });
+        $('#zika-chart').show();
+    }
+
+    /*function zikaPieChart() {
+        var zika_title;
+        var columns;
+        if (orig_zika.travel !== null && dest_zika.travel !== null) {
+            $('#orig-zika-info').hide();
+            $('#dest-zika-info').hide();
+            zika_title = "Zika Comparisons";
+            columns = [
+                ['total', total_zika.travel + total_zika.local],
+                ['origin', orig_zika.travel + orig_zika.local],
+                ['destination', dest_zika.travel + dest_zika.local],
+            ];
+        }
+        chart_pie_zika = c3.generate({
+            bindto: '#zika-pie-chart',
+            title: {
+                text: zika_title
+            },
+            data: {
+                columns: columns,
+                type: 'pie',
+                labels: true
+            },
+            pie: {
+                label: {
+                    format: function(value, ratio, id) {
+                        return value;
+                    }
+                }
+            }
+        });
+        $('#zika-pie-chart').show();
+    }*/
 
     function weatherOrig() {
         var url;
@@ -365,16 +658,28 @@ function initMap() {
                 orig_temp = {
                     low: ['low'],
                     high: ['high'],
-                    qpf_allday: ['rain']
+                    qpf_allday: ['rain'],
+                    conditions: ['conditions']
                 };
 
                 for (var i = 0; i < weather_len; i++) {
                     orig_temp.low.push(orig_weather_data[i].low.fahrenheit);
                     orig_temp.high.push(orig_weather_data[i].high.fahrenheit);
                     orig_temp.qpf_allday.push(orig_weather_data[i].qpf_allday.in);
+                    orig_temp.conditions.push(orig_weather_data[i].conditions);
                 }
 
-                weatherOrigGraph();
+                if ($("#weather-clouds").hasClass('active')) {
+                    weatherCloudChart();
+                } else {
+                    weatherOrigChart();
+                }
+
+                /*if (!$("#weather-clouds-chart").is(":visible")) {
+                    weatherOrigChart();
+                } else {
+                    weatherCloudChart();
+                }*/
             });
         } else {
             $('#orig-weather-chart').hide();
@@ -406,16 +711,28 @@ function initMap() {
                 dest_temp = {
                     low: ['low'],
                     high: ['high'],
-                    qpf_allday: ['rain']
+                    qpf_allday: ['rain'],
+                    conditions: ['conditions']
                 };
 
                 for (var i = 0; i < weather_len; i++) {
                     dest_temp.low.push(dest_weather_data[i].low.fahrenheit);
                     dest_temp.high.push(dest_weather_data[i].high.fahrenheit);
                     dest_temp.qpf_allday.push(dest_weather_data[i].qpf_allday.in);
+                    dest_temp.conditions.push(dest_weather_data[i].conditions);
                 }
 
-                weatherDestGraph();
+                if ($("#weather-clouds").hasClass('active')) {
+                    weatherCloudChart();
+                } else {
+                    weatherDestChart();
+                }
+
+                /*if (!$("#weather-clouds-chart").is(":visible")) {
+                    weatherDestChart();
+                } else {
+                    weatherCloudChart();
+                }*/
             });
         } else {
             $('#dest-weather-chart').hide();
@@ -423,9 +740,15 @@ function initMap() {
         }
     }
 
-    function weatherOrigGraph() {
+    function weatherOrigChart() {
         $('#orig-weather-info').hide();
         getWeatherRange();
+        var type;
+        if ($("#weather-spline").hasClass('active')) {
+            type = 'area-spline';
+        } else if ($("#weather-bar").hasClass('active')) {
+            type = 'bar';
+        }
         chart_weather_orig = c3.generate({
             bindto: '#orig-weather-chart',
             title: {
@@ -445,7 +768,7 @@ function initMap() {
                     high: 'y',
                     rain: 'y2'
                 },
-                type: 'area-spline',
+                type: type,
                 labels: true
             },
             axis: {
@@ -471,7 +794,7 @@ function initMap() {
         $('#orig-weather-chart').show();
     }
 
-    function weatherDestGraph() {
+    function weatherDestChart() {
         $('#dest-weather-info').hide();
         getWeatherRange();
         chart_weather_dest = c3.generate({
