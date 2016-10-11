@@ -11,16 +11,18 @@ block content
                     hr
                     p TravelSmart helps you make informed travel decisions so you can enjoy a safe journey.
                     div.about
-                        div#about-1.col-xs-4
+                        div.col-xs-4
                             h1 Route
                             i.fa.fa-map-signs
-                            p We'll give you
-                        div#about-2.col-xs-4
+                            p Reliable travel info for a variety of modes of transportation.
+                        div.col-xs-4
                             h1 Weather
                             i.fa.fa-sun-o
-                        div#about-4.col-xs-4
+                            p Accurate 7 day forecast for origin and destination.
+                        div.col-xs-4
                             h1 Health
                             i.fa.fa-medkit
+                            p Zika threat analysis to reduce your risk of infection.
                     a#go-to-app.btn.btn-primary(role='button') Plan your trip
         .section
             div#main.text-center
@@ -83,9 +85,20 @@ block content
                 .modal-header
                     button.close(type='button', data-dismiss='modal', aria-label='Close')
                         span(aria-hidden='true') ×
-                    h4#myModalLabel.modal-title About
+                    h3#myModalLabel.modal-title About
                 .modal-body
-                    | ...
+                    ul Datasets
+                        li
+                            | Google Maps JavaScript API: 
+                            a(href='https://developers.google.com/maps/documentation/javascript/3.exp/reference') Map and Directions services
+                        li
+                            | Global Climate Network: 
+                            a(href='http://www.ncdc.noaa.gov/cdo-web/webservices/v2') CDO API for GHCN Daily Summaries
+                        li
+                            | Wunderground: 
+                            a(href='https://www.wunderground.com/weather/api/') 10-Day Forecast API
+                        li
+                            | CDC: 
+                            a(href='https://www.cdc.gov/zika/intheus/maps-zika-us.html') Maps of Zika in the United States
                 .modal-footer
-                    button.btn.btn-secondary(type='button', data-dismiss='modal') Close
-                    button.btn.btn-primary(type='button') Save changes
+                    button.btn.btn-primary(type='button', data-dismiss='modal') Close

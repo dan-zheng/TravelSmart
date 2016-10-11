@@ -4,3 +4,7 @@ footer
             | Made for 
             a.black(href='http://www.blackironhack.com/') Black IronHack 2016
             | .
+        ul.pull-right.list-inline
+                    li(class=(title == 'Contact Us') ? 'active' : undefined)
+                        a(href='#', onclick='return false;', data-toggle='modal', data-target='#myModal') About
+                    li © 2016 TravelSmart
