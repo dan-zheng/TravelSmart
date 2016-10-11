@@ -1,5 +1,5 @@
 {
-   "United States": [
+   "total_us": [
       {
          "indicator": "Travel",
          "date": 2016,
@@ -611,7 +611,7 @@
          "value": 0
       }
    ],
-   "US Territories": [
+   "total_us_territories": [
       {
          "indicator": "Travel",
          "date": 2016,
