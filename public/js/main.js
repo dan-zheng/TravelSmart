@@ -1,6 +1,13 @@
+/* jshint -W083 */
+
 var test;
 var test2;
 var test3;
+
+var local_msg;
+var travel_msg;
+var pop_msg;
+var risk_msg;
 
 var orig = {
     weather_data: [],
@@ -13,10 +20,14 @@ var orig = {
     addr: '',
     long_addr: '',
     locality: '',
+    county: '',
     state: '',
     state_long: '',
     country: '',
-    population: -1
+    country_long: '',
+    query: '',
+    population: -1,
+    zip_pop: -1
 };
 
 var dest = {
@@ -30,10 +41,14 @@ var dest = {
     addr: '',
     long_addr: '',
     locality: '',
+    county: '',
     state: '',
     state_long: '',
     country: '',
-    population: -1
+    country_long: '',
+    query: '',
+    population: -1,
+    zip_pop: -1
 };
 var orig_prcp_data;
 var dest_prcp_data;
@@ -51,6 +66,7 @@ var total_zika = {
 };
 
 var zika_chart;
+var zika_pop_chart;
 var zika_pie_chart;
 var chart_weather_orig;
 var chart_weather_dest;
@@ -75,6 +91,10 @@ $.getJSON("zika-data.json", function(json) {
 var zip_population;
 $.getJSON("zip-population.json", function(json) {
     zip_population = json;
+});
+var county_population;
+$.getJSON("county-population.json", function(json) {
+    county_population = json;
 });
 
 var wunderground_key = "6901a5ba64a062c1";
@@ -101,6 +121,10 @@ $(document).ready(function() {
     $("#zika-threat").height(route_height);
     $("#route-info").height(route_height - $("#route-heading").height() - 10);
     $('#weather-clouds-chart').hide();
+    $('#zika-details').hide();
+    $('#zika-cases').hide();
+    $('#zika-pop').hide();
+    $('#zika-summary').hide();
     /*var maxHeight = Math.max.apply(null, $(".data-tab").map(function() {
         console.log($(this).height() );
         return $(this).height() - 16;
@@ -150,22 +174,6 @@ $('#weather-spline').on('click', function() {
     }
 });
 
-$('#weather-bar').on('click', function() {
-    $('#weather-bar').addClass('active');
-    $('#weather-spline').removeClass('active');
-    $('#orig-weather-chart').show();
-    $('#dest-weather-chart').show();
-    $('#weather-clouds-chart').hide();
-    if (chart_weather_orig) {
-        chart_weather_orig.transform('bar');
-    }
-    if (chart_weather_dest) {
-        chart_weather_dest.transform('bar');
-    }
-});
-
-
-
 /*$('#data-tabs').on('click', function() {
     console.log('hi');
     $(".data-tab").map(function() {
@@ -196,6 +204,28 @@ function initMap() {
         } else if (dest_temp.low.length >= weather_len + 1) {
             weatherDest();
         }*/
+    });
+
+    $('#zika-graph').on('click', function() {
+        $('#zika-graph').addClass('active');
+        $('#zika-data').removeClass('active');
+        $('#zika-details').hide();
+        if (orig_zika.travel !== null || dest_zika.travel !== null) {
+            zikaChart();
+            $('#zika-chart').show();
+            $('#zika-population').show();
+        }
+    });
+
+    $('#zika-data').on('click', function() {
+        $('#zika-data').addClass('active');
+        $('#zika-graph').removeClass('active');
+        $('#zika-chart').hide();
+        $('#zika-population').hide();
+        if (orig_zika.travel !== null && dest_zika.travel !== null) {
+            zikaDetails();
+            $('#zika-details').show();
+        }
     });
 
     var orig_place_id = null;
@@ -342,20 +372,29 @@ function initMap() {
                                 dest.long_addr = results[0].formatted_address;
                             }
                             var temp = results[0].address_components;
+                            console.log(temp);
                             for (var c = 0; c < temp.length; c++) {
                                 if (temp[c].types[0] == 'postal_code') {
                                     var postal_code = temp[c].short_name;
                                     if (type == 'origin') {
                                         orig.postal_code = postal_code;
-                                        orig.population = zip_population.find(function(zip) {
-                                            return zip.zip == postal_code;
-                                        }).population;
+                                        try {
+                                            orig.zip_pop = zip_population.find(function(zip) {
+                                                return zip.zip == postal_code;
+                                            }).population;
+                                        } catch (err) {
+                                            console.log(err);
+                                        }
                                         //prcpInfoOrigin();
                                     } else if (type == 'destination') {
                                         dest.postal_code = postal_code;
-                                        dest.population = zip_population.find(function(zip) {
-                                            return zip.zip == postal_code;
-                                        }).population;
+                                        try {
+                                            dest.zip_pop = zip_population.find(function(zip) {
+                                                return zip.zip == postal_code;
+                                            }).population;
+                                        } catch (err) {
+                                            console.log(err);
+                                        }
                                         //prcpInfoDest();
                                     }
                                 } else if (temp[c].types[0] == 'locality') {
@@ -368,17 +407,37 @@ function initMap() {
                                     if (type == 'origin') {
                                         orig.state = temp[c].short_name;
                                         orig.state_long = temp[c].long_name;
-                                        console.log(orig.state);
                                     } else {
                                         dest.state = temp[c].short_name;
                                         dest.state_long = temp[c].long_name;
-                                        console.log(dest.state);
+                                    }
+                                } else if (temp[c].types[0] == 'administrative_area_level_2') {
+                                    if (type == 'origin') {
+                                        orig.county = temp[c].short_name;
+                                        try {
+                                            orig.population = county_population.find(function(zip) {
+                                                return zip.county == orig.county;
+                                            }).population;
+                                        } catch (err) {
+                                            console.log(err);
+                                        }
+                                    } else {
+                                        dest.county = temp[c].short_name;
+                                        try {
+                                            dest.population = county_population.find(function(zip) {
+                                                return zip.county == dest.county;
+                                            }).population;
+                                        } catch (err) {
+                                            console.log(err);
+                                        }
                                     }
                                 } else if (temp[c].types[0] == 'country') {
                                     if (type == 'origin') {
                                         orig.country = temp[c].short_name;
+                                        orig.country_long = temp[c].long_name;
                                     } else {
                                         dest.country = temp[c].short_name;
+                                        dest.country_long = temp[c].long_name;
                                     }
                                 }
                             }
@@ -462,7 +521,7 @@ function initMap() {
                 cl: 'title',
                 html: ƒ('orig')
             }];
-        } else if (dest.zika.travel !== null) {
+        } else if (dest_zika.travel !== null) {
             $('#dest-weather-info').hide();
             cloud_title = "Cloud Info: (" + dest.state_long + ")";
             for (var k = 0; k < 7; k++) {
@@ -527,7 +586,11 @@ function initMap() {
                 var zika = zika_data[orig.state];
                 orig_zika.travel = zika[0].value;
                 orig_zika.local = zika[1].value;
-                zikaChart();
+                if ($("#zika-graph").hasClass('active')) {
+                    zikaChart();
+                } else {
+                    zikaDetails();
+                }
             } else {
                 orig_zika.travel = null;
                 orig_zika.local = null;
@@ -535,7 +598,7 @@ function initMap() {
         } else {
             orig_zika.travel = null;
             orig_zika.local = null;
-            $('#orig-zika-info').html("No Zika data found for " + orig_country + ". Only US data is available.");
+            $('#orig-zika-info').html("No Zika data found for " + orig.country_long + ". Only US data is available.");
         }
     }
 
@@ -545,7 +608,11 @@ function initMap() {
                 var zika = zika_data[dest.state];
                 dest_zika.travel = zika[0].value;
                 dest_zika.local = zika[1].value;
-                zikaChart();
+                if ($("#zika-graph").hasClass('active')) {
+                    zikaChart();
+                } else {
+                    zikaDetails();
+                }
             } else {
                 dest_zika.travel = null;
                 dest_zika.local = null;
@@ -553,40 +620,63 @@ function initMap() {
         } else {
             dest_zika.travel = null;
             dest_zika.local = null;
-            $('#dest-zika-info').html("No Zika data found for " + dest_country + ". Only US data is available.");
+            $('#dest-zika-info').html("No Zika data found for " + dest.country_long + ". Only US data is available.");
         }
     }
 
     function zikaChart() {
         var zika_title;
+        var zika_pop_title;
         var columns;
+        var columns2;
         if (orig_zika.travel !== null && dest_zika.travel !== null) {
             $('#orig-zika-info').hide();
             $('#dest-zika-info').hide();
             zika_title = "Zika Info: (" + orig.state_long + " vs " + dest.state_long + ")";
+            zika_pop_title = "Population Info: (" + orig.county + ", " + orig.state + " vs " + dest.county + ", " + dest.state + ")";
             columns = [
                 ['type', 'Travel acquired', 'Locally acquired'],
                 ['origin', orig_zika.travel, orig_zika.local],
                 ['destination', dest_zika.travel, dest_zika.local],
             ];
+            columns2 = [
+                ['type', 'Population'],
+                ['origin', orig.population],
+                ['destination', dest.population]
+            ];
+            //zikaDetails();
             //zikaPieChart();
         } else if (orig_zika.travel !== null) {
             $('#orig-zika-info').hide();
             zika_title = "Zika Info: (" + orig.state_long + ")";
+            zika_pop_title = "Population Info: (" + orig.county + ", " + orig.state + ")";
             columns = [
                 ['type', 'Travel acquired', 'Locally acquired'],
                 ['origin', orig_zika.travel, orig_zika.local],
             ];
+            columns2 = [
+                ['type', 'Population'],
+                ['origin', orig.population]
+            ];
         } else if (dest_zika.travel !== null) {
             $('#dest-zika-info').hide();
             zika_title = "Zika Info: (" + dest.state_long + ")";
+            zika_pop_title = "Population Info: (" + dest.county + ", " + dest.state + ")";
             columns = [
                 ['type', 'Travel acquired', 'Locally acquired'],
                 ['destination', dest_zika.travel, dest_zika.local],
             ];
+            columns2 = [
+                ['type', 'Population'],
+                ['destination', dest.population]
+            ];
         }
+
         chart_zika = c3.generate({
             bindto: '#zika-chart',
+            size: {
+                height: 280
+            },
             title: {
                 text: zika_title
             },
@@ -606,7 +696,159 @@ function initMap() {
                 }
             }
         });
-        $('#zika-chart').show();
+
+        chart_pop_zika = c3.generate({
+            bindto: '#zika-population',
+            size: {
+                height: 280
+            },
+            title: {
+                text: zika_pop_title
+            },
+            data: {
+                x: 'type',
+                columns: columns2,
+                type: 'bar',
+                labels: true
+            },
+            axis: {
+                x: {
+                    type: 'category',
+                    label: 'County'
+                },
+                y: {
+                    label: 'Number of people',
+                    tick: {
+                        format: d3.format("0,000")
+                    }
+                }
+            }
+        });
+        $('#zika-population-chart').show();
+    }
+
+    function zikaDetails() {
+        var zikarisk_local = -1;
+        var zikarisk_travel = -1;
+        var zikarisk_pop = -1;
+        var risk_percent = -1;
+
+        if (orig_zika.travel !== null && dest_zika.travel !== null) {
+            $('#orig-zika-info').hide();
+            $('#dest-zika-info').hide();
+            local_msg = null;
+            travel_msg = null;
+
+            var local_diff = dest_zika.local - orig_zika.local;
+            var travel_diff = dest_zika.travel - orig_zika.travel;
+
+            if (orig.country == 'US' && orig.country == dest.country && orig.state == dest.state) {
+                local_msg = "You're traveling within the same state, so the number of locally acquired and travel acquired cases of Zika is about the same from your origin to your destination.";
+            } else {
+                if (local_diff > 0) {
+                    local_msg = dest.state_long + " has " + local_diff + " more locally acquired cases of Zika than " + orig.state_long + ". This means that there is more active transmission of the Zika virus by local mosquitoes in " + dest.state_long + " compared to " + orig.state_long + ".";
+                    zikarisk_local = true;
+                } else if (local_diff < 0) {
+                    local_msg = dest.state_long + " has " + (-1 * local_diff) + " less locally acquired cases of Zika than " + orig.state_long + ". This means that there is less active transmission of the Zika virus by local mosquitoes in " + dest.state_long + " compared to " + orig.state_long + ".";
+                    zikarisk_local = false;
+                } else {
+                    local_msg = dest.state_long + " has the same number of locally acquired cases of Zika than " + orig.state_long + ". This means that there is about the same amount of active transmission of the Zika virus by local mosquitoes in " + dest.state_long + " compared to " + orig.state_long + ".";
+                    zikarisk_local = false;
+                }
+
+                if (travel_diff > 0) {
+                    travel_msg = dest.state_long + " has " + travel_diff + " more traveling acquired cases of Zika than " + orig.state_long + ". This means that there are more travelers entering " + dest.state_long + " with the Zika virus compared to " + orig.state_long + ".";
+                    zikarisk_travel = true;
+                } else if (travel_diff < 0) {
+                    travel_msg = dest.state_long + " has " + (-1 * travel_diff) + " less traveling acquired cases of Zika than " + orig.state_long + ". This means that there are fewer travelers entering " + dest.state_long + " with the Zika virus compared to " + orig.state_long + ".";
+                    zikarisk_travel = false;
+                } else {
+                    travel_msg = dest.state_long + " has the same number of traveling acquired cases of Zika than " + orig.state_long + ". This means that there is about the same number of travelers entering " + dest.state_long + " with the Zika virus compared to " + orig.state_long + ".";
+                    zikarisk_travel = false;
+                }
+            }
+
+            if (local_msg) {
+                $('#zika-local').html(local_msg);
+                $('#zika-local').show();
+                $('#zika-cases').show();
+                $('#zika-details').show();
+                if (!travel_msg) {
+                    $('#zika-travel').hide();
+                }
+            }
+            if (travel_msg) {
+                $('#zika-travel').html(travel_msg);
+                $('#zika-travel').show();
+                $('#zika-cases').show();
+                $('#zika-details').show();
+            }
+
+            if (orig.population && dest.population) {
+                var pop_diff = dest.population - orig.population;
+                var orig_name = orig.county + ", " + orig.state;
+                var dest_name = dest.county + ", " + dest.state;
+                if (pop_diff > 0) {
+                    pop_msg = dest_name + " has a larger population than " + orig_name + ". Areas that are more populous are at higher risk of infection. You could be more safe if you traveled to a less populous destination.";
+                    zikarisk_pop = true;
+                } else if (pop_diff < 0) {
+                    pop_msg = dest_name + " has a smaller population than " + orig_name + ". Areas that are less populous are at lower risk of infection.";
+                    zikarisk_pop = false;
+                } else {
+                    pop_msg = dest_name + " has the same population as " + orig_name + ". Thus, in this case, population does not affect risk of infection.";
+                    zikarisk_pop = false;
+                }
+                if (pop_msg) {
+                    $('#zika-pop-info').html(pop_msg);
+                    $('#zika-pop').show();
+                    $('#zika-pop-info').show();
+                }
+                $('#zika-details').show();
+            }
+
+            if (orig.country == 'US' && orig.country == dest.country && orig.state == dest.state) {
+                risk_percent = 0;
+            } else if (zikarisk_local != -1 || zikarisk_travel != -1 || zikarisk_pop != -1) {
+                var risk_total = 0;
+                var risk_count = 0;
+                if (zikarisk_local === false) {
+                    risk_total++;
+                } else if (zikarisk_local === true) {
+                    risk_total++;
+                    risk_count++;
+                }
+                if (zikarisk_travel === false) {
+                    risk_total++;
+                } else if (zikarisk_travel === true) {
+                    risk_total++;
+                    risk_count++;
+                }
+                if (zikarisk_pop === false) {
+                    risk_total++;
+                } else if (zikarisk_pop === true) {
+                    risk_total++;
+                    risk_count++;
+                }
+                risk_percent = risk_count / risk_total;
+            }
+                console.log(risk_percent);
+                if (risk_percent >= 0 && risk_percent < 0.34) {
+                    risk_msg = "Overall, your risk of Zika infection for this trip is <span class='green'>LOW</span>.";
+                } else if (risk_percent >= 0.34 && risk_percent < 0.67) {
+                    risk_msg = "Overall, your risk of Zika infection for this trip is <span class='yellow'>SOMEWHAT LOW</span>.";
+                } else if (risk_percent >= 0.67 && risk_percent <= 1) {
+                    risk_msg = "Overall, your risk of Zika infection for this trip is <span class='red'>SOMEWHAT HIGH</span>.";
+                }
+                if (risk_msg) {
+                    $('#zika-summary').html(risk_msg);
+                    $('#zika-summary').show();
+                    $('#zika-details').show();
+                }
+        } else if (orig_zika.travel !== null) {
+            $('#orig-zika-info').hide();
+        } else if (dest_zika.travel !== null) {
+            $('#dest-zika-info').hide();
+        }
     }
 
     /*function zikaPieChart() {
@@ -662,6 +904,7 @@ function initMap() {
                     console.log(err);
                     $('#orig-weather-chart').hide();
                     $('#orig-weather-info').html("No weather information found for " + orig.locality + ".");
+                    return;
                 }
 
                 orig.temp = {
@@ -710,11 +953,13 @@ function initMap() {
             url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + dest_query + ".json";
             httpGetAsync(url, null, function(data) {
                 try {
+                    var temp = JSON.parse(data);
                     dest.weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
                 } catch (err) {
                     console.log(err);
                     $('#dest-weather-chart').hide();
                     $('#dest-weather-info').html("No weather information found for " + dest.locality + ".");
+                    return;
                 }
 
                 dest.temp = {

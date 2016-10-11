@@ -58,9 +58,20 @@ block content
                                     span.no-info#dest-weather-info Please select a destination location.
                         div#zika-threat
                             h1#zika-heading Zika Threat
+                            #zika-btn-group.btn-group(role='group', aria-label='...')
+                                #zika-graph.btn.btn-primary.active(role='button') Graphs
+                                #zika-data.btn.btn-primary(role='button') Summary
                             div#zika-info
                                 div#zika-chart.chart
+                                div#zika-population.chart
                                 div#zika-pie-chart.chart
+                                div#zika-details
+                                    ul#zika-cases Recorded cases
+                                        li#zika-local
+                                        li#zika-travel
+                                    ul#zika-pop Population
+                                        li#zika-pop-info
+                                    div#zika-summary
                                 div#orig-zika
                                     span.no-info#orig-zika-info Please select an origin location.
                                 div#dest-zika

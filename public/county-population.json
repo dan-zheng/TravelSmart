@@ -1,0 +1,3315 @@
+[
+    {
+        "population": 203709,
+        "county": "Baldwin County",
+        "state": "Alabama"
+    }, {
+        "population": 115620,
+        "county": "Calhoun County",
+        "state": "Alabama"
+    }, {
+        "population": 82005,
+        "county": "Cullman County",
+        "state": "Alabama"
+    }, {
+        "population": 71130,
+        "county": "DeKalb County",
+        "state": "Alabama"
+    }, {
+        "population": 81468,
+        "county": "Elmore County",
+        "state": "Alabama"
+    }, {
+        "population": 103057,
+        "county": "Etowah County",
+        "state": "Alabama"
+    }, {
+        "population": 104173,
+        "county": "Houston County",
+        "state": "Alabama"
+    }, {
+        "population": 660367,
+        "county": "Jefferson County",
+        "state": "Alabama"
+    }, {
+        "population": 92596,
+        "county": "Lauderdale County",
+        "state": "Alabama"
+    }, {
+        "population": 156993,
+        "county": "Lee County",
+        "state": "Alabama"
+    }, {
+        "population": 91663,
+        "county": "Limestone County",
+        "state": "Alabama"
+    }, {
+        "population": 353089,
+        "county": "Madison County",
+        "state": "Alabama"
+    }, {
+        "population": 94725,
+        "county": "Marshall County",
+        "state": "Alabama"
+    }, {
+        "population": 415395,
+        "county": "Mobile County",
+        "state": "Alabama"
+    }, {
+        "population": 226519,
+        "county": "Montgomery County",
+        "state": "Alabama"
+    }, {
+        "population": 119565,
+        "county": "Morgan County",
+        "state": "Alabama"
+    }, {
+        "population": 87074,
+        "county": "St. Clair County",
+        "state": "Alabama"
+    }, {
+        "population": 208713,
+        "county": "Shelby County",
+        "state": "Alabama"
+    }, {
+        "population": 80862,
+        "county": "Talladega County",
+        "state": "Alabama"
+    }, {
+        "population": 203976,
+        "county": "Tuscaloosa County",
+        "state": "Alabama"
+    }, {
+        "population": 65294,
+        "county": "Walker County",
+        "state": "Alabama"
+    }, {
+        "population": 298695,
+        "county": "Anchorage Municipality",
+        "state": "Alaska"
+    }, {
+        "population": 99631,
+        "county": "Fairbanks North Star Borough",
+        "state": "Alaska"
+    }, {
+        "population": 101095,
+        "county": "Matanuska-Susitna Borough",
+        "state": "Alaska"
+    }, {
+        "population": 71474,
+        "county": "Apache County",
+        "state": "Arizona"
+    }, {
+        "population": 126427,
+        "county": "Cochise County",
+        "state": "Arizona"
+    }, {
+        "population": 139097,
+        "county": "Coconino County",
+        "state": "Arizona"
+    }, {
+        "population": 4167947,
+        "county": "Maricopa County",
+        "state": "Arizona"
+    }, {
+        "population": 204737,
+        "county": "Mohave County",
+        "state": "Arizona"
+    }, {
+        "population": 108277,
+        "county": "Navajo County",
+        "state": "Arizona"
+    }, {
+        "population": 1010025,
+        "county": "Pima County",
+        "state": "Arizona"
+    }, {
+        "population": 406584,
+        "county": "Pinal County",
+        "state": "Arizona"
+    }, {
+        "population": 222255,
+        "county": "Yavapai County",
+        "state": "Arizona"
+    }, {
+        "population": 204275,
+        "county": "Yuma County",
+        "state": "Arizona"
+    }, {
+        "population": 249672,
+        "county": "Benton County",
+        "state": "Arkansas"
+    }, {
+        "population": 104354,
+        "county": "Craighead County",
+        "state": "Arkansas"
+    }, {
+        "population": 121552,
+        "county": "Faulkner County",
+        "state": "Arkansas"
+    }, {
+        "population": 97177,
+        "county": "Garland County",
+        "state": "Arkansas"
+    }, {
+        "population": 71565,
+        "county": "Jefferson County",
+        "state": "Arkansas"
+    }, {
+        "population": 71645,
+        "county": "Lonoke County",
+        "state": "Arkansas"
+    }, {
+        "population": 392664,
+        "county": "Pulaski County",
+        "state": "Arkansas"
+    }, {
+        "population": 117460,
+        "county": "Saline County",
+        "state": "Arkansas"
+    }, {
+        "population": 127780,
+        "county": "Sebastian County",
+        "state": "Arkansas"
+    }, {
+        "population": 225477,
+        "county": "Washington County",
+        "state": "Arkansas"
+    }, {
+        "population": 79161,
+        "county": "White County",
+        "state": "Arkansas"
+    }, {
+        "population": 1638215,
+        "county": "Alameda County",
+        "state": "California"
+    }, {
+        "population": 225411,
+        "county": "Butte County",
+        "state": "California"
+    }, {
+        "population": 1126745,
+        "county": "Contra Costa County",
+        "state": "California"
+    }, {
+        "population": 184452,
+        "county": "El Dorado County",
+        "state": "California"
+    }, {
+        "population": 974861,
+        "county": "Fresno County",
+        "state": "California"
+    }, {
+        "population": 135727,
+        "county": "Humboldt County",
+        "state": "California"
+    }, {
+        "population": 180191,
+        "county": "Imperial County",
+        "state": "California"
+    }, {
+        "population": 882176,
+        "county": "Kern County",
+        "state": "California"
+    }, {
+        "population": 150965,
+        "county": "Kings County",
+        "state": "California"
+    }, {
+        "population": 64591,
+        "county": "Lake County",
+        "state": "California"
+    }, {
+        "population": 10170292,
+        "county": "Los Angeles County",
+        "state": "California"
+    }, {
+        "population": 154998,
+        "county": "Madera County",
+        "state": "California"
+    }, {
+        "population": 261221,
+        "county": "Marin County",
+        "state": "California"
+    }, {
+        "population": 87649,
+        "county": "Mendocino County",
+        "state": "California"
+    }, {
+        "population": 268455,
+        "county": "Merced County",
+        "state": "California"
+    }, {
+        "population": 433898,
+        "county": "Monterey County",
+        "state": "California"
+    }, {
+        "population": 142456,
+        "county": "Napa County",
+        "state": "California"
+    }, {
+        "population": 98877,
+        "county": "Nevada County",
+        "state": "California"
+    }, {
+        "population": 3169776,
+        "county": "Orange County",
+        "state": "California"
+    }, {
+        "population": 375391,
+        "county": "Placer County",
+        "state": "California"
+    }, {
+        "population": 2361026,
+        "county": "Riverside County",
+        "state": "California"
+    }, {
+        "population": 1501335,
+        "county": "Sacramento County",
+        "state": "California"
+    }, {
+        "population": 2128133,
+        "county": "San Bernardino County",
+        "state": "California"
+    }, {
+        "population": 3299521,
+        "county": "San Diego County",
+        "state": "California"
+    }, {
+        "population": 864816,
+        "county": "San Francisco County",
+        "state": "California"
+    }, {
+        "population": 726106,
+        "county": "San Joaquin County",
+        "state": "California"
+    }, {
+        "population": 281401,
+        "county": "San Luis Obispo County",
+        "state": "California"
+    }, {
+        "population": 765135,
+        "county": "San Mateo County",
+        "state": "California"
+    }, {
+        "population": 444769,
+        "county": "Santa Barbara County",
+        "state": "California"
+    }, {
+        "population": 1918044,
+        "county": "Santa Clara County",
+        "state": "California"
+    }, {
+        "population": 274146,
+        "county": "Santa Cruz County",
+        "state": "California"
+    }, {
+        "population": 179533,
+        "county": "Shasta County",
+        "state": "California"
+    }, {
+        "population": 436092,
+        "county": "Solano County",
+        "state": "California"
+    }, {
+        "population": 502146,
+        "county": "Sonoma County",
+        "state": "California"
+    }, {
+        "population": 538388,
+        "county": "Stanislaus County",
+        "state": "California"
+    }, {
+        "population": 96463,
+        "county": "Sutter County",
+        "state": "California"
+    }, {
+        "population": 459863,
+        "county": "Tulare County",
+        "state": "California"
+    }, {
+        "population": 850536,
+        "county": "Ventura County",
+        "state": "California"
+    }, {
+        "population": 213016,
+        "county": "Yolo County",
+        "state": "California"
+    }, {
+        "population": 74492,
+        "county": "Yuba County",
+        "state": "California"
+    }, {
+        "population": 491337,
+        "county": "Adams County",
+        "state": "Colorado"
+    }, {
+        "population": 631096,
+        "county": "Arapahoe County",
+        "state": "Colorado"
+    }, {
+        "population": 319372,
+        "county": "Boulder County",
+        "state": "Colorado"
+    }, {
+        "population": 682545,
+        "county": "Denver County",
+        "state": "Colorado"
+    }, {
+        "population": 322387,
+        "county": "Douglas County",
+        "state": "Colorado"
+    }, {
+        "population": 674471,
+        "county": "El Paso County",
+        "state": "Colorado"
+    }, {
+        "population": 565524,
+        "county": "Jefferson County",
+        "state": "Colorado"
+    }, {
+        "population": 333577,
+        "county": "Larimer County",
+        "state": "Colorado"
+    }, {
+        "population": 148513,
+        "county": "Mesa County",
+        "state": "Colorado"
+    }, {
+        "population": 163591,
+        "county": "Pueblo County",
+        "state": "Colorado"
+    }, {
+        "population": 285174,
+        "county": "Weld County",
+        "state": "Colorado"
+    }, {
+        "population": 948053,
+        "county": "Fairfield County",
+        "state": "Connecticut"
+    }, {
+        "population": 895841,
+        "county": "Hartford County",
+        "state": "Connecticut"
+    }, {
+        "population": 183603,
+        "county": "Litchfield County",
+        "state": "Connecticut"
+    }, {
+        "population": 164063,
+        "county": "Middlesex County",
+        "state": "Connecticut"
+    }, {
+        "population": 859470,
+        "county": "New Haven County",
+        "state": "Connecticut"
+    }, {
+        "population": 271863,
+        "county": "New London County",
+        "state": "Connecticut"
+    }, {
+        "population": 151420,
+        "county": "Tolland County",
+        "state": "Connecticut"
+    }, {
+        "population": 116573,
+        "county": "Windham County",
+        "state": "Connecticut"
+    }, {
+        "population": 173533,
+        "county": "Kent County",
+        "state": "Delaware"
+    }, {
+        "population": 556779,
+        "county": "New Castle County",
+        "state": "Delaware"
+    }, {
+        "population": 215622,
+        "county": "Sussex County",
+        "state": "Delaware"
+    }, {
+        "population": 672228,
+        "county": "District of Columbia",
+        "state": "District of Columbia"
+    }, {
+        "population": 259964,
+        "county": "Alachua County",
+        "state": "Florida"
+    }, {
+        "population": 181635,
+        "county": "Bay County",
+        "state": "Florida"
+    }, {
+        "population": 568088,
+        "county": "Brevard County",
+        "state": "Florida"
+    }, {
+        "population": 1896425,
+        "county": "Broward County",
+        "state": "Florida"
+    }, {
+        "population": 173115,
+        "county": "Charlotte County",
+        "state": "Florida"
+    }, {
+        "population": 141058,
+        "county": "Citrus County",
+        "state": "Florida"
+    }, {
+        "population": 203967,
+        "county": "Clay County",
+        "state": "Florida"
+    }, {
+        "population": 357305,
+        "county": "Collier County",
+        "state": "Florida"
+    }, {
+        "population": 68348,
+        "county": "Columbia County",
+        "state": "Florida"
+    }, {
+        "population": 913010,
+        "county": "Duval County",
+        "state": "Florida"
+    }, {
+        "population": 311003,
+        "county": "Escambia County",
+        "state": "Florida"
+    }, {
+        "population": 105392,
+        "county": "Flagler County",
+        "state": "Florida"
+    }, {
+        "population": 178439,
+        "county": "Hernando County",
+        "state": "Florida"
+    }, {
+        "population": 99491,
+        "county": "Highlands County",
+        "state": "Florida"
+    }, {
+        "population": 1349050,
+        "county": "Hillsborough County",
+        "state": "Florida"
+    }, {
+        "population": 147919,
+        "county": "Indian River County",
+        "state": "Florida"
+    }, {
+        "population": 325875,
+        "county": "Lake County",
+        "state": "Florida"
+    }, {
+        "population": 701982,
+        "county": "Lee County",
+        "state": "Florida"
+    }, {
+        "population": 286272,
+        "county": "Leon County",
+        "state": "Florida"
+    }, {
+        "population": 363369,
+        "county": "Manatee County",
+        "state": "Florida"
+    }, {
+        "population": 343254,
+        "county": "Marion County",
+        "state": "Florida"
+    }, {
+        "population": 156283,
+        "county": "Martin County",
+        "state": "Florida"
+    }, {
+        "population": 2693117,
+        "county": "Miami-Dade County",
+        "state": "Florida"
+    }, {
+        "population": 77482,
+        "county": "Monroe County",
+        "state": "Florida"
+    }, {
+        "population": 78444,
+        "county": "Nassau County",
+        "state": "Florida"
+    }, {
+        "population": 198664,
+        "county": "Okaloosa County",
+        "state": "Florida"
+    }, {
+        "population": 1288126,
+        "county": "Orange County",
+        "state": "Florida"
+    }, {
+        "population": 323993,
+        "county": "Osceola County",
+        "state": "Florida"
+    }, {
+        "population": 1422789,
+        "county": "Palm Beach County",
+        "state": "Florida"
+    }, {
+        "population": 497909,
+        "county": "Pasco County",
+        "state": "Florida"
+    }, {
+        "population": 949827,
+        "county": "Pinellas County",
+        "state": "Florida"
+    }, {
+        "population": 650092,
+        "county": "Polk County",
+        "state": "Florida"
+    }, {
+        "population": 72023,
+        "county": "Putnam County",
+        "state": "Florida"
+    }, {
+        "population": 226640,
+        "county": "St. Johns County",
+        "state": "Florida"
+    }, {
+        "population": 298563,
+        "county": "St. Lucie County",
+        "state": "Florida"
+    }, {
+        "population": 167040,
+        "county": "Santa Rosa County",
+        "state": "Florida"
+    }, {
+        "population": 405549,
+        "county": "Sarasota County",
+        "state": "Florida"
+    }, {
+        "population": 449144,
+        "county": "Seminole County",
+        "state": "Florida"
+    }, {
+        "population": 118891,
+        "county": "Sumter County",
+        "state": "Florida"
+    }, {
+        "population": 517887,
+        "county": "Volusia County",
+        "state": "Florida"
+    }, {
+        "population": 75370,
+        "county": "Barrow County",
+        "state": "Georgia"
+    }, {
+        "population": 102747,
+        "county": "Bartow County",
+        "state": "Georgia"
+    }, {
+        "population": 153721,
+        "county": "Bibb County",
+        "state": "Georgia"
+    }, {
+        "population": 72651,
+        "county": "Bulloch County",
+        "state": "Georgia"
+    }, {
+        "population": 114545,
+        "county": "Carroll County",
+        "state": "Georgia"
+    }, {
+        "population": 66050,
+        "county": "Catoosa County",
+        "state": "Georgia"
+    }, {
+        "population": 286956,
+        "county": "Chatham County",
+        "state": "Georgia"
+    }, {
+        "population": 235900,
+        "county": "Cherokee County",
+        "state": "Georgia"
+    }, {
+        "population": 123912,
+        "county": "Clarke County",
+        "state": "Georgia"
+    }, {
+        "population": 273955,
+        "county": "Clayton County",
+        "state": "Georgia"
+    }, {
+        "population": 741334,
+        "county": "Cobb County",
+        "state": "Georgia"
+    }, {
+        "population": 144052,
+        "county": "Columbia County",
+        "state": "Georgia"
+    }, {
+        "population": 138427,
+        "county": "Coweta County",
+        "state": "Georgia"
+    }, {
+        "population": 734871,
+        "county": "DeKalb County",
+        "state": "Georgia"
+    }, {
+        "population": 91332,
+        "county": "Dougherty County",
+        "state": "Georgia"
+    }, {
+        "population": 140733,
+        "county": "Douglas County",
+        "state": "Georgia"
+    }, {
+        "population": 110714,
+        "county": "Fayette County",
+        "state": "Georgia"
+    }, {
+        "population": 96504,
+        "county": "Floyd County",
+        "state": "Georgia"
+    }, {
+        "population": 212438,
+        "county": "Forsyth County",
+        "state": "Georgia"
+    }, {
+        "population": 1010562,
+        "county": "Fulton County",
+        "state": "Georgia"
+    }, {
+        "population": 83579,
+        "county": "Glynn County",
+        "state": "Georgia"
+    }, {
+        "population": 895823,
+        "county": "Gwinnett County",
+        "state": "Georgia"
+    }, {
+        "population": 193535,
+        "county": "Hall County",
+        "state": "Georgia"
+    }, {
+        "population": 217739,
+        "county": "Henry County",
+        "state": "Georgia"
+    }, {
+        "population": 150033,
+        "county": "Houston County",
+        "state": "Georgia"
+    }, {
+        "population": 62467,
+        "county": "Liberty County",
+        "state": "Georgia"
+    }, {
+        "population": 112865,
+        "county": "Lowndes County",
+        "state": "Georgia"
+    }, {
+        "population": 200579,
+        "county": "Muscogee County",
+        "state": "Georgia"
+    }, {
+        "population": 105473,
+        "county": "Newton County",
+        "state": "Georgia"
+    }, {
+        "population": 152238,
+        "county": "Paulding County",
+        "state": "Georgia"
+    }, {
+        "population": 201793,
+        "county": "Richmond County",
+        "state": "Georgia"
+    }, {
+        "population": 88856,
+        "county": "Rockdale County",
+        "state": "Georgia"
+    }, {
+        "population": 69763,
+        "county": "Troup County",
+        "state": "Georgia"
+    }, {
+        "population": 68066,
+        "county": "Walker County",
+        "state": "Georgia"
+    }, {
+        "population": 88399,
+        "county": "Walton County",
+        "state": "Georgia"
+    }, {
+        "population": 104216,
+        "county": "Whitfield County",
+        "state": "Georgia"
+    }, {
+        "population": 196428,
+        "county": "Hawaii County",
+        "state": "Hawaii"
+    }, {
+        "population": 998714,
+        "county": "Honolulu County",
+        "state": "Hawaii"
+    }, {
+        "population": 71735,
+        "county": "Kauai County",
+        "state": "Hawaii"
+    }, {
+        "population": 164593,
+        "county": "Maui County",
+        "state": "Hawaii"
+    }, {
+        "population": 434211,
+        "county": "Ada County",
+        "state": "Idaho"
+    }, {
+        "population": 83744,
+        "county": "Bannock County",
+        "state": "Idaho"
+    }, {
+        "population": 110089,
+        "county": "Bonneville County",
+        "state": "Idaho"
+    }, {
+        "population": 207478,
+        "county": "Canyon County",
+        "state": "Idaho"
+    }, {
+        "population": 150346,
+        "county": "Kootenai County",
+        "state": "Idaho"
+    }, {
+        "population": 82375,
+        "county": "Twin Falls County",
+        "state": "Idaho"
+    }, {
+        "population": 67013,
+        "county": "Adams County",
+        "state": "Illinois"
+    }, {
+        "population": 208861,
+        "county": "Champaign County",
+        "state": "Illinois"
+    }, {
+        "population": 5238216,
+        "county": "Cook County",
+        "state": "Illinois"
+    }, {
+        "population": 104352,
+        "county": "DeKalb County",
+        "state": "Illinois"
+    }, {
+        "population": 933736,
+        "county": "DuPage County",
+        "state": "Illinois"
+    }, {
+        "population": 530847,
+        "county": "Kane County",
+        "state": "Illinois"
+    }, {
+        "population": 110879,
+        "county": "Kankakee County",
+        "state": "Illinois"
+    }, {
+        "population": 123355,
+        "county": "Kendall County",
+        "state": "Illinois"
+    }, {
+        "population": 703910,
+        "county": "Lake County",
+        "state": "Illinois"
+    }, {
+        "population": 111333,
+        "county": "LaSalle County",
+        "state": "Illinois"
+    }, {
+        "population": 307343,
+        "county": "McHenry County",
+        "state": "Illinois"
+    }, {
+        "population": 173166,
+        "county": "McLean County",
+        "state": "Illinois"
+    }, {
+        "population": 107303,
+        "county": "Macon County",
+        "state": "Illinois"
+    }, {
+        "population": 266209,
+        "county": "Madison County",
+        "state": "Illinois"
+    }, {
+        "population": 186221,
+        "county": "Peoria County",
+        "state": "Illinois"
+    }, {
+        "population": 146133,
+        "county": "Rock Island County",
+        "state": "Illinois"
+    }, {
+        "population": 264052,
+        "county": "St. Clair County",
+        "state": "Illinois"
+    }, {
+        "population": 198712,
+        "county": "Sangamon County",
+        "state": "Illinois"
+    }, {
+        "population": 134800,
+        "county": "Tazewell County",
+        "state": "Illinois"
+    }, {
+        "population": 79282,
+        "county": "Vermilion County",
+        "state": "Illinois"
+    }, {
+        "population": 687263,
+        "county": "Will County",
+        "state": "Illinois"
+    }, {
+        "population": 67466,
+        "county": "Williamson County",
+        "state": "Illinois"
+    }, {
+        "population": 287078,
+        "county": "Winnebago County",
+        "state": "Illinois"
+    }, {
+        "population": 368450,
+        "county": "Allen County",
+        "state": "Indiana"
+    }, {
+        "population": 81162,
+        "county": "Bartholomew County",
+        "state": "Indiana"
+    }, {
+        "population": 115371,
+        "county": "Clark County",
+        "state": "Indiana"
+    }, {
+        "population": 116852,
+        "county": "Delaware County",
+        "state": "Indiana"
+    }, {
+        "population": 203474,
+        "county": "Elkhart County",
+        "state": "Indiana"
+    }, {
+        "population": 76778,
+        "county": "Floyd County",
+        "state": "Indiana"
+    }, {
+        "population": 67979,
+        "county": "Grant County",
+        "state": "Indiana"
+    }, {
+        "population": 309697,
+        "county": "Hamilton County",
+        "state": "Indiana"
+    }, {
+        "population": 72520,
+        "county": "Hancock County",
+        "state": "Indiana"
+    }, {
+        "population": 158192,
+        "county": "Hendricks County",
+        "state": "Indiana"
+    }, {
+        "population": 82556,
+        "county": "Howard County",
+        "state": "Indiana"
+    }, {
+        "population": 149633,
+        "county": "Johnson County",
+        "state": "Indiana"
+    }, {
+        "population": 78620,
+        "county": "Kosciusko County",
+        "state": "Indiana"
+    }, {
+        "population": 487865,
+        "county": "Lake County",
+        "state": "Indiana"
+    }, {
+        "population": 110884,
+        "county": "LaPorte County",
+        "state": "Indiana"
+    }, {
+        "population": 129723,
+        "county": "Madison County",
+        "state": "Indiana"
+    }, {
+        "population": 939020,
+        "county": "Marion County",
+        "state": "Indiana"
+    }, {
+        "population": 144705,
+        "county": "Monroe County",
+        "state": "Indiana"
+    }, {
+        "population": 69648,
+        "county": "Morgan County",
+        "state": "Indiana"
+    }, {
+        "population": 167688,
+        "county": "Porter County",
+        "state": "Indiana"
+    }, {
+        "population": 268441,
+        "county": "St. Joseph County",
+        "state": "Indiana"
+    }, {
+        "population": 185826,
+        "county": "Tippecanoe County",
+        "state": "Indiana"
+    }, {
+        "population": 181877,
+        "county": "Vanderburgh County",
+        "state": "Indiana"
+    }, {
+        "population": 107896,
+        "county": "Vigo County",
+        "state": "Indiana"
+    }, {
+        "population": 67001,
+        "county": "Wayne County",
+        "state": "Indiana"
+    }, {
+        "population": 133455,
+        "county": "Black Hawk County",
+        "state": "Iowa"
+    }, {
+        "population": 80133,
+        "county": "Dallas County",
+        "state": "Iowa"
+    }, {
+        "population": 97125,
+        "county": "Dubuque County",
+        "state": "Iowa"
+    }, {
+        "population": 144251,
+        "county": "Johnson County",
+        "state": "Iowa"
+    }, {
+        "population": 219916,
+        "county": "Linn County",
+        "state": "Iowa"
+    }, {
+        "population": 467711,
+        "county": "Polk County",
+        "state": "Iowa"
+    }, {
+        "population": 93671,
+        "county": "Pottawattamie County",
+        "state": "Iowa"
+    }, {
+        "population": 172126,
+        "county": "Scott County",
+        "state": "Iowa"
+    }, {
+        "population": 96021,
+        "county": "Story County",
+        "state": "Iowa"
+    }, {
+        "population": 102782,
+        "county": "Woodbury County",
+        "state": "Iowa"
+    }, {
+        "population": 66741,
+        "county": "Butler County",
+        "state": "Kansas"
+    }, {
+        "population": 118053,
+        "county": "Douglas County",
+        "state": "Kansas"
+    }, {
+        "population": 580159,
+        "county": "Johnson County",
+        "state": "Kansas"
+    }, {
+        "population": 79315,
+        "county": "Leavenworth County",
+        "state": "Kansas"
+    }, {
+        "population": 75247,
+        "county": "Riley County",
+        "state": "Kansas"
+    }, {
+        "population": 511574,
+        "county": "Sedgwick County",
+        "state": "Kansas"
+    }, {
+        "population": 178725,
+        "county": "Shawnee County",
+        "state": "Kansas"
+    }, {
+        "population": 163369,
+        "county": "Wyandotte County",
+        "state": "Kansas"
+    }, {
+        "population": 127712,
+        "county": "Boone County",
+        "state": "Kentucky"
+    }, {
+        "population": 78702,
+        "county": "Bullitt County",
+        "state": "Kentucky"
+    }, {
+        "population": 92066,
+        "county": "Campbell County",
+        "state": "Kentucky"
+    }, {
+        "population": 73309,
+        "county": "Christian County",
+        "state": "Kentucky"
+    }, {
+        "population": 99259,
+        "county": "Daviess County",
+        "state": "Kentucky"
+    }, {
+        "population": 314488,
+        "county": "Fayette County",
+        "state": "Kentucky"
+    }, {
+        "population": 106439,
+        "county": "Hardin County",
+        "state": "Kentucky"
+    }, {
+        "population": 763623,
+        "county": "Jefferson County",
+        "state": "Kentucky"
+    }, {
+        "population": 165012,
+        "county": "Kenton County",
+        "state": "Kentucky"
+    }, {
+        "population": 65018,
+        "county": "McCracken County",
+        "state": "Kentucky"
+    }, {
+        "population": 87824,
+        "county": "Madison County",
+        "state": "Kentucky"
+    }, {
+        "population": 61792,
+        "county": "Pike County",
+        "state": "Kentucky"
+    }, {
+        "population": 122851,
+        "county": "Warren County",
+        "state": "Kentucky"
+    }, {
+        "population": 119455,
+        "county": "Ascension Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 125175,
+        "county": "Bossier Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 251460,
+        "county": "Caddo Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 198788,
+        "county": "Calcasieu Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 446753,
+        "county": "East Baton Rouge Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 74103,
+        "county": "Iberia Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 436275,
+        "county": "Jefferson Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 240098,
+        "county": "Lafayette Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 98325,
+        "county": "Lafourche Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 137788,
+        "county": "Livingston Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 389617,
+        "county": "Orleans Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 156761,
+        "county": "Ouachita Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 132141,
+        "county": "Rapides Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 83848,
+        "county": "St. Landry Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 250088,
+        "county": "St. Tammany Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 128755,
+        "county": "Tangipahoa Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 113972,
+        "county": "Terrebonne Parish",
+        "state": "Louisiana"
+    }, {
+        "population": 107233,
+        "county": "Androscoggin County",
+        "state": "Maine"
+    }, {
+        "population": 68628,
+        "county": "Aroostook County",
+        "state": "Maine"
+    }, {
+        "population": 289977,
+        "county": "Cumberland County",
+        "state": "Maine"
+    }, {
+        "population": 119980,
+        "county": "Kennebec County",
+        "state": "Maine"
+    }, {
+        "population": 152692,
+        "county": "Penobscot County",
+        "state": "Maine"
+    }, {
+        "population": 201169,
+        "county": "York County",
+        "state": "Maine"
+    }, {
+        "population": 72528,
+        "county": "Allegany County",
+        "state": "Maryland"
+    }, {
+        "population": 564195,
+        "county": "Anne Arundel County",
+        "state": "Maryland"
+    }, {
+        "population": 831128,
+        "county": "Baltimore County",
+        "state": "Maryland"
+    }, {
+        "population": 90595,
+        "county": "Calvert County",
+        "state": "Maryland"
+    }, {
+        "population": 167627,
+        "county": "Carroll County",
+        "state": "Maryland"
+    }, {
+        "population": 102382,
+        "county": "Cecil County",
+        "state": "Maryland"
+    }, {
+        "population": 156118,
+        "county": "Charles County",
+        "state": "Maryland"
+    }, {
+        "population": 245322,
+        "county": "Frederick County",
+        "state": "Maryland"
+    }, {
+        "population": 250290,
+        "county": "Harford County",
+        "state": "Maryland"
+    }, {
+        "population": 313414,
+        "county": "Howard County",
+        "state": "Maryland"
+    }, {
+        "population": 1040116,
+        "county": "Montgomery County",
+        "state": "Maryland"
+    }, {
+        "population": 909535,
+        "county": "Prince George's County",
+        "state": "Maryland"
+    }, {
+        "population": 111413,
+        "county": "St. Mary's County",
+        "state": "Maryland"
+    }, {
+        "population": 149585,
+        "county": "Washington County",
+        "state": "Maryland"
+    }, {
+        "population": 102370,
+        "county": "Wicomico County",
+        "state": "Maryland"
+    }, {
+        "population": 621849,
+        "county": "Baltimore city",
+        "state": "Maryland"
+    }, {
+        "population": 214333,
+        "county": "Barnstable County",
+        "state": "Massachusetts"
+    }, {
+        "population": 127828,
+        "county": "Berkshire County",
+        "state": "Massachusetts"
+    }, {
+        "population": 556772,
+        "county": "Bristol County",
+        "state": "Massachusetts"
+    }, {
+        "population": 776043,
+        "county": "Essex County",
+        "state": "Massachusetts"
+    }, {
+        "population": 70601,
+        "county": "Franklin County",
+        "state": "Massachusetts"
+    }, {
+        "population": 470690,
+        "county": "Hampden County",
+        "state": "Massachusetts"
+    }, {
+        "population": 161292,
+        "county": "Hampshire County",
+        "state": "Massachusetts"
+    }, {
+        "population": 1585139,
+        "county": "Middlesex County",
+        "state": "Massachusetts"
+    }, {
+        "population": 696023,
+        "county": "Norfolk County",
+        "state": "Massachusetts"
+    }, {
+        "population": 510393,
+        "county": "Plymouth County",
+        "state": "Massachusetts"
+    }, {
+        "population": 778121,
+        "county": "Suffolk County",
+        "state": "Massachusetts"
+    }, {
+        "population": 818963,
+        "county": "Worcester County",
+        "state": "Massachusetts"
+    }, {
+        "population": 114625,
+        "county": "Allegan County",
+        "state": "Michigan"
+    }, {
+        "population": 105659,
+        "county": "Bay County",
+        "state": "Michigan"
+    }, {
+        "population": 154636,
+        "county": "Berrien County",
+        "state": "Michigan"
+    }, {
+        "population": 134314,
+        "county": "Calhoun County",
+        "state": "Michigan"
+    }, {
+        "population": 77390,
+        "county": "Clinton County",
+        "state": "Michigan"
+    }, {
+        "population": 108801,
+        "county": "Eaton County",
+        "state": "Michigan"
+    }, {
+        "population": 410849,
+        "county": "Genesee County",
+        "state": "Michigan"
+    }, {
+        "population": 91636,
+        "county": "Grand Traverse County",
+        "state": "Michigan"
+    }, {
+        "population": 286085,
+        "county": "Ingham County",
+        "state": "Michigan"
+    }, {
+        "population": 70698,
+        "county": "Isabella County",
+        "state": "Michigan"
+    }, {
+        "population": 159494,
+        "county": "Jackson County",
+        "state": "Michigan"
+    }, {
+        "population": 260263,
+        "county": "Kalamazoo County",
+        "state": "Michigan"
+    }, {
+        "population": 636369,
+        "county": "Kent County",
+        "state": "Michigan"
+    }, {
+        "population": 88373,
+        "county": "Lapeer County",
+        "state": "Michigan"
+    }, {
+        "population": 98573,
+        "county": "Lenawee County",
+        "state": "Michigan"
+    }, {
+        "population": 187316,
+        "county": "Livingston County",
+        "state": "Michigan"
+    }, {
+        "population": 864840,
+        "county": "Macomb County",
+        "state": "Michigan"
+    }, {
+        "population": 67215,
+        "county": "Marquette County",
+        "state": "Michigan"
+    }, {
+        "population": 83632,
+        "county": "Midland County",
+        "state": "Michigan"
+    }, {
+        "population": 149568,
+        "county": "Monroe County",
+        "state": "Michigan"
+    }, {
+        "population": 172790,
+        "county": "Muskegon County",
+        "state": "Michigan"
+    }, {
+        "population": 1242304,
+        "county": "Oakland County",
+        "state": "Michigan"
+    }, {
+        "population": 279955,
+        "county": "Ottawa County",
+        "state": "Michigan"
+    }, {
+        "population": 193307,
+        "county": "Saginaw County",
+        "state": "Michigan"
+    }, {
+        "population": 159875,
+        "county": "St. Clair County",
+        "state": "Michigan"
+    }, {
+        "population": 68619,
+        "county": "Shiawassee County",
+        "state": "Michigan"
+    }, {
+        "population": 75077,
+        "county": "Van Buren County",
+        "state": "Michigan"
+    }, {
+        "population": 358880,
+        "county": "Washtenaw County",
+        "state": "Michigan"
+    }, {
+        "population": 1759335,
+        "county": "Wayne County",
+        "state": "Michigan"
+    }, {
+        "population": 344151,
+        "county": "Anoka County",
+        "state": "Minnesota"
+    }, {
+        "population": 65787,
+        "county": "Blue Earth County",
+        "state": "Minnesota"
+    }, {
+        "population": 98741,
+        "county": "Carver County",
+        "state": "Minnesota"
+    }, {
+        "population": 414686,
+        "county": "Dakota County",
+        "state": "Minnesota"
+    }, {
+        "population": 1223149,
+        "county": "Hennepin County",
+        "state": "Minnesota"
+    }, {
+        "population": 151436,
+        "county": "Olmsted County",
+        "state": "Minnesota"
+    }, {
+        "population": 538133,
+        "county": "Ramsey County",
+        "state": "Minnesota"
+    }, {
+        "population": 65400,
+        "county": "Rice County",
+        "state": "Minnesota"
+    }, {
+        "population": 200431,
+        "county": "St. Louis County",
+        "state": "Minnesota"
+    }, {
+        "population": 141660,
+        "county": "Scott County",
+        "state": "Minnesota"
+    }, {
+        "population": 91705,
+        "county": "Sherburne County",
+        "state": "Minnesota"
+    }, {
+        "population": 154708,
+        "county": "Stearns County",
+        "state": "Minnesota"
+    }, {
+        "population": 251597,
+        "county": "Washington County",
+        "state": "Minnesota"
+    }, {
+        "population": 131311,
+        "county": "Wright County",
+        "state": "Minnesota"
+    }, {
+        "population": 173323,
+        "county": "DeSoto County",
+        "state": "Mississippi"
+    }, {
+        "population": 75944,
+        "county": "Forrest County",
+        "state": "Mississippi"
+    }, {
+        "population": 201410,
+        "county": "Harrison County",
+        "state": "Mississippi"
+    }, {
+        "population": 242891,
+        "county": "Hinds County",
+        "state": "Mississippi"
+    }, {
+        "population": 141425,
+        "county": "Jackson County",
+        "state": "Mississippi"
+    }, {
+        "population": 68215,
+        "county": "Jones County",
+        "state": "Mississippi"
+    }, {
+        "population": 78524,
+        "county": "Lauderdale County",
+        "state": "Mississippi"
+    }, {
+        "population": 85300,
+        "county": "Lee County",
+        "state": "Mississippi"
+    }, {
+        "population": 103465,
+        "county": "Madison County",
+        "state": "Mississippi"
+    }, {
+        "population": 149039,
+        "county": "Rankin County",
+        "state": "Mississippi"
+    }, {
+        "population": 174974,
+        "county": "Boone County",
+        "state": "Missouri"
+    }, {
+        "population": 89100,
+        "county": "Buchanan County",
+        "state": "Missouri"
+    }, {
+        "population": 78572,
+        "county": "Cape Girardeau County",
+        "state": "Missouri"
+    }, {
+        "population": 101603,
+        "county": "Cass County",
+        "state": "Missouri"
+    }, {
+        "population": 83279,
+        "county": "Christian County",
+        "state": "Missouri"
+    }, {
+        "population": 235637,
+        "county": "Clay County",
+        "state": "Missouri"
+    }, {
+        "population": 76720,
+        "county": "Cole County",
+        "state": "Missouri"
+    }, {
+        "population": 102426,
+        "county": "Franklin County",
+        "state": "Missouri"
+    }, {
+        "population": 288072,
+        "county": "Greene County",
+        "state": "Missouri"
+    }, {
+        "population": 687623,
+        "county": "Jackson County",
+        "state": "Missouri"
+    }, {
+        "population": 118596,
+        "county": "Jasper County",
+        "state": "Missouri"
+    }, {
+        "population": 224124,
+        "county": "Jefferson County",
+        "state": "Missouri"
+    }, {
+        "population": 96096,
+        "county": "Platte County",
+        "state": "Missouri"
+    }, {
+        "population": 385590,
+        "county": "St. Charles County",
+        "state": "Missouri"
+    }, {
+        "population": 66520,
+        "county": "St. Francois County",
+        "state": "Missouri"
+    }, {
+        "population": 1003362,
+        "county": "St. Louis County",
+        "state": "Missouri"
+    }, {
+        "population": 315685,
+        "county": "St. Louis city",
+        "state": "Missouri"
+    }, {
+        "population": 82278,
+        "county": "Cascade County",
+        "state": "Montana"
+    }, {
+        "population": 96165,
+        "county": "Flathead County",
+        "state": "Montana"
+    }, {
+        "population": 100739,
+        "county": "Gallatin County",
+        "state": "Montana"
+    }, {
+        "population": 66418,
+        "county": "Lewis and Clark County",
+        "state": "Montana"
+    }, {
+        "population": 114181,
+        "county": "Missoula County",
+        "state": "Montana"
+    }, {
+        "population": 157048,
+        "county": "Yellowstone County",
+        "state": "Montana"
+    }, {
+        "population": 550064,
+        "county": "Douglas County",
+        "state": "Nebraska"
+    }, {
+        "population": 306468,
+        "county": "Lancaster County",
+        "state": "Nebraska"
+    }, {
+        "population": 175692,
+        "county": "Sarpy County",
+        "state": "Nebraska"
+    }, {
+        "population": 2114801,
+        "county": "Clark County",
+        "state": "Nevada"
+    }, {
+        "population": 446903,
+        "county": "Washoe County",
+        "state": "Nevada"
+    }, {
+        "population": 75909,
+        "county": "Cheshire County",
+        "state": "New Hampshire"
+    }, {
+        "population": 89320,
+        "county": "Grafton County",
+        "state": "New Hampshire"
+    }, {
+        "population": 406678,
+        "county": "Hillsborough County",
+        "state": "New Hampshire"
+    }, {
+        "population": 147994,
+        "county": "Merrimack County",
+        "state": "New Hampshire"
+    }, {
+        "population": 301777,
+        "county": "Rockingham County",
+        "state": "New Hampshire"
+    }, {
+        "population": 126825,
+        "county": "Strafford County",
+        "state": "New Hampshire"
+    }, {
+        "population": 274219,
+        "county": "Atlantic County",
+        "state": "New Jersey"
+    }, {
+        "population": 938506,
+        "county": "Bergen County",
+        "state": "New Jersey"
+    }, {
+        "population": 450226,
+        "county": "Burlington County",
+        "state": "New Jersey"
+    }, {
+        "population": 510923,
+        "county": "Camden County",
+        "state": "New Jersey"
+    }, {
+        "population": 94727,
+        "county": "Cape May County",
+        "state": "New Jersey"
+    }, {
+        "population": 155854,
+        "county": "Cumberland County",
+        "state": "New Jersey"
+    }, {
+        "population": 797434,
+        "county": "Essex County",
+        "state": "New Jersey"
+    }, {
+        "population": 291479,
+        "county": "Gloucester County",
+        "state": "New Jersey"
+    }, {
+        "population": 674836,
+        "county": "Hudson County",
+        "state": "New Jersey"
+    }, {
+        "population": 125488,
+        "county": "Hunterdon County",
+        "state": "New Jersey"
+    }, {
+        "population": 371398,
+        "county": "Mercer County",
+        "state": "New Jersey"
+    }, {
+        "population": 840900,
+        "county": "Middlesex County",
+        "state": "New Jersey"
+    }, {
+        "population": 628715,
+        "county": "Monmouth County",
+        "state": "New Jersey"
+    }, {
+        "population": 499509,
+        "county": "Morris County",
+        "state": "New Jersey"
+    }, {
+        "population": 588721,
+        "county": "Ocean County",
+        "state": "New Jersey"
+    }, {
+        "population": 510916,
+        "county": "Passaic County",
+        "state": "New Jersey"
+    }, {
+        "population": 64180,
+        "county": "Salem County",
+        "state": "New Jersey"
+    }, {
+        "population": 333654,
+        "county": "Somerset County",
+        "state": "New Jersey"
+    }, {
+        "population": 143673,
+        "county": "Sussex County",
+        "state": "New Jersey"
+    }, {
+        "population": 555786,
+        "county": "Union County",
+        "state": "New Jersey"
+    }, {
+        "population": 106869,
+        "county": "Warren County",
+        "state": "New Jersey"
+    }, {
+        "population": 676685,
+        "county": "Bernalillo County",
+        "state": "New Mexico"
+    }, {
+        "population": 65764,
+        "county": "Chaves County",
+        "state": "New Mexico"
+    }, {
+        "population": 214295,
+        "county": "Doña Ana County",
+        "state": "New Mexico"
+    }, {
+        "population": 71180,
+        "county": "Lea County",
+        "state": "New Mexico"
+    }, {
+        "population": 76708,
+        "county": "McKinley County",
+        "state": "New Mexico"
+    }, {
+        "population": 64362,
+        "county": "Otero County",
+        "state": "New Mexico"
+    }, {
+        "population": 139394,
+        "county": "Sandoval County",
+        "state": "New Mexico"
+    }, {
+        "population": 118737,
+        "county": "San Juan County",
+        "state": "New Mexico"
+    }, {
+        "population": 148686,
+        "county": "Santa Fe County",
+        "state": "New Mexico"
+    }, {
+        "population": 75737,
+        "county": "Valencia County",
+        "state": "New Mexico"
+    }, {
+        "population": 309381,
+        "county": "Albany County",
+        "state": "New York"
+    }, {
+        "population": 1455444,
+        "county": "Bronx County",
+        "state": "New York"
+    }, {
+        "population": 196567,
+        "county": "Broome County",
+        "state": "New York"
+    }, {
+        "population": 77922,
+        "county": "Cattaraugus County",
+        "state": "New York"
+    }, {
+        "population": 78288,
+        "county": "Cayuga County",
+        "state": "New York"
+    }, {
+        "population": 130779,
+        "county": "Chautauqua County",
+        "state": "New York"
+    }, {
+        "population": 87071,
+        "county": "Chemung County",
+        "state": "New York"
+    }, {
+        "population": 81251,
+        "county": "Clinton County",
+        "state": "New York"
+    }, {
+        "population": 295754,
+        "county": "Dutchess County",
+        "state": "New York"
+    }, {
+        "population": 922578,
+        "county": "Erie County",
+        "state": "New York"
+    }, {
+        "population": 117635,
+        "county": "Jefferson County",
+        "state": "New York"
+    }, {
+        "population": 2636735,
+        "county": "Kings County",
+        "state": "New York"
+    }, {
+        "population": 64717,
+        "county": "Livingston County",
+        "state": "New York"
+    }, {
+        "population": 71849,
+        "county": "Madison County",
+        "state": "New York"
+    }, {
+        "population": 749600,
+        "county": "Monroe County",
+        "state": "New York"
+    }, {
+        "population": 1361350,
+        "county": "Nassau County",
+        "state": "New York"
+    }, {
+        "population": 1644518,
+        "county": "New York County",
+        "state": "New York"
+    }, {
+        "population": 212652,
+        "county": "Niagara County",
+        "state": "New York"
+    }, {
+        "population": 232500,
+        "county": "Oneida County",
+        "state": "New York"
+    }, {
+        "population": 468463,
+        "county": "Onondaga County",
+        "state": "New York"
+    }, {
+        "population": 109561,
+        "county": "Ontario County",
+        "state": "New York"
+    }, {
+        "population": 377647,
+        "county": "Orange County",
+        "state": "New York"
+    }, {
+        "population": 120146,
+        "county": "Oswego County",
+        "state": "New York"
+    }, {
+        "population": 99042,
+        "county": "Putnam County",
+        "state": "New York"
+    }, {
+        "population": 2339150,
+        "county": "Queens County",
+        "state": "New York"
+    }, {
+        "population": 160266,
+        "county": "Rensselaer County",
+        "state": "New York"
+    }, {
+        "population": 474558,
+        "county": "Richmond County",
+        "state": "New York"
+    }, {
+        "population": 326037,
+        "county": "Rockland County",
+        "state": "New York"
+    }, {
+        "population": 111007,
+        "county": "St. Lawrence County",
+        "state": "New York"
+    }, {
+        "population": 226249,
+        "county": "Saratoga County",
+        "state": "New York"
+    }, {
+        "population": 154604,
+        "county": "Schenectady County",
+        "state": "New York"
+    }, {
+        "population": 97631,
+        "county": "Steuben County",
+        "state": "New York"
+    }, {
+        "population": 1501587,
+        "county": "Suffolk County",
+        "state": "New York"
+    }, {
+        "population": 74877,
+        "county": "Sullivan County",
+        "state": "New York"
+    }, {
+        "population": 104926,
+        "county": "Tompkins County",
+        "state": "New York"
+    }, {
+        "population": 180143,
+        "county": "Ulster County",
+        "state": "New York"
+    }, {
+        "population": 64688,
+        "county": "Warren County",
+        "state": "New York"
+    }, {
+        "population": 91446,
+        "county": "Wayne County",
+        "state": "New York"
+    }, {
+        "population": 976396,
+        "county": "Westchester County",
+        "state": "New York"
+    }, {
+        "population": 158276,
+        "county": "Alamance County",
+        "state": "North Carolina"
+    }, {
+        "population": 122765,
+        "county": "Brunswick County",
+        "state": "North Carolina"
+    }, {
+        "population": 253178,
+        "county": "Buncombe County",
+        "state": "North Carolina"
+    }, {
+        "population": 88842,
+        "county": "Burke County",
+        "state": "North Carolina"
+    }, {
+        "population": 196762,
+        "county": "Cabarrus County",
+        "state": "North Carolina"
+    }, {
+        "population": 81287,
+        "county": "Caldwell County",
+        "state": "North Carolina"
+    }, {
+        "population": 68879,
+        "county": "Carteret County",
+        "state": "North Carolina"
+    }, {
+        "population": 155056,
+        "county": "Catawba County",
+        "state": "North Carolina"
+    }, {
+        "population": 70928,
+        "county": "Chatham County",
+        "state": "North Carolina"
+    }, {
+        "population": 96879,
+        "county": "Cleveland County",
+        "state": "North Carolina"
+    }, {
+        "population": 103451,
+        "county": "Craven County",
+        "state": "North Carolina"
+    }, {
+        "population": 323838,
+        "county": "Cumberland County",
+        "state": "North Carolina"
+    }, {
+        "population": 164622,
+        "county": "Davidson County",
+        "state": "North Carolina"
+    }, {
+        "population": 300952,
+        "county": "Durham County",
+        "state": "North Carolina"
+    }, {
+        "population": 369019,
+        "county": "Forsyth County",
+        "state": "North Carolina"
+    }, {
+        "population": 213442,
+        "county": "Gaston County",
+        "state": "North Carolina"
+    }, {
+        "population": 517600,
+        "county": "Guilford County",
+        "state": "North Carolina"
+    }, {
+        "population": 128140,
+        "county": "Harnett County",
+        "state": "North Carolina"
+    }, {
+        "population": 112655,
+        "county": "Henderson County",
+        "state": "North Carolina"
+    }, {
+        "population": 169866,
+        "county": "Iredell County",
+        "state": "North Carolina"
+    }, {
+        "population": 185660,
+        "county": "Johnston County",
+        "state": "North Carolina"
+    }, {
+        "population": 81035,
+        "county": "Lincoln County",
+        "state": "North Carolina"
+    }, {
+        "population": 1034070,
+        "county": "Mecklenburg County",
+        "state": "North Carolina"
+    }, {
+        "population": 94352,
+        "county": "Moore County",
+        "state": "North Carolina"
+    }, {
+        "population": 93919,
+        "county": "Nash County",
+        "state": "North Carolina"
+    }, {
+        "population": 220358,
+        "county": "New Hanover County",
+        "state": "North Carolina"
+    }, {
+        "population": 186311,
+        "county": "Onslow County",
+        "state": "North Carolina"
+    }, {
+        "population": 141354,
+        "county": "Orange County",
+        "state": "North Carolina"
+    }, {
+        "population": 175842,
+        "county": "Pitt County",
+        "state": "North Carolina"
+    }, {
+        "population": 142799,
+        "county": "Randolph County",
+        "state": "North Carolina"
+    }, {
+        "population": 134197,
+        "county": "Robeson County",
+        "state": "North Carolina"
+    }, {
+        "population": 91758,
+        "county": "Rockingham County",
+        "state": "North Carolina"
+    }, {
+        "population": 139142,
+        "county": "Rowan County",
+        "state": "North Carolina"
+    }, {
+        "population": 66390,
+        "county": "Rutherford County",
+        "state": "North Carolina"
+    }, {
+        "population": 72743,
+        "county": "Surry County",
+        "state": "North Carolina"
+    }, {
+        "population": 222742,
+        "county": "Union County",
+        "state": "North Carolina"
+    }, {
+        "population": 1024198,
+        "county": "Wake County",
+        "state": "North Carolina"
+    }, {
+        "population": 124132,
+        "county": "Wayne County",
+        "state": "North Carolina"
+    }, {
+        "population": 68502,
+        "county": "Wilkes County",
+        "state": "North Carolina"
+    }, {
+        "population": 81714,
+        "county": "Wilson County",
+        "state": "North Carolina"
+    }, {
+        "population": 92991,
+        "county": "Burleigh County",
+        "state": "North Dakota"
+    }, {
+        "population": 171512,
+        "county": "Cass County",
+        "state": "North Dakota"
+    }, {
+        "population": 70916,
+        "county": "Grand Forks County",
+        "state": "North Dakota"
+    }, {
+        "population": 71275,
+        "county": "Ward County",
+        "state": "North Dakota"
+    }, {
+        "population": 104425,
+        "county": "Allen County",
+        "state": "Ohio"
+    }, {
+        "population": 98632,
+        "county": "Ashtabula County",
+        "state": "Ohio"
+    }, {
+        "population": 69154,
+        "county": "Belmont County",
+        "state": "Ohio"
+    }, {
+        "population": 376353,
+        "county": "Butler County",
+        "state": "Ohio"
+    }, {
+        "population": 135959,
+        "county": "Clark County",
+        "state": "Ohio"
+    }, {
+        "population": 201973,
+        "county": "Clermont County",
+        "state": "Ohio"
+    }, {
+        "population": 104806,
+        "county": "Columbiana County",
+        "state": "Ohio"
+    }, {
+        "population": 1255921,
+        "county": "Cuyahoga County",
+        "state": "Ohio"
+    }, {
+        "population": 193013,
+        "county": "Delaware County",
+        "state": "Ohio"
+    }, {
+        "population": 75550,
+        "county": "Erie County",
+        "state": "Ohio"
+    }, {
+        "population": 151408,
+        "county": "Fairfield County",
+        "state": "Ohio"
+    }, {
+        "population": 1251722,
+        "county": "Franklin County",
+        "state": "Ohio"
+    }, {
+        "population": 94102,
+        "county": "Geauga County",
+        "state": "Ohio"
+    }, {
+        "population": 164427,
+        "county": "Greene County",
+        "state": "Ohio"
+    }, {
+        "population": 807598,
+        "county": "Hamilton County",
+        "state": "Ohio"
+    }, {
+        "population": 75573,
+        "county": "Hancock County",
+        "state": "Ohio"
+    }, {
+        "population": 67347,
+        "county": "Jefferson County",
+        "state": "Ohio"
+    }, {
+        "population": 229245,
+        "county": "Lake County",
+        "state": "Ohio"
+    }, {
+        "population": 170570,
+        "county": "Licking County",
+        "state": "Ohio"
+    }, {
+        "population": 305147,
+        "county": "Lorain County",
+        "state": "Ohio"
+    }, {
+        "population": 433689,
+        "county": "Lucas County",
+        "state": "Ohio"
+    }, {
+        "population": 231900,
+        "county": "Mahoning County",
+        "state": "Ohio"
+    }, {
+        "population": 65355,
+        "county": "Marion County",
+        "state": "Ohio"
+    }, {
+        "population": 176395,
+        "county": "Medina County",
+        "state": "Ohio"
+    }, {
+        "population": 104224,
+        "county": "Miami County",
+        "state": "Ohio"
+    }, {
+        "population": 532258,
+        "county": "Montgomery County",
+        "state": "Ohio"
+    }, {
+        "population": 86290,
+        "county": "Muskingum County",
+        "state": "Ohio"
+    }, {
+        "population": 162275,
+        "county": "Portage County",
+        "state": "Ohio"
+    }, {
+        "population": 121707,
+        "county": "Richland County",
+        "state": "Ohio"
+    }, {
+        "population": 77170,
+        "county": "Ross County",
+        "state": "Ohio"
+    }, {
+        "population": 76825,
+        "county": "Scioto County",
+        "state": "Ohio"
+    }, {
+        "population": 375165,
+        "county": "Stark County",
+        "state": "Ohio"
+    }, {
+        "population": 541968,
+        "county": "Summit County",
+        "state": "Ohio"
+    }, {
+        "population": 203751,
+        "county": "Trumbull County",
+        "state": "Ohio"
+    }, {
+        "population": 92916,
+        "county": "Tuscarawas County",
+        "state": "Ohio"
+    }, {
+        "population": 224469,
+        "county": "Warren County",
+        "state": "Ohio"
+    }, {
+        "population": 116063,
+        "county": "Wayne County",
+        "state": "Ohio"
+    }, {
+        "population": 129730,
+        "county": "Wood County",
+        "state": "Ohio"
+    }, {
+        "population": 133378,
+        "county": "Canadian County",
+        "state": "Oklahoma"
+    }, {
+        "population": 274458,
+        "county": "Cleveland County",
+        "state": "Oklahoma"
+    }, {
+        "population": 124648,
+        "county": "Comanche County",
+        "state": "Oklahoma"
+    }, {
+        "population": 70892,
+        "county": "Creek County",
+        "state": "Oklahoma"
+    }, {
+        "population": 69699,
+        "county": "Muskogee County",
+        "state": "Oklahoma"
+    }, {
+        "population": 776864,
+        "county": "Oklahoma County",
+        "state": "Oklahoma"
+    }, {
+        "population": 80850,
+        "county": "Payne County",
+        "state": "Oklahoma"
+    }, {
+        "population": 71875,
+        "county": "Pottawatomie County",
+        "state": "Oklahoma"
+    }, {
+        "population": 90802,
+        "county": "Rogers County",
+        "state": "Oklahoma"
+    }, {
+        "population": 639242,
+        "county": "Tulsa County",
+        "state": "Oklahoma"
+    }, {
+        "population": 76559,
+        "county": "Wagoner County",
+        "state": "Oklahoma"
+    }, {
+        "population": 87572,
+        "county": "Benton County",
+        "state": "Oregon"
+    }, {
+        "population": 401515,
+        "county": "Clackamas County",
+        "state": "Oregon"
+    }, {
+        "population": 175268,
+        "county": "Deschutes County",
+        "state": "Oregon"
+    }, {
+        "population": 107685,
+        "county": "Douglas County",
+        "state": "Oregon"
+    }, {
+        "population": 212567,
+        "county": "Jackson County",
+        "state": "Oregon"
+    }, {
+        "population": 84745,
+        "county": "Josephine County",
+        "state": "Oregon"
+    }, {
+        "population": 66016,
+        "county": "Klamath County",
+        "state": "Oregon"
+    }, {
+        "population": 362895,
+        "county": "Lane County",
+        "state": "Oregon"
+    }, {
+        "population": 120547,
+        "county": "Linn County",
+        "state": "Oregon"
+    }, {
+        "population": 330700,
+        "county": "Marion County",
+        "state": "Oregon"
+    }, {
+        "population": 790294,
+        "county": "Multnomah County",
+        "state": "Oregon"
+    }, {
+        "population": 79391,
+        "county": "Polk County",
+        "state": "Oregon"
+    }, {
+        "population": 76531,
+        "county": "Umatilla County",
+        "state": "Oregon"
+    }, {
+        "population": 574326,
+        "county": "Washington County",
+        "state": "Oregon"
+    }, {
+        "population": 102659,
+        "county": "Yamhill County",
+        "state": "Oregon"
+    }, {
+        "population": 102295,
+        "county": "Adams County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 1230459,
+        "county": "Allegheny County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 67052,
+        "county": "Armstrong County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 168871,
+        "county": "Beaver County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 415271,
+        "county": "Berks County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 125593,
+        "county": "Blair County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 627367,
+        "county": "Bucks County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 186818,
+        "county": "Butler County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 136411,
+        "county": "Cambria County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 63960,
+        "county": "Carbon County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 160580,
+        "county": "Centre County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 515939,
+        "county": "Chester County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 80994,
+        "county": "Clearfield County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 66672,
+        "county": "Columbia County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 86484,
+        "county": "Crawford County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 246338,
+        "county": "Cumberland County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 272983,
+        "county": "Dauphin County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 563894,
+        "county": "Delaware County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 278045,
+        "county": "Erie County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 133628,
+        "county": "Fayette County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 153638,
+        "county": "Franklin County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 86966,
+        "county": "Indiana County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 211917,
+        "county": "Lackawanna County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 536624,
+        "county": "Lancaster County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 88082,
+        "county": "Lawrence County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 137067,
+        "county": "Lebanon County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 360685,
+        "county": "Lehigh County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 318449,
+        "county": "Luzerne County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 116048,
+        "county": "Lycoming County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 114234,
+        "county": "Mercer County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 166397,
+        "county": "Monroe County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 819264,
+        "county": "Montgomery County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 300813,
+        "county": "Northampton County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 93246,
+        "county": "Northumberland County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 1567442,
+        "county": "Philadelphia County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 144590,
+        "county": "Schuylkill County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 75522,
+        "county": "Somerset County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 208261,
+        "county": "Washington County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 357956,
+        "county": "Westmoreland County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 442867,
+        "county": "York County",
+        "state": "Pennsylvania"
+    }, {
+        "population": 164801,
+        "county": "Kent County",
+        "state": "Rhode Island"
+    }, {
+        "population": 82423,
+        "county": "Newport County",
+        "state": "Rhode Island"
+    }, {
+        "population": 633473,
+        "county": "Providence County",
+        "state": "Rhode Island"
+    }, {
+        "population": 126517,
+        "county": "Washington County",
+        "state": "Rhode Island"
+    }, {
+        "population": 165829,
+        "county": "Aiken County",
+        "state": "South Carolina"
+    }, {
+        "population": 194692,
+        "county": "Anderson County",
+        "state": "South Carolina"
+    }, {
+        "population": 179589,
+        "county": "Beaufort County",
+        "state": "South Carolina"
+    }, {
+        "population": 202786,
+        "county": "Berkeley County",
+        "state": "South Carolina"
+    }, {
+        "population": 389262,
+        "county": "Charleston County",
+        "state": "South Carolina"
+    }, {
+        "population": 67548,
+        "county": "Darlington County",
+        "state": "South Carolina"
+    }, {
+        "population": 152478,
+        "county": "Dorchester County",
+        "state": "South Carolina"
+    }, {
+        "population": 138900,
+        "county": "Florence County",
+        "state": "South Carolina"
+    }, {
+        "population": 491863,
+        "county": "Greenville County",
+        "state": "South Carolina"
+    }, {
+        "population": 69838,
+        "county": "Greenwood County",
+        "state": "South Carolina"
+    }, {
+        "population": 309199,
+        "county": "Horry County",
+        "state": "South Carolina"
+    }, {
+        "population": 85842,
+        "county": "Lancaster County",
+        "state": "South Carolina"
+    }, {
+        "population": 66623,
+        "county": "Laurens County",
+        "state": "South Carolina"
+    }, {
+        "population": 281833,
+        "county": "Lexington County",
+        "state": "South Carolina"
+    }, {
+        "population": 75713,
+        "county": "Oconee County",
+        "state": "South Carolina"
+    }, {
+        "population": 89208,
+        "county": "Orangeburg County",
+        "state": "South Carolina"
+    }, {
+        "population": 121691,
+        "county": "Pickens County",
+        "state": "South Carolina"
+    }, {
+        "population": 407051,
+        "county": "Richland County",
+        "state": "South Carolina"
+    }, {
+        "population": 297302,
+        "county": "Spartanburg County",
+        "state": "South Carolina"
+    }, {
+        "population": 107480,
+        "county": "Sumter County",
+        "state": "South Carolina"
+    }, {
+        "population": 251195,
+        "county": "York County",
+        "state": "South Carolina"
+    }, {
+        "population": 185197,
+        "county": "Minnehaha County",
+        "state": "South Dakota"
+    }, {
+        "population": 108702,
+        "county": "Pennington County",
+        "state": "South Dakota"
+    }, {
+        "population": 75749,
+        "county": "Anderson County",
+        "state": "Tennessee"
+    }, {
+        "population": 127253,
+        "county": "Blount County",
+        "state": "Tennessee"
+    }, {
+        "population": 104091,
+        "county": "Bradley County",
+        "state": "Tennessee"
+    }, {
+        "population": 678889,
+        "county": "Davidson County",
+        "state": "Tennessee"
+    }, {
+        "population": 68580,
+        "county": "Greene County",
+        "state": "Tennessee"
+    }, {
+        "population": 354098,
+        "county": "Hamilton County",
+        "state": "Tennessee"
+    }, {
+        "population": 451324,
+        "county": "Knox County",
+        "state": "Tennessee"
+    }, {
+        "population": 97610,
+        "county": "Madison County",
+        "state": "Tennessee"
+    }, {
+        "population": 87757,
+        "county": "Maury County",
+        "state": "Tennessee"
+    }, {
+        "population": 193479,
+        "county": "Montgomery County",
+        "state": "Tennessee"
+    }, {
+        "population": 74553,
+        "county": "Putnam County",
+        "state": "Tennessee"
+    }, {
+        "population": 68570,
+        "county": "Robertson County",
+        "state": "Tennessee"
+    }, {
+        "population": 298612,
+        "county": "Rutherford County",
+        "state": "Tennessee"
+    }, {
+        "population": 95946,
+        "county": "Sevier County",
+        "state": "Tennessee"
+    }, {
+        "population": 938069,
+        "county": "Shelby County",
+        "state": "Tennessee"
+    }, {
+        "population": 156791,
+        "county": "Sullivan County",
+        "state": "Tennessee"
+    }, {
+        "population": 175989,
+        "county": "Sumner County",
+        "state": "Tennessee"
+    }, {
+        "population": 126302,
+        "county": "Washington County",
+        "state": "Tennessee"
+    }, {
+        "population": 211672,
+        "county": "Williamson County",
+        "state": "Tennessee"
+    }, {
+        "population": 128911,
+        "county": "Wilson County",
+        "state": "Tennessee"
+    }, {
+        "population": 88255,
+        "county": "Angelina County",
+        "state": "Texas"
+    }, {
+        "population": 80527,
+        "county": "Bastrop County",
+        "state": "Texas"
+    }, {
+        "population": 334941,
+        "county": "Bell County",
+        "state": "Texas"
+    }, {
+        "population": 1897753,
+        "county": "Bexar County",
+        "state": "Texas"
+    }, {
+        "population": 93389,
+        "county": "Bowie County",
+        "state": "Texas"
+    }, {
+        "population": 346312,
+        "county": "Brazoria County",
+        "state": "Texas"
+    }, {
+        "population": 215037,
+        "county": "Brazos County",
+        "state": "Texas"
+    }, {
+        "population": 422156,
+        "county": "Cameron County",
+        "state": "Texas"
+    }, {
+        "population": 914127,
+        "county": "Collin County",
+        "state": "Texas"
+    }, {
+        "population": 129048,
+        "county": "Comal County",
+        "state": "Texas"
+    }, {
+        "population": 75503,
+        "county": "Coryell County",
+        "state": "Texas"
+    }, {
+        "population": 2553385,
+        "county": "Dallas County",
+        "state": "Texas"
+    }, {
+        "population": 780612,
+        "county": "Denton County",
+        "state": "Texas"
+    }, {
+        "population": 159436,
+        "county": "Ector County",
+        "state": "Texas"
+    }, {
+        "population": 163632,
+        "county": "Ellis County",
+        "state": "Texas"
+    }, {
+        "population": 835593,
+        "county": "El Paso County",
+        "state": "Texas"
+    }, {
+        "population": 716087,
+        "county": "Fort Bend County",
+        "state": "Texas"
+    }, {
+        "population": 322225,
+        "county": "Galveston County",
+        "state": "Texas"
+    }, {
+        "population": 125467,
+        "county": "Grayson County",
+        "state": "Texas"
+    }, {
+        "population": 124108,
+        "county": "Gregg County",
+        "state": "Texas"
+    }, {
+        "population": 151249,
+        "county": "Guadalupe County",
+        "state": "Texas"
+    }, {
+        "population": 4538028,
+        "county": "Harris County",
+        "state": "Texas"
+    }, {
+        "population": 66746,
+        "county": "Harrison County",
+        "state": "Texas"
+    }, {
+        "population": 194739,
+        "county": "Hays County",
+        "state": "Texas"
+    }, {
+        "population": 79545,
+        "county": "Henderson County",
+        "state": "Texas"
+    }, {
+        "population": 842304,
+        "county": "Hidalgo County",
+        "state": "Texas"
+    }, {
+        "population": 89844,
+        "county": "Hunt County",
+        "state": "Texas"
+    }, {
+        "population": 254308,
+        "county": "Jefferson County",
+        "state": "Texas"
+    }, {
+        "population": 159990,
+        "county": "Johnson County",
+        "state": "Texas"
+    }, {
+        "population": 114690,
+        "county": "Kaufman County",
+        "state": "Texas"
+    }, {
+        "population": 79654,
+        "county": "Liberty County",
+        "state": "Texas"
+    }, {
+        "population": 299453,
+        "county": "Lubbock County",
+        "state": "Texas"
+    }, {
+        "population": 245671,
+        "county": "McLennan County",
+        "state": "Texas"
+    }, {
+        "population": 161077,
+        "county": "Midland County",
+        "state": "Texas"
+    }, {
+        "population": 537559,
+        "county": "Montgomery County",
+        "state": "Texas"
+    }, {
+        "population": 65664,
+        "county": "Nacogdoches County",
+        "state": "Texas"
+    }, {
+        "population": 359715,
+        "county": "Nueces County",
+        "state": "Texas"
+    }, {
+        "population": 84260,
+        "county": "Orange County",
+        "state": "Texas"
+    }, {
+        "population": 126042,
+        "county": "Parker County",
+        "state": "Texas"
+    }, {
+        "population": 121802,
+        "county": "Potter County",
+        "state": "Texas"
+    }, {
+        "population": 130269,
+        "county": "Randall County",
+        "state": "Texas"
+    }, {
+        "population": 90861,
+        "county": "Rockwall County",
+        "state": "Texas"
+    }, {
+        "population": 67357,
+        "county": "San Patricio County",
+        "state": "Texas"
+    }, {
+        "population": 222936,
+        "county": "Smith County",
+        "state": "Texas"
+    }, {
+        "population": 1982498,
+        "county": "Tarrant County",
+        "state": "Texas"
+    }, {
+        "population": 136051,
+        "county": "Taylor County",
+        "state": "Texas"
+    }, {
+        "population": 118105,
+        "county": "Tom Green County",
+        "state": "Texas"
+    }, {
+        "population": 1176558,
+        "county": "Travis County",
+        "state": "Texas"
+    }, {
+        "population": 92382,
+        "county": "Victoria County",
+        "state": "Texas"
+    }, {
+        "population": 70699,
+        "county": "Walker County",
+        "state": "Texas"
+    }, {
+        "population": 269721,
+        "county": "Webb County",
+        "state": "Texas"
+    }, {
+        "population": 131705,
+        "county": "Wichita County",
+        "state": "Texas"
+    }, {
+        "population": 508514,
+        "county": "Williamson County",
+        "state": "Texas"
+    }, {
+        "population": 120783,
+        "county": "Cache County",
+        "state": "Utah"
+    }, {
+        "population": 336043,
+        "county": "Davis County",
+        "state": "Utah"
+    }, {
+        "population": 1107314,
+        "county": "Salt Lake County",
+        "state": "Utah"
+    }, {
+        "population": 575205,
+        "county": "Utah County",
+        "state": "Utah"
+    }, {
+        "population": 155602,
+        "county": "Washington County",
+        "state": "Utah"
+    }, {
+        "population": 243645,
+        "county": "Weber County",
+        "state": "Utah"
+    }, {
+        "population": 161382,
+        "county": "Chittenden County",
+        "state": "Vermont"
+    }, {
+        "population": 105703,
+        "county": "Albemarle County",
+        "state": "Virginia"
+    }, {
+        "population": 229164,
+        "county": "Arlington County",
+        "state": "Virginia"
+    }, {
+        "population": 74314,
+        "county": "Augusta County",
+        "state": "Virginia"
+    }, {
+        "population": 77724,
+        "county": "Bedford County",
+        "state": "Virginia"
+    }, {
+        "population": 335687,
+        "county": "Chesterfield County",
+        "state": "Virginia"
+    }, {
+        "population": 1142234,
+        "county": "Fairfax County",
+        "state": "Virginia"
+    }, {
+        "population": 68782,
+        "county": "Fauquier County",
+        "state": "Virginia"
+    }, {
+        "population": 83199,
+        "county": "Frederick County",
+        "state": "Virginia"
+    }, {
+        "population": 103227,
+        "county": "Hanover County",
+        "state": "Virginia"
+    }, {
+        "population": 325155,
+        "county": "Henrico County",
+        "state": "Virginia"
+    }, {
+        "population": 73147,
+        "county": "James City County",
+        "state": "Virginia"
+    }, {
+        "population": 375629,
+        "county": "Loudoun County",
+        "state": "Virginia"
+    }, {
+        "population": 97653,
+        "county": "Montgomery County",
+        "state": "Virginia"
+    }, {
+        "population": 451721,
+        "county": "Prince William County",
+        "state": "Virginia"
+    }, {
+        "population": 94409,
+        "county": "Roanoke County",
+        "state": "Virginia"
+    }, {
+        "population": 78593,
+        "county": "Rockingham County",
+        "state": "Virginia"
+    }, {
+        "population": 130475,
+        "county": "Spotsylvania County",
+        "state": "Virginia"
+    }, {
+        "population": 142003,
+        "county": "Stafford County",
+        "state": "Virginia"
+    }, {
+        "population": 67837,
+        "county": "York County",
+        "state": "Virginia"
+    }, {
+        "population": 153511,
+        "county": "Alexandria city",
+        "state": "Virginia"
+    }, {
+        "population": 235429,
+        "county": "Chesapeake city",
+        "state": "Virginia"
+    }, {
+        "population": 136454,
+        "county": "Hampton city",
+        "state": "Virginia"
+    }, {
+        "population": 79812,
+        "county": "Lynchburg city",
+        "state": "Virginia"
+    }, {
+        "population": 182385,
+        "county": "Newport News city",
+        "state": "Virginia"
+    }, {
+        "population": 246393,
+        "county": "Norfolk city",
+        "state": "Virginia"
+    }, {
+        "population": 96201,
+        "county": "Portsmouth city",
+        "state": "Virginia"
+    }, {
+        "population": 220289,
+        "county": "Richmond city",
+        "state": "Virginia"
+    }, {
+        "population": 99897,
+        "county": "Roanoke city",
+        "state": "Virginia"
+    }, {
+        "population": 88161,
+        "county": "Suffolk city",
+        "state": "Virginia"
+    }, {
+        "population": 452745,
+        "county": "Virginia Beach city",
+        "state": "Virginia"
+    }, {
+        "population": 190309,
+        "county": "Benton County",
+        "state": "Washington"
+    }, {
+        "population": 75644,
+        "county": "Chelan County",
+        "state": "Washington"
+    }, {
+        "population": 73486,
+        "county": "Clallam County",
+        "state": "Washington"
+    }, {
+        "population": 459495,
+        "county": "Clark County",
+        "state": "Washington"
+    }, {
+        "population": 103468,
+        "county": "Cowlitz County",
+        "state": "Washington"
+    }, {
+        "population": 88807,
+        "county": "Franklin County",
+        "state": "Washington"
+    }, {
+        "population": 93259,
+        "county": "Grant County",
+        "state": "Washington"
+    }, {
+        "population": 71122,
+        "county": "Grays Harbor County",
+        "state": "Washington"
+    }, {
+        "population": 80593,
+        "county": "Island County",
+        "state": "Washington"
+    }, {
+        "population": 2117125,
+        "county": "King County",
+        "state": "Washington"
+    }, {
+        "population": 260131,
+        "county": "Kitsap County",
+        "state": "Washington"
+    }, {
+        "population": 75882,
+        "county": "Lewis County",
+        "state": "Washington"
+    }, {
+        "population": 843954,
+        "county": "Pierce County",
+        "state": "Washington"
+    }, {
+        "population": 121846,
+        "county": "Skagit County",
+        "state": "Washington"
+    }, {
+        "population": 772501,
+        "county": "Snohomish County",
+        "state": "Washington"
+    }, {
+        "population": 490945,
+        "county": "Spokane County",
+        "state": "Washington"
+    }, {
+        "population": 269536,
+        "county": "Thurston County",
+        "state": "Washington"
+    }, {
+        "population": 212284,
+        "county": "Whatcom County",
+        "state": "Washington"
+    }, {
+        "population": 248830,
+        "county": "Yakima County",
+        "state": "Washington"
+    }, {
+        "population": 111901,
+        "county": "Berkeley County",
+        "state": "West Virginia"
+    }, {
+        "population": 96844,
+        "county": "Cabell County",
+        "state": "West Virginia"
+    }, {
+        "population": 68714,
+        "county": "Harrison County",
+        "state": "West Virginia"
+    }, {
+        "population": 188332,
+        "county": "Kanawha County",
+        "state": "West Virginia"
+    }, {
+        "population": 104236,
+        "county": "Monongalia County",
+        "state": "West Virginia"
+    }, {
+        "population": 77510,
+        "county": "Raleigh County",
+        "state": "West Virginia"
+    }, {
+        "population": 86452,
+        "county": "Wood County",
+        "state": "West Virginia"
+    }, {
+        "population": 258718,
+        "county": "Brown County",
+        "state": "Wisconsin"
+    }, {
+        "population": 523643,
+        "county": "Dane County",
+        "state": "Wisconsin"
+    }, {
+        "population": 88502,
+        "county": "Dodge County",
+        "state": "Wisconsin"
+    }, {
+        "population": 102105,
+        "county": "Eau Claire County",
+        "state": "Wisconsin"
+    }, {
+        "population": 101973,
+        "county": "Fond du Lac County",
+        "state": "Wisconsin"
+    }, {
+        "population": 84559,
+        "county": "Jefferson County",
+        "state": "Wisconsin"
+    }, {
+        "population": 168437,
+        "county": "Kenosha County",
+        "state": "Wisconsin"
+    }, {
+        "population": 118212,
+        "county": "La Crosse County",
+        "state": "Wisconsin"
+    }, {
+        "population": 79806,
+        "county": "Manitowoc County",
+        "state": "Wisconsin"
+    }, {
+        "population": 135868,
+        "county": "Marathon County",
+        "state": "Wisconsin"
+    }, {
+        "population": 957735,
+        "county": "Milwaukee County",
+        "state": "Wisconsin"
+    }, {
+        "population": 183245,
+        "county": "Outagamie County",
+        "state": "Wisconsin"
+    }, {
+        "population": 87850,
+        "county": "Ozaukee County",
+        "state": "Wisconsin"
+    }, {
+        "population": 70408,
+        "county": "Portage County",
+        "state": "Wisconsin"
+    }, {
+        "population": 195080,
+        "county": "Racine County",
+        "state": "Wisconsin"
+    }, {
+        "population": 161448,
+        "county": "Rock County",
+        "state": "Wisconsin"
+    }, {
+        "population": 87513,
+        "county": "St. Croix County",
+        "state": "Wisconsin"
+    }, {
+        "population": 115569,
+        "county": "Sheboygan County",
+        "state": "Wisconsin"
+    }, {
+        "population": 102804,
+        "county": "Walworth County",
+        "state": "Wisconsin"
+    }, {
+        "population": 133674,
+        "county": "Washington County",
+        "state": "Wisconsin"
+    }, {
+        "population": 396488,
+        "county": "Waukesha County",
+        "state": "Wisconsin"
+    }, {
+        "population": 169546,
+        "county": "Winnebago County",
+        "state": "Wisconsin"
+    }, {
+        "population": 73435,
+        "county": "Wood County",
+        "state": "Wisconsin"
+    }, {
+        "population": 97121,
+        "county": "Laramie County",
+        "state": "Wyoming"
+    }, {
+        "population": 82178,
+        "county": "Natrona County",
+        "state": "Wyoming"
+    }, {
+        "population": 89648,
+        "county": "Arecibo Municipio",
+        "state": "Puerto Rico"
+    }, {
+        "population": 189159,
+        "county": "Bayamón Municipio",
+        "state": "Puerto Rico"
+    }, {
+        "population": 134481,
+        "county": "Caguas Municipio",
+        "state": "Puerto Rico"
+    }, {
+        "population": 161884,
+        "county": "Carolina Municipio",
+        "state": "Puerto Rico"
+    }, {
+        "population": 90879,
+        "county": "Guaynabo Municipio",
+        "state": "Puerto Rico"
+    }, {
+        "population": 79510,
+        "county": "Mayagüez Municipio",
+        "state": "Puerto Rico"
+    }, {
+        "population": 149028,
+        "county": "Ponce Municipio",
+        "state": "Puerto Rico"
+    }, {
+        "population": 355074,
+        "county": "San Juan Municipio",
+        "state": "Puerto Rico"
+    }, {
+        "population": 74368,
+        "county": "Toa Alta Municipio",
+        "state": "Puerto Rico"
+    }, {
+        "population": 82065,
+        "county": "Toa Baja Municipio",
+        "state": "Puerto Rico"
+    }, {
+        "population": 69615,
+        "county": "Trujillo Alto Municipio",
+        "state": "Puerto Rico"
+    }
+]

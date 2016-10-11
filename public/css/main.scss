@@ -316,11 +316,71 @@ th.num {
     margin-left: 5px;
 }
 
-#weather-btn-group > .btn {
+#weather-btn-group > .btn, #zika-btn-group > .btn {
     height: 20px;
     padding-top: 2px;
     padding-bottom: 4px;
     margin-bottom: 6px;
+}
+
+#zika-details {
+    ul {
+        font-size: 16px;
+        @media (min-width: $screen-md-min) {
+            font-size: 18px;
+        }
+        @media (min-width: $screen-lg-min) {
+            font-size: 20px;
+        }
+        font-weight: 700;
+        padding-left: 10px;
+    }
+}
+
+
+
+#zika-local, #zika-travel, #zika-pop-info {
+    font-weight: normal;
+    text-align: left;
+    font-size: 14px;
+    width: 90%;
+    margin: auto;
+    margin-top: 3px;
+    @media (min-width: $screen-md-min) {
+        font-size: 16px;
+    }
+    @media (min-width: $screen-lg-min) {
+        font-size: 18px;
+    }
+}
+
+#zika-summary {
+    text-align: left;
+    font-size: 14px;
+    width: 90%;
+    margin: auto;
+    margin-top: 3px;
+    @media (min-width: $screen-md-min) {
+        font-size: 16px;
+    }
+    @media (min-width: $screen-lg-min) {
+        font-size: 18px;
+    }
+}
+
+.green {
+    color: #06bd3d;
+    font-weight: 700;
+}
+
+.orange {
+    color: #f4c542;
+    font-weight: 700;
+}
+
+.red {
+    color: #f45042;
+    font-weight: 700;
 }
 
 #myModal {
