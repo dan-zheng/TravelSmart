@@ -10,9 +10,10 @@ Users input a starting location, a destination, and their mode of travel. The ap
 
 ## Datasets
 
+- Google Maps JavaScript API: [Map and Directions services](https://developers.google.com/maps/documentation/javascript/3.exp/reference)
 - Global Climate Network: [CDO API for GHCN Daily Summaries](http://www.ncdc.noaa.gov/cdo-web/webservices/v2)
 - Wunderground: [10-Day Forecast API](https://www.wunderground.com/weather/api/)
-- Google Maps JavaScript API: [Map and Directions services](https://developers.google.com/maps/documentation/javascript/3.exp/reference)
+- CDC: [Maps of Zika in the United States](https://www.cdc.gov/zika/intheus/maps-zika-us.html)
 
 _more to be determined_
 
