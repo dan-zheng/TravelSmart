@@ -2,34 +2,37 @@ var test;
 var test2;
 var test3;
 
+var orig = {
+    weather_data: [],
+    temp: {
+        low: ['low'],
+        high: ['high'],
+        qpf_allday: ['rain'],
+        conditions: ['conditions']
+    },
+    addr: '',
+    long_addr: '',
+    locality: '',
+    state: '',
+    state_long: '',
+    country: ''
+};
 
-var dest;
-var orig_addr;
-var dest_addr;
-var orig_weather_data;
-var dest_weather_data;
-var orig_temp = {
-    low: ['low'],
-    high: ['high'],
-    qpf_allday: ['rain'],
-    conditions: ['conditions']
+var dest = {
+    weather_data: [],
+    temp: {
+        low: ['low'],
+        high: ['high'],
+        qpf_allday: ['rain'],
+        conditions: ['conditions']
+    },
+    addr: '',
+    long_addr: '',
+    locality: '',
+    state: '',
+    state_long: '',
+    country: ''
 };
-var dest_temp = {
-    low: ['low'],
-    high: ['high'],
-    qpf_allday: ['rain'],
-    conditions: ['conditions']
-};
-var orig_long_addr;
-var dest_long_addr;
-var orig_locality;
-var orig_state;
-var orig_state_long;
-var orig_country;
-var dest_locality;
-var dest_state;
-var dest_state_long;
-var dest_country;
 var orig_prcp_data;
 var dest_prcp_data;
 var orig_zika = {
@@ -327,61 +330,55 @@ function initMap() {
                         if (results[0]) {
                             if (type == 'origin') {
                                 orig = results[0];
-                                orig_long_addr = results[0].formatted_address;
+                                orig.long_addr = results[0].formatted_address;
                             } else if (type == 'destination') {
                                 dest = results[0];
-                                dest_long_addr = results[0].formatted_address;
+                                dest.long_addr = results[0].formatted_address;
                             }
                             var temp = results[0].address_components;
-                            console.log(results[0]);
                             for (var c = 0; c < temp.length; c++) {
                                 if (temp[c].types[0] == 'postal_code') {
                                     var postal_code = temp[c].short_name;
-                                    //console.log(postal_code);
                                     if (type == 'origin') {
-                                        orig_postal_code = postal_code;
-                                        test = orig_postal_code;
+                                        orig.postal_code = postal_code;
                                         //prcpInfoOrigin();
-                                        //callback();
                                     } else if (type == 'destination') {
-                                        dest_postal_code = postal_code;
-                                        test2 = dest_postal_code;
+                                        dest.postal_code = postal_code;
                                         //prcpInfoDest();
-                                        //callback();
                                     }
                                 } else if (temp[c].types[0] == 'locality') {
                                     if (type == 'origin') {
-                                        orig_locality = temp[c].short_name;
+                                        orig.locality = temp[c].short_name;
                                     } else {
-                                        dest_locality = temp[c].short_name;
+                                        dest.locality = temp[c].short_name;
                                     }
                                 } else if (temp[c].types[0] == 'administrative_area_level_1') {
                                     if (type == 'origin') {
-                                        orig_state = temp[c].short_name;
-                                        orig_state_long = temp[c].long_name;
-                                        console.log(orig_state);
+                                        orig.state = temp[c].short_name;
+                                        orig.state_long = temp[c].long_name;
+                                        console.log(orig.state);
                                     } else {
-                                        dest_state = temp[c].short_name;
-                                        dest_state_long = temp[c].long_name;
-                                        console.log(dest_state);
+                                        dest.state = temp[c].short_name;
+                                        dest.state_long = temp[c].long_name;
+                                        console.log(dest.state);
                                     }
                                 } else if (temp[c].types[0] == 'country') {
                                     if (type == 'origin') {
-                                        orig_country = temp[c].short_name;
+                                        orig.country = temp[c].short_name;
                                     } else {
-                                        dest_country = temp[c].short_name;
+                                        dest.country = temp[c].short_name;
                                     }
                                 }
                             }
                             if (type == 'origin') {
-                                if (orig_locality && orig_country) {
-                                    orig_addr = orig_country + "/" + orig_locality;
+                                if (orig.locality && orig.country) {
+                                    orig.addr = orig.country + "/" + orig.locality;
                                     weatherOrig();
                                     zikaOrig();
                                 }
                             } else if (type == 'destination') {
-                                if (dest_locality && dest_country) {
-                                    dest_addr = dest_country + "/" + dest_locality;
+                                if (dest.locality && dest.country) {
+                                    dest.addr = dest.country + "/" + dest.locality;
                                     weatherDest();
                                     zikaDest();
                                 }
@@ -413,12 +410,12 @@ function initMap() {
         if (orig_zika.travel !== null && dest_zika.travel !== null) {
             $('#orig-weather-info').hide();
             $('#dest-weather-info').hide();
-            cloud_title = "Cloud Info: (" + orig_state_long + " vs " + dest_state_long + ")";
+            cloud_title = "Cloud Info: (" + orig.state_long + " vs " + dest.state_long + ")";
             for (var i = 0; i < 7; i++) {
                 conditions.push({
                     'date': temp_weather_range[i],
-                    'orig': orig_temp.conditions[i + 1],
-                    'dest': dest_temp.conditions[i + 1]
+                    'orig': orig.temp.conditions[i + 1],
+                    'dest': dest.temp.conditions[i + 1]
                 });
             }
             columns = [{
@@ -437,11 +434,11 @@ function initMap() {
             //zikaPieChart();
         } else if (orig_zika.travel !== null) {
             $('#orig-weather-info').hide();
-            cloud_title = "Cloud Info: (" + orig_state_long + ")";
+            cloud_title = "Cloud Info: (" + orig.state_long + ")";
             for (var j = 0; j < 7; j++) {
                 conditions.push({
                     'date': temp_weather_range[j],
-                    'orig': orig_temp.conditions[j + 1]
+                    'orig': orig.temp.conditions[j + 1]
                 });
             }
             columns = [{
@@ -453,13 +450,13 @@ function initMap() {
                 cl: 'title',
                 html: ƒ('orig')
             }];
-        } else if (dest_zika.travel !== null) {
+        } else if (dest.zika.travel !== null) {
             $('#dest-weather-info').hide();
-            cloud_title = "Cloud Info: (" + dest_state_long + ")";
+            cloud_title = "Cloud Info: (" + dest.state_long + ")";
             for (var k = 0; k < 7; k++) {
                 conditions.push({
                     'date': temp_weather_range[k],
-                    'dest': dest_temp.conditions[k + 1]
+                    'dest': dest.temp.conditions[k + 1]
                 });
             }
             columns = [{
@@ -513,9 +510,9 @@ function initMap() {
     }
 
     function zikaOrig() {
-        if (orig_country == 'US' && orig_state) {
-            if (zika_data[orig_state]) {
-                var zika = zika_data[orig_state];
+        if (orig.country == 'US' && orig.state) {
+            if (zika_data[orig.state]) {
+                var zika = zika_data[orig.state];
                 orig_zika.travel = zika[0].value;
                 orig_zika.local = zika[1].value;
                 zikaChart();
@@ -531,9 +528,9 @@ function initMap() {
     }
 
     function zikaDest() {
-        if (dest_country == 'US' && dest_state) {
-            if (zika_data[dest_state]) {
-                var zika = zika_data[dest_state];
+        if (dest.country == 'US' && dest.state) {
+            if (zika_data[dest.state]) {
+                var zika = zika_data[dest.state];
                 dest_zika.travel = zika[0].value;
                 dest_zika.local = zika[1].value;
                 zikaChart();
@@ -554,7 +551,7 @@ function initMap() {
         if (orig_zika.travel !== null && dest_zika.travel !== null) {
             $('#orig-zika-info').hide();
             $('#dest-zika-info').hide();
-            zika_title = "Zika Info: (" + orig_state_long + " vs " + dest_state_long + ")";
+            zika_title = "Zika Info: (" + orig.state_long + " vs " + dest.state_long + ")";
             columns = [
                 ['type', 'Travel acquired', 'Locally acquired'],
                 ['origin', orig_zika.travel, orig_zika.local],
@@ -563,14 +560,14 @@ function initMap() {
             //zikaPieChart();
         } else if (orig_zika.travel !== null) {
             $('#orig-zika-info').hide();
-            zika_title = "Zika Info: (" + orig_state_long + ")";
+            zika_title = "Zika Info: (" + orig.state_long + ")";
             columns = [
                 ['type', 'Travel acquired', 'Locally acquired'],
                 ['origin', orig_zika.travel, orig_zika.local],
             ];
         } else if (dest_zika.travel !== null) {
             $('#dest-zika-info').hide();
-            zika_title = "Zika Info: (" + dest_state_long + ")";
+            zika_title = "Zika Info: (" + dest.state_long + ")";
             columns = [
                 ['type', 'Travel acquired', 'Locally acquired'],
                 ['destination', dest_zika.travel, dest_zika.local],
@@ -637,25 +634,25 @@ function initMap() {
     function weatherOrig() {
         var url;
         var orig_query;
-        if (orig_postal_code && orig_country == 'US') {
-            orig_query = orig_postal_code;
+        if (orig.postal_code && orig.country == 'US') {
+            orig_query = orig.postal_code;
             console.log("postal code: " + orig_query);
-        } else if (orig_addr) {
-            orig_query = orig_addr;
+        } else if (orig.addr) {
+            orig_query = orig.addr;
             console.log("addr: " + orig_query);
         }
         if (orig_query) {
             url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + orig_query + ".json";
             httpGetAsync(url, null, function(data) {
                 try {
-                    orig_weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
+                    orig.weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
                 } catch (err) {
                     console.log(err);
                     $('#orig-weather-chart').hide();
-                    $('#orig-weather-info').html("No weather information found for " + orig_locality + ".");
+                    $('#orig-weather-info').html("No weather information found for " + orig.locality + ".");
                 }
 
-                orig_temp = {
+                orig.temp = {
                     low: ['low'],
                     high: ['high'],
                     qpf_allday: ['rain'],
@@ -663,10 +660,10 @@ function initMap() {
                 };
 
                 for (var i = 0; i < weather_len; i++) {
-                    orig_temp.low.push(orig_weather_data[i].low.fahrenheit);
-                    orig_temp.high.push(orig_weather_data[i].high.fahrenheit);
-                    orig_temp.qpf_allday.push(orig_weather_data[i].qpf_allday.in);
-                    orig_temp.conditions.push(orig_weather_data[i].conditions);
+                    orig.temp.low.push(orig.weather_data[i].low.fahrenheit);
+                    orig.temp.high.push(orig.weather_data[i].high.fahrenheit);
+                    orig.temp.qpf_allday.push(orig.weather_data[i].qpf_allday.in);
+                    orig.temp.conditions.push(orig.weather_data[i].conditions);
                 }
 
                 if ($("#weather-clouds").hasClass('active')) {
@@ -690,25 +687,25 @@ function initMap() {
     function weatherDest() {
         var url;
         var dest_query;
-        if (dest_postal_code && orig_country == 'US') {
-            dest_query = dest_postal_code;
+        if (dest.postal_code && dest.country == 'US') {
+            dest_query = dest.postal_code;
             console.log("postal code: " + dest_query);
-        } else if (dest_addr) {
-            dest_query = dest_addr;
+        } else if (dest.addr) {
+            dest_query = dest.addr;
             console.log("addr: " + dest_query);
         }
         if (dest_query) {
             url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + dest_query + ".json";
             httpGetAsync(url, null, function(data) {
                 try {
-                    dest_weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
+                    dest.weather_data = JSON.parse(data).forecast.simpleforecast.forecastday;
                 } catch (err) {
                     console.log(err);
                     $('#dest-weather-chart').hide();
-                    $('#dest-weather-info').html("No weather information found for " + dest_locality + ".");
+                    $('#dest-weather-info').html("No weather information found for " + dest.locality + ".");
                 }
 
-                dest_temp = {
+                dest.temp = {
                     low: ['low'],
                     high: ['high'],
                     qpf_allday: ['rain'],
@@ -716,10 +713,10 @@ function initMap() {
                 };
 
                 for (var i = 0; i < weather_len; i++) {
-                    dest_temp.low.push(dest_weather_data[i].low.fahrenheit);
-                    dest_temp.high.push(dest_weather_data[i].high.fahrenheit);
-                    dest_temp.qpf_allday.push(dest_weather_data[i].qpf_allday.in);
-                    dest_temp.conditions.push(dest_weather_data[i].conditions);
+                    dest.temp.low.push(dest.weather_data[i].low.fahrenheit);
+                    dest.temp.high.push(dest.weather_data[i].high.fahrenheit);
+                    dest.temp.qpf_allday.push(dest.weather_data[i].qpf_allday.in);
+                    dest.temp.conditions.push(dest.weather_data[i].conditions);
                 }
 
                 if ($("#weather-clouds").hasClass('active')) {
@@ -752,16 +749,16 @@ function initMap() {
         chart_weather_orig = c3.generate({
             bindto: '#orig-weather-chart',
             title: {
-                text: 'Origin Info (' + orig_locality + ')'
+                text: 'Origin Info (' + orig.locality + ')'
             },
             data: {
                 x: 'days',
                 xFormat: '%m-%d',
                 columns: [
                     weather_range,
-                    orig_temp.low,
-                    orig_temp.high,
-                    orig_temp.qpf_allday
+                    orig.temp.low,
+                    orig.temp.high,
+                    orig.temp.qpf_allday
                 ],
                 axes: {
                     low: 'y',
@@ -800,16 +797,16 @@ function initMap() {
         chart_weather_dest = c3.generate({
             bindto: '#dest-weather-chart',
             title: {
-                text: 'Destination Info (' + dest_locality + ')'
+                text: 'Destination Info (' + dest.locality + ')'
             },
             data: {
                 x: 'days',
                 xFormat: '%m-%d',
                 columns: [
                     weather_range,
-                    dest_temp.low,
-                    dest_temp.high,
-                    dest_temp.qpf_allday
+                    dest.temp.low,
+                    dest.temp.high,
+                    dest.temp.qpf_allday
                 ],
                 axes: {
                     low: 'y',
@@ -844,12 +841,12 @@ function initMap() {
 
     function prcpInfoOrigin() {
         var dateToday, dateLastWeek, url;
-        if (orig_postal_code) {
-            console.log("origin: " + orig_postal_code);
+        if (orig.postal_code) {
+            console.log("origin: " + orig.postal_code);
             dateToday = moment().format('YYYY-MM-DD');
             dateLastWeek = moment().subtract(7, 'days').format('YYYY-MM-DD');
             console.log(dateToday + ", " + dateLastWeek);
-            url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + orig_postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=5&sortfield=date&sortorder=desc&includemetadata=false";
+            url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + orig.postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=5&sortfield=date&sortorder=desc&includemetadata=false";
 
             httpGetAsync(url, tokenHeader, function(data) {
                 orig_prcp_data = JSON.parse(data);
@@ -862,12 +859,12 @@ function initMap() {
 
     function prcpInfoDest() {
         var dateToday, dateLastWeek, url;
-        if (dest_postal_code) {
-            console.log("dest: " + dest_postal_code);
+        if (dest.postal_code) {
+            console.log("dest: " + dest.postal_code);
             dateToday = moment().format('YYYY-MM-DD');
             dateLastWeek = moment().subtract(7, 'days').format('YYYY-MM-DD');
             console.log(dateToday + ", " + dateLastWeek);
-            url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + dest_postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=5&sortfield=date&sortorder=desc&includemetadata=false";
+            url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + dest.postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=5&sortfield=date&sortorder=desc&includemetadata=false";
             tokenHeader = [];
             tokenHeader.push({
                 key: 'token',
