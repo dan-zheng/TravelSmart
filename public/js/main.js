@@ -15,7 +15,8 @@ var orig = {
     locality: '',
     state: '',
     state_long: '',
-    country: ''
+    country: '',
+    population: -1
 };
 
 var dest = {
@@ -31,7 +32,8 @@ var dest = {
     locality: '',
     state: '',
     state_long: '',
-    country: ''
+    country: '',
+    population: -1
 };
 var orig_prcp_data;
 var dest_prcp_data;
@@ -69,6 +71,10 @@ $.getJSON("zika-data.json", function(json) {
     zika_data = json;
     total_zika.travel = zika_data.total_us[0].value;
     total_zika.local = zika_data.total_us[1].value;
+});
+var zip_population;
+$.getJSON("zip-population.json", function(json) {
+    zip_population = json;
 });
 
 var wunderground_key = "6901a5ba64a062c1";
@@ -341,9 +347,15 @@ function initMap() {
                                     var postal_code = temp[c].short_name;
                                     if (type == 'origin') {
                                         orig.postal_code = postal_code;
+                                        orig.population = zip_population.find(function(zip) {
+                                            return zip.zip == postal_code;
+                                        }).population;
                                         //prcpInfoOrigin();
                                     } else if (type == 'destination') {
                                         dest.postal_code = postal_code;
+                                        dest.population = zip_population.find(function(zip) {
+                                            return zip.zip == postal_code;
+                                        }).population;
                                         //prcpInfoDest();
                                     }
                                 } else if (temp[c].types[0] == 'locality') {
