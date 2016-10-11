@@ -2,8 +2,7 @@
 @import "lib/bootstrap/bootstrap";
 @import "lib/bootstrap-social";
 @import "lib/font-awesome/font-awesome";
-@import "themes/modern/modern";
-// Scaffolding
+@import "themes/modern/modern"; // Scaffolding
 // -------------------------
 
 #main {
@@ -104,22 +103,44 @@
 
 #data {
     h1 {
-        margin-top: 0px;
+        margin-top: 0;
         margin-bottom: 10px;
     }
 }
 
-#route {
-
+.about {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+    h1 {
+        font-size: 28px;
+        font-weight: 300;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    i {
+        font-size: 50px;
+        margin: 0;
+    }
+    p {
+        font-size: 20px;
+    }
 }
+
+#go-to-app {
+    margin-top: 140px;
+}
+
+#route {}
 
 #route-info {
     font-family: 'Roboto','sans-serif';
     line-height: 30px;
     padding-left: 6px;
-    padding-left: 6px;
+    padding-right: 6px;
     float: left;
-    width: inherit;
+    width: 100%;
     height: 100%;
     position: static;
     overflow: auto;
@@ -143,17 +164,66 @@
     display: none;
 }
 
+.adp-summary{
+    font-size: 15px;
+}
+
+.no-info {
+    font-size: 17px;
+}
+
+#weather table {
+    font-family: 'Helvetica Neue', Helvetica;
+    font-size: 15px;
+    @media (min-width: 1380px) {
+        font-size: 18px;
+    }
+    font-weight: 300;
+    padding: 20px;
+}
+
+#route table {
+    font-family: 'Helvetica Neue', Helvetica;
+    font-size: 14px;
+    @media (min-width: 1380px) {
+        font-size: 16px;
+    }
+    font-weight: 300;
+    padding: 20px;
+}
+
+th {
+    text-align: left;
+}
+
+td,
+th {
+    padding: 0 1em 0.5ex 1em;
+}
+
+td.center,
+th.center,
+th.title {
+    text-align: center;
+}
+
+td.num,
+th.num {
+    text-align: right;
+}
+
 #data-tabs {
     margin-bottom: 10px;
     font-weight: 700;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
     font-size: 15px;
-    text-shadow: 0 0px 1px rgba(0,0,0,.2);
+    text-shadow: 0 0 1px rgba(0,0,0,.1);
 
     *:focus {
         outline: none;
         border: none;
     }
+
     li a {
         overflow: hidden;
         border-bottom-width: 0;
@@ -189,7 +259,7 @@
     font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
-    margin-top: 0px;
+    margin-top: 0;
     margin-bottom: 5px;
     margin-left: 12px;
     //padding: 0 11px 0 13px;
@@ -210,8 +280,8 @@
     font-family: Roboto;
     font-size: 15px;
     font-weight: 300;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 0;
+    margin-bottom: 0;
     margin-left: 11px;
     //padding: 0 11px 0 13px;
     text-overflow: ellipsis;
@@ -220,6 +290,10 @@
 
 #weather {
     overflow: auto;
+}
+
+#weather-clouds {
+    margin-left: 5px;
 }
 
 #weather-btn-group > .btn {
