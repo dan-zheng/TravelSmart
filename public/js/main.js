@@ -170,9 +170,7 @@ $('#go-to-app').on('click', function() {
 $('#contact-submit').on('click', function() {
     var subject = $('#contact-subject').val();
     var body = $('#contact-body').val();
-    console.log(body);
     body = encodeURIComponent(body);
-    console.log(body);
     window.location.href = "mailto:zheng321@purdue.edu?subject=" + subject + "&body=" + body;
 });
 
@@ -441,7 +439,6 @@ function initMap() {
                             for (var c = 0; c < temp.length; c++) {
                                 if (temp[c].types[0] == 'postal_code') {
                                     var postal_code = temp[c].short_name;
-                                    console.log(postal_code);
                                     if (type == 'origin') {
                                         orig.postal_code = postal_code;
                                         try {
@@ -578,7 +575,6 @@ function initMap() {
 
         if (query) {
             var url = "http://api.geonames.org/searchJSON?name_startsWith=" + query + "&username=danzheng";
-            console.log(url);
             httpGetAsync(url, null, function(data) {
                 try {
                     orig.geography = geographyFeature(JSON.parse(data).geonames[0].fcl);
@@ -605,7 +601,6 @@ function initMap() {
 
         if (query) {
             var url = "http://api.geonames.org/searchJSON?name_startsWith=" + query + "&username=danzheng";
-            console.log(url);
             httpGetAsync(url, null, function(data) {
                 try {
                     dest.geography = geographyFeature(JSON.parse(data).geonames[0].fcl);
