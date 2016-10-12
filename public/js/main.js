@@ -171,7 +171,7 @@ $('#contact-submit').on('click', function() {
     var subject = $('#contact-subject').val();
     var body = $('#contact-body').val();
     console.log(body);
-    body = replaceNewline(body);
+    body = encodeURIComponent(body);
     console.log(body);
     window.location.href = "mailto:zheng321@purdue.edu?subject=" + subject + "&body=" + body;
 });
@@ -1032,13 +1032,13 @@ function initMap() {
             var risk_num = risk_percent * 100;
             if (risk_percent >= 0 && risk_percent < 0.26) {
                 //risk_msg = risk_msg + "<span class='green'>LOW</span>.";
-                risk_msg = risk_msg + "<div class=\"progress\"> <div class=\"progress-bar progress-bar-striped green\" role=\"progressbar\" aria-valuenow=\"" + risk_num + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:80%\">LOW</div></div>"
+                risk_msg = risk_msg + "<div class=\"progress\"> <div class=\"progress-bar progress-bar-striped green\" role=\"progressbar\" aria-valuenow=\"" + risk_num + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:80%\">LOW</div></div>";
             } else if (risk_percent >= 0.26 && risk_percent < 0.51) {
                 //risk_msg = risk_msg + "<span class='yellow'>SOMEWHAT LOW</span>.";
-                risk_msg = risk_msg + "<div class=\"progress\"> <div class=\"progress-bar progress-bar-striped yellow\" role=\"progressbar\" aria-valuenow=\"" + risk_num + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:80%\">SOMEWHAT LOW</div></div>"
+                risk_msg = risk_msg + "<div class=\"progress\"> <div class=\"progress-bar progress-bar-striped yellow\" role=\"progressbar\" aria-valuenow=\"" + risk_num + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:80%\">SOMEWHAT LOW</div></div>";
             } else if (risk_percent >= 0.51 && risk_percent <= 1) {
                 //risk_msg = risk_msg + "<span class='red'>SOMEWHAT HIGH</span>.";
-                risk_msg = risk_msg + "<div class=\"progress\"> <div class=\"progress-bar progress-bar-striped red\" role=\"progressbar\" aria-valuenow=\"" + risk_num + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:80%\">SOMEWHAT HIGH</div></div>"
+                risk_msg = risk_msg + "<div class=\"progress\"> <div class=\"progress-bar progress-bar-striped red\" role=\"progressbar\" aria-valuenow=\"" + risk_num + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:80%\">SOMEWHAT HIGH</div></div>";
             }
             if (risk_msg) {
                 $('#zika-summary').html(risk_msg);
@@ -1371,6 +1371,10 @@ var HttpClient = function() {
 };
 
 function replaceNewline(input) {
-    var newline = String.fromCharCode(13, 10);
-    return input.replace('\n', newline);
+    //var newline = String.fromCharCode(13, 10);
+    //return input.replace('\n', newline);
+    var newline = "%0D%0A";
+    var re = new RegExp(newline, 'g');
+    console.log(input.replace(re, ''));
+    return input.replace(re, '');
 }
