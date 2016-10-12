@@ -378,7 +378,7 @@ function initMap() {
         if (!orig_place_id || !destination_place_id) {
             return;
         }
-        if (travel_mode == 'Flight') {
+        if (travel_mode == 'FLIGHT') {
             $('#route-error').html('Google Maps does not support travel by plane. You can view weather and Zika info in the other tabs and look up flights <a target=\'_blank\' href=\'https://www.expedia.com/Flights\'>here</a>.');
             $('#route-error').show();
             $('#route-info').hide();
