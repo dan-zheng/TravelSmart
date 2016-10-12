@@ -161,34 +161,6 @@ $('#go-to-app').on('click', function() {
     $.fn.fullpage.moveTo('app');
 });
 
-$('#weather-spline').on('click', function() {
-    $('#weather-spline').addClass('active');
-    $('#weather-bar').removeClass('active');
-    $('#orig-weather-chart').show();
-    $('#dest-weather-chart').show();
-    $('#weather-clouds-chart').hide();
-    if (chart_weather_orig) {
-        chart_weather_orig.transform('area-spline');
-    }
-    if (chart_weather_dest) {
-        chart_weather_dest.transform('area-spline');
-    }
-});
-
-$('#weather-bar').on('click', function() {
-    $('#weather-bar').addClass('active');
-    $('#weather-spline').removeClass('active');
-    $('#orig-weather-chart').show();
-    $('#dest-weather-chart').show();
-    $('#weather-clouds-chart').hide();
-    if (chart_weather_orig) {
-        chart_weather_orig.transform('bar');
-    }
-    if (chart_weather_dest) {
-        chart_weather_dest.transform('bar');
-    }
-});
-
 /*$('#data-tabs').on('click', function() {
     console.log('hi');
     $(".data-tab").map(function() {
@@ -197,6 +169,46 @@ $('#weather-bar').on('click', function() {
 });*/
 
 function initMap() {
+    $('#weather-spline').on('click', function() {
+        $('#weather-spline').addClass('active');
+        $('#weather-bar').removeClass('active');
+        if (orig.temp.low.length > 1) {
+            weatherOrigChart();
+        }
+        if (dest.temp.low.length > 1) {
+            weatherDestChart();
+        }
+        $('#orig-weather-chart').show();
+        $('#dest-weather-chart').show();
+        $('#weather-clouds-chart').hide();
+        if (chart_weather_orig) {
+            chart_weather_orig.transform('area-spline');
+        }
+        if (chart_weather_dest) {
+            chart_weather_dest.transform('area-spline');
+        }
+    });
+
+    $('#weather-bar').on('click', function() {
+        $('#weather-bar').addClass('active');
+        $('#weather-spline').removeClass('active');
+        if (orig.temp.low.length > 1) {
+            weatherOrigChart();
+        }
+        if (dest.temp.low.length > 1) {
+            weatherDestChart();
+        }
+        $('#orig-weather-chart').show();
+        $('#dest-weather-chart').show();
+        $('#weather-clouds-chart').hide();
+        if (chart_weather_orig) {
+            chart_weather_orig.transform('bar');
+        }
+        if (chart_weather_dest) {
+            chart_weather_dest.transform('bar');
+        }
+    });
+
     $('#weather-clouds').on('click', function() {
         if ($("#weather-clouds").hasClass('active')) {
             $('#weather-clouds').removeClass('active');
