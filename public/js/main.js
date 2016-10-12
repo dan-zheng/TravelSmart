@@ -992,7 +992,11 @@ function initMap() {
             $('#zika-details').show();*/
 
             if (orig.country == 'US' && orig.country == dest.country && orig.state == dest.state) {
-                risk_percent = 0;
+                if (dest_zika.local === 0) {
+                    risk_percent = 0;
+                } else {
+                    risk_percent = 1 / 3;
+                }
             } else if (zikarisk_local != -1 || zikarisk_travel != -1 || zikarisk_pop != -1 || zikarisk_geo) {
                 var risk_total = 0;
                 var risk_count = 0;
@@ -1014,9 +1018,9 @@ function initMap() {
                     risk_total++;
                     risk_count++;
                 }
-                if (zikarisk_geo === false) {
+                if (zikarisk_geo === false && dest_zika.local === 0) {
                     risk_total++;
-                } else if (zikarisk_geo === true) {
+                } else if (zikarisk_geo === true || dest_zika.local > 0) {
                     risk_total++;
                     risk_count++;
                 }
