@@ -173,50 +173,68 @@ function initMap() {
     $('#weather-spline').on('click', function() {
         $('#weather-spline').addClass('active');
         $('#weather-bar').removeClass('active');
+        $('#weather-clouds').removeClass('active');
         if (orig.temp.low.length > 1) {
             weatherOrigChart();
+            if (chart_weather_orig) {
+                chart_weather_orig.transform('area-spline');
+            }
         }
         if (dest.temp.low.length > 1) {
             weatherDestChart();
+            if (chart_weather_dest) {
+                chart_weather_dest.transform('area-spline');
+            }
         }
         $('#orig-weather-chart').show();
         $('#dest-weather-chart').show();
         $('#weather-clouds-chart').hide();
-        if (chart_weather_orig) {
-            chart_weather_orig.transform('area-spline');
-        }
-        if (chart_weather_dest) {
-            chart_weather_dest.transform('area-spline');
-        }
     });
 
     $('#weather-bar').on('click', function() {
         $('#weather-bar').addClass('active');
         $('#weather-spline').removeClass('active');
+        $('#weather-clouds').removeClass('active');
         if (orig.temp.low.length > 1) {
             weatherOrigChart();
+            if (chart_weather_orig) {
+                chart_weather_orig.transform('bar');
+            }
         }
         if (dest.temp.low.length > 1) {
             weatherDestChart();
+            if (chart_weather_dest) {
+                chart_weather_dest.transform('bar');
+            }
         }
         $('#orig-weather-chart').show();
         $('#dest-weather-chart').show();
         $('#weather-clouds-chart').hide();
-        if (chart_weather_orig) {
-            chart_weather_orig.transform('bar');
-        }
-        if (chart_weather_dest) {
-            chart_weather_dest.transform('bar');
-        }
     });
 
     $('#weather-clouds').on('click', function() {
         if ($("#weather-clouds").hasClass('active')) {
+            $('#weather-spline').addClass('active');
+            $('#weather-bar').removeClass('active');
             $('#weather-clouds').removeClass('active');
+            if (orig.temp.low.length > 1) {
+                weatherOrigChart();
+                if (chart_weather_orig) {
+                    chart_weather_orig.transform('area-spline');
+                }
+            }
+            if (dest.temp.low.length > 1) {
+                weatherDestChart();
+                if (chart_weather_dest) {
+                    chart_weather_dest.transform('area-spline');
+                }
+            }
             $('#orig-weather-chart').show();
             $('#dest-weather-chart').show();
             $('#weather-clouds-chart').hide();
         } else {
+            $('#weather-spline').removeClass('active');
+            $('#weather-bar').removeClass('active');
             weatherCloudChart();
             $('#weather-clouds').addClass('active');
             $('#orig-weather-chart').hide();
@@ -825,18 +843,22 @@ function initMap() {
             }
 
             if (orig.population && dest.population) {
-                var pop_diff = dest.population - orig.population;
-                var orig_name = orig.county + ", " + orig.state;
-                var dest_name = dest.county + ", " + dest.state;
-                if (pop_diff > 0) {
-                    pop_msg = dest_name + " has a larger population than " + orig_name + ". Areas that are more populous are at higher risk of infection. You could be more safe if you traveled to a less populous destination.";
-                    zikarisk_pop = true;
-                } else if (pop_diff < 0) {
-                    pop_msg = dest_name + " has a smaller population than " + orig_name + ". Areas that are less populous are at lower risk of infection.";
-                    zikarisk_pop = false;
+                if (orig.county == dest.county) {
+                    pop_msg = "You're traveling within the same county, so origin and destination population does not have a major impact on your risk of infection.";
                 } else {
-                    pop_msg = dest_name + " has the same population as " + orig_name + ". Thus, in this case, population does not affect risk of infection.";
-                    zikarisk_pop = false;
+                    var pop_diff = dest.population - orig.population;
+                    var orig_name = orig.county + ", " + orig.state;
+                    var dest_name = dest.county + ", " + dest.state;
+                    if (pop_diff > 0) {
+                        pop_msg = dest_name + " has a larger population than " + orig_name + ". Areas that are more populous are at higher risk of infection. You could be more safe if you traveled to a less populous destination.";
+                        zikarisk_pop = true;
+                    } else if (pop_diff < 0) {
+                        pop_msg = dest_name + " has a smaller population than " + orig_name + ". Areas that are less populous are at lower risk of infection.";
+                        zikarisk_pop = false;
+                    } else {
+                        pop_msg = dest_name + " has the same population as " + orig_name + ". Thus, in this case, population does not have a major impact on your risk of infection.";
+                        zikarisk_pop = false;
+                    }
                 }
                 if (pop_msg) {
                     $('#zika-pop-info').html(pop_msg);
