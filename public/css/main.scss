@@ -352,7 +352,7 @@ th.num {
     }
 }
 
-#zika-local, #zika-travel, #zika-pop-info {
+#zika-local, #zika-travel, #zika-pop-info, #zika-geo-info {
     font-weight: normal;
     text-align: left;
     font-size: 14px;
@@ -384,18 +384,28 @@ th.num {
     }
 }
 
+.progress {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    height: 28px;
+    .progress-bar {
+        padding-top: 5px;
+        font-size: 22px;
+    }
+}
+
 .green {
-    color: #06bd3d;
+    background-color: #06bd3d;
     font-weight: 700;
 }
 
 .yellow {
-    color: #a97a1c;
+    background-color: #a97a1c;
     font-weight: 700;
 }
 
 .red {
-    color: #f45042;
+    background-color: #f45042;
     font-weight: 700;
 }
 

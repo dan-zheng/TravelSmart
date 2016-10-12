@@ -3,6 +3,7 @@
 var local_msg;
 var travel_msg;
 var pop_msg;
+var geo_msg;
 var risk_msg;
 
 var orig = {
@@ -22,7 +23,9 @@ var orig = {
     state_long: '',
     country: '',
     country_long: '',
+    postal_code: '',
     query: '',
+    geography: '',
     population: -1,
     zip_pop: -1
 };
@@ -44,7 +47,9 @@ var dest = {
     state_long: '',
     country: '',
     country_long: '',
+    postal_code: '',
     query: '',
+    geography: '',
     population: -1,
     zip_pop: -1
 };
@@ -165,6 +170,9 @@ $('#go-to-app').on('click', function() {
 $('#contact-submit').on('click', function() {
     var subject = $('#contact-subject').val();
     var body = $('#contact-body').val();
+    console.log(body);
+    body = replaceNewline(body);
+    console.log(body);
     window.location.href = "mailto:zheng321@purdue.edu?subject=" + subject + "&body=" + body;
 });
 
@@ -379,7 +387,7 @@ function initMap() {
             return;
         }
         if (travel_mode == 'FLIGHT') {
-            $('#route-error').html('Google Maps does not support travel by plane. You can view weather and Zika info in the other tabs and look up flights <a target=\'_blank\' href=\'https://www.expedia.com/Flights\'>here</a>.');
+            $('#route-error').html('Google Maps does not support travel by flight. You can view weather and Zika info in the other tabs and look up flights <a target=\'_blank\' href=\'https://www.expedia.com/Flights\'>here</a>.');
             $('#route-error').show();
             $('#route-info').hide();
             return;
@@ -433,6 +441,7 @@ function initMap() {
                             for (var c = 0; c < temp.length; c++) {
                                 if (temp[c].types[0] == 'postal_code') {
                                     var postal_code = temp[c].short_name;
+                                    console.log(postal_code);
                                     if (type == 'origin') {
                                         orig.postal_code = postal_code;
                                         try {
@@ -502,12 +511,14 @@ function initMap() {
                                 if (orig.locality && orig.country) {
                                     orig.addr = orig.country + "/" + orig.locality;
                                     weatherOrig();
+                                    geographyOrig();
                                     zikaOrig();
                                 }
                             } else if (type == 'destination') {
                                 if (dest.locality && dest.country) {
                                     dest.addr = dest.country + "/" + dest.locality;
                                     weatherDest();
+                                    geographyDest();
                                     zikaDest();
                                 }
                             }
@@ -522,6 +533,88 @@ function initMap() {
                 alert('Geocode was not successful for the following reason: ' + status);
             }
         });
+    }
+
+    function geographyFeature(code) {
+        var result = '';
+        switch(code) {
+            case 'H':
+                result = 'small body of water';
+                break;
+            case 'L':
+                result = 'park or area';
+                break;
+            case 'P':
+                result = 'city or town';
+                break;
+            case 'R':
+                result = 'road or railway';
+                break;
+            case 'S':
+                result = 'spot, building, or farm';
+                break;
+            case 'T':
+                result = 'mountain, hill, or rock';
+                break;
+            case 'V':
+                result = 'forest';
+                break;
+        }
+        return result;
+    }
+
+    function geographyOrig() {
+        orig.geography = '';
+        var query;
+        if (orig.locality) {
+            if (orig.state_long) {
+                query = orig.locality + " " + orig.state_long;
+            } else if (orig.country) {
+                query = orig.locality + " " + orig.country;
+            } else {
+                query = orig.locality;
+            }
+        }
+
+        if (query) {
+            var url = "http://api.geonames.org/searchJSON?name_startsWith=" + query + "&username=danzheng";
+            console.log(url);
+            httpGetAsync(url, null, function(data) {
+                try {
+                    orig.geography = geographyFeature(JSON.parse(data).geonames[0].fcl);
+                } catch (err) {
+                    console.log(err);
+                    return;
+                }
+            });
+        }
+    }
+
+    function geographyDest() {
+        dest.geography = '';
+        var query;
+        if (dest.locality) {
+            if (dest.state_long) {
+                query = dest.locality + " " + dest.state_long;
+            } else if (dest.country) {
+                query = dest.locality + " " + dest.country;
+            } else {
+                query = dest.locality;
+            }
+        }
+
+        if (query) {
+            var url = "http://api.geonames.org/searchJSON?name_startsWith=" + query + "&username=danzheng";
+            console.log(url);
+            httpGetAsync(url, null, function(data) {
+                try {
+                    dest.geography = geographyFeature(JSON.parse(data).geonames[0].fcl);
+                } catch (err) {
+                    console.log(err);
+                    return;
+                }
+            });
+        }
     }
 
     function weatherCloudChart() {
@@ -795,6 +888,7 @@ function initMap() {
         var zikarisk_local = -1;
         var zikarisk_travel = -1;
         var zikarisk_pop = -1;
+        var zikarisk_geo = -1;
         var risk_percent = -1;
 
         if (orig_zika.travel !== null && dest_zika.travel !== null) {
@@ -802,6 +896,7 @@ function initMap() {
             $('#dest-zika-info').hide();
             local_msg = null;
             travel_msg = null;
+            geo_msg = null;
 
             var local_diff = dest_zika.local - orig_zika.local;
             var travel_diff = dest_zika.travel - orig_zika.travel;
@@ -874,9 +969,36 @@ function initMap() {
                 $('#zika-details').show();
             }
 
+            /*if (orig.geography && dest.geography) {
+                if (orig.geography == dest.geography) {
+                    geo_msg = "The geographical classes of your origin and destination are of the same: " + orig.geography + ". Thus, in this case, geography does not have a major impact on your risk of infection.";
+                    zikarisk_geo = false;
+                } else {
+                    if (dest.geography == 'city or town') {
+                        geo_msg = dest.locality + " is of the class: " + dest.geography + ", but " + orig.locality + " is of the class: " + orig.geography + ". Towns and cities are at higher risk of infection than other geographical classes. You could be more safe if you traveled to a place with a different geographical class.";
+                        zikarisk_geo = true;
+                    } else if (orig.geography == 'city or town') {
+                        geo_msg = orig.locality + " is of the class: " + orig.geography + ", but " + dest.locality + " is of the class: " + dest.geography + ". Areas that are not towns or cities are at lower risk of infection than other geographical classes.";
+                        zikarisk_geo = true;
+                    }
+                }
+                if (geo_msg) {
+                    $('#zika-geo-info').html(geo_msg);
+                    $('#zika-geo').show();
+                    $('#zika-geo-info').show();
+                }
+                $('#zika-details').show();
+            } else {
+                geo_msg = "Geographical information could not be determined for your origin and destination. It will not affect the risk of infection calculation."
+                $('#zika-geo-info').html(geo_msg);
+                $('#zika-geo').show();
+                $('#zika-geo-info').show();
+            }
+            $('#zika-details').show();*/
+
             if (orig.country == 'US' && orig.country == dest.country && orig.state == dest.state) {
                 risk_percent = 0;
-            } else if (zikarisk_local != -1 || zikarisk_travel != -1 || zikarisk_pop != -1) {
+            } else if (zikarisk_local != -1 || zikarisk_travel != -1 || zikarisk_pop != -1 || zikarisk_geo) {
                 var risk_total = 0;
                 var risk_count = 0;
                 if (zikarisk_local === false) {
@@ -897,15 +1019,26 @@ function initMap() {
                     risk_total++;
                     risk_count++;
                 }
+                if (zikarisk_geo === false) {
+                    risk_total++;
+                } else if (zikarisk_geo === true) {
+                    risk_total++;
+                    risk_count++;
+                }
                 risk_percent = risk_count / risk_total;
             }
             console.log(risk_percent);
-            if (risk_percent >= 0 && risk_percent < 0.34) {
-                risk_msg = "Overall, your risk of Zika infection for this trip is <span class='green'>LOW</span>.";
-            } else if (risk_percent >= 0.34 && risk_percent < 0.67) {
-                risk_msg = "Overall, your risk of Zika infection for this trip is <span class='yellow'>SOMEWHAT LOW</span>.";
-            } else if (risk_percent >= 0.67 && risk_percent <= 1) {
-                risk_msg = "Overall, your risk of Zika infection for this trip is <span class='red'>SOMEWHAT HIGH</span>.";
+            risk_msg = "Overall, your risk of Zika infection for this trip is:";
+            var risk_num = risk_percent * 100;
+            if (risk_percent >= 0 && risk_percent < 0.26) {
+                //risk_msg = risk_msg + "<span class='green'>LOW</span>.";
+                risk_msg = risk_msg + "<div class=\"progress\"> <div class=\"progress-bar green\" role=\"progressbar\" aria-valuenow=\"" + risk_num + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:80%\">LOW</div></div>"
+            } else if (risk_percent >= 0.26 && risk_percent < 0.51) {
+                //risk_msg = risk_msg + "<span class='yellow'>SOMEWHAT LOW</span>.";
+                risk_msg = risk_msg + "<div class=\"progress\"> <div class=\"progress-bar yellow\" role=\"progressbar\" aria-valuenow=\"" + risk_num + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:80%\">SOMEWHAT LOW</div></div>"
+            } else if (risk_percent >= 0.51 && risk_percent <= 1) {
+                //risk_msg = risk_msg + "<span class='red'>SOMEWHAT HIGH</span>.";
+                risk_msg = risk_msg + "<div class=\"progress\"> <div class=\"progress-bar red\" role=\"progressbar\" aria-valuenow=\"" + risk_num + "\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width:80%\">SOMEWHAT HIGH</div></div>"
             }
             if (risk_msg) {
                 $('#zika-summary').html(risk_msg);
@@ -1236,3 +1369,8 @@ var HttpClient = function() {
         xmlHttp.send(null);
     };
 };
+
+function replaceNewline(input) {
+    var newline = String.fromCharCode(13, 10);
+    return input.replace('\n', newline);
+}
