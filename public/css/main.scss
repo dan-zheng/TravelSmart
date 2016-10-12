@@ -206,7 +206,7 @@
     font-family: 'Helvetica Neue', Helvetica;
     font-size: 14px;
     @media (min-width: 1380px) {
-        font-size: 16px;
+        font-size: 15px;
     }
     font-weight: 300;
     padding: 20px;
@@ -218,7 +218,7 @@ th {
 
 td,
 th {
-    padding: 0 1em 0.5ex 1em;
+    padding: 0 0.25em 0.5ex 0.25em;
 }
 
 td.center,
@@ -363,6 +363,9 @@ th.num {
     }
     @media (min-width: $screen-lg-min) {
         font-size: 18px;
+    }
+    a {
+        font-style: italic;
     }
 }
 

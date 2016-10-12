@@ -15,7 +15,8 @@ var orig = {
         low: ['low'],
         high: ['high'],
         qpf_allday: ['rain'],
-        conditions: ['conditions']
+        conditions: ['conditions'],
+        images: ['images']
     },
     addr: '',
     long_addr: '',
@@ -36,7 +37,8 @@ var dest = {
         low: ['low'],
         high: ['high'],
         qpf_allday: ['rain'],
-        conditions: ['conditions']
+        conditions: ['conditions'],
+        images: ['images']
     },
     addr: '',
     long_addr: '',
@@ -412,7 +414,7 @@ function initMap() {
                                         } catch (err) {
                                             console.log(err);
                                         }
-                                        //prcpInfoOrigin();
+                                        prcpInfoOrigin();
                                     } else if (type == 'destination') {
                                         dest.postal_code = postal_code;
                                         try {
@@ -422,7 +424,7 @@ function initMap() {
                                         } catch (err) {
                                             console.log(err);
                                         }
-                                        //prcpInfoDest();
+                                        prcpInfoDest();
                                     }
                                 } else if (temp[c].types[0] == 'locality') {
                                     if (type == 'origin') {
@@ -512,8 +514,12 @@ function initMap() {
             for (var i = 0; i < 7; i++) {
                 conditions.push({
                     'date': temp_weather_range[i],
-                    'orig': orig.temp.conditions[i + 1],
-                    'dest': dest.temp.conditions[i + 1]
+                    'orig': '<img src=\"' + orig.temp.images[i + 1] +
+                            '\" title=\"' + orig.temp.conditions[i + 1] +
+                            '\" alt=\"' + orig.temp.conditions[i + 1] + '\">',
+                    'dest': '<img src=\"' + dest.temp.images[i + 1] +
+                            '\" title=\"' + dest.temp.conditions[i + 1] +
+                            '\" alt=\"' + dest.temp.conditions[i + 1] + '\">'
                 });
             }
             columns = [{
@@ -536,7 +542,9 @@ function initMap() {
             for (var j = 0; j < 7; j++) {
                 conditions.push({
                     'date': temp_weather_range[j],
-                    'orig': orig.temp.conditions[j + 1]
+                    'orig': '<img src=\"' + orig.temp.images[j + 1] +
+                            '\" title=\"' + orig.temp.conditions[j + 1] +
+                            '\" alt=\"' + orig.temp.conditions[j + 1] + '\">'
                 });
             }
             columns = [{
@@ -554,7 +562,9 @@ function initMap() {
             for (var k = 0; k < 7; k++) {
                 conditions.push({
                     'date': temp_weather_range[k],
-                    'dest': dest.temp.conditions[k + 1]
+                    'dest': '<img src=\"' + dest.temp.images[k + 1] +
+                            '\" title=\"' + dest.temp.conditions[k + 1] +
+                            '\" alt=\"' + dest.temp.conditions[k + 1] + '\">'
                 });
             }
             columns = [{
@@ -939,7 +949,8 @@ function initMap() {
                     low: ['low'],
                     high: ['high'],
                     qpf_allday: ['rain'],
-                    conditions: ['conditions']
+                    conditions: ['conditions'],
+                    images: ['images']
                 };
 
                 for (var i = 0; i < weather_len; i++) {
@@ -947,6 +958,7 @@ function initMap() {
                     orig.temp.high.push(orig.weather_data[i].high.fahrenheit);
                     orig.temp.qpf_allday.push(orig.weather_data[i].qpf_allday.in);
                     orig.temp.conditions.push(orig.weather_data[i].conditions);
+                    orig.temp.images.push(orig.weather_data[i].icon_url);
                 }
 
                 if ($("#weather-clouds").hasClass('active')) {
@@ -994,7 +1006,8 @@ function initMap() {
                     low: ['low'],
                     high: ['high'],
                     qpf_allday: ['rain'],
-                    conditions: ['conditions']
+                    conditions: ['conditions'],
+                    images: ['images']
                 };
 
                 for (var i = 0; i < weather_len; i++) {
@@ -1002,6 +1015,7 @@ function initMap() {
                     dest.temp.high.push(dest.weather_data[i].high.fahrenheit);
                     dest.temp.qpf_allday.push(dest.weather_data[i].qpf_allday.in);
                     dest.temp.conditions.push(dest.weather_data[i].conditions);
+                    dest.temp.images.push(dest.weather_data[i].icon_url);
                 }
 
                 if ($("#weather-clouds").hasClass('active')) {
