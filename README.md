@@ -16,8 +16,6 @@ Users input a starting location, a destination, and their mode of travel. The ap
 - US Census: [US County Population Data](http://www.census.gov/data/developers/data-sets/acs-1yr.2015.html)
 - CDC: [Maps of Zika in the United States](https://www.cdc.gov/zika/intheus/maps-zika-us.html)
 
-_more to be determined_
-
 ## Requirements
 
 - Node
