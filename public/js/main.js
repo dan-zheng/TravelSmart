@@ -585,7 +585,7 @@ function initMap() {
 
         cloudInfo = d3.select('#weather-clouds-chart')
             .append('p')
-            .html('Mouse over a weather icon for a description.');
+            .html('Hover over a weather icon for a description.');
 
         cloudTable = d3.select('#weather-clouds-chart')
             .append('table').style('margin', 'auto');
