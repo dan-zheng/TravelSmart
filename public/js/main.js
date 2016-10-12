@@ -76,6 +76,8 @@ var chart_weather_dest;
 var weather_range = [];
 var weather_len = 7; // orig_weather_data.length
 
+var travel_mode;
+
 function getWeatherRange() {
     weather_range = ['days'];
     for (var i = 0; i < weather_len; i++) {
@@ -128,6 +130,7 @@ $(document).ready(function() {
     $('#zika-pop').hide();
     $('#zika-summary').hide();
     $('#zika-reminder').hide();
+    $('#route-error').hide();
     /*var maxHeight = Math.max.apply(null, $(".data-tab").map(function() {
         console.log($(this).height() );
         return $(this).height() - 16;
@@ -263,7 +266,7 @@ function initMap() {
     var orig_postal_code = null;
     var dest_postal_code = null;
 
-    var travel_mode = 'WALKING';
+    travel_mode = 'DRIVING';
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 14,
         center: {
@@ -353,6 +356,12 @@ function initMap() {
     function route(orig_place_id, destination_place_id, travel_mode,
         directionsService, directionsDisplay) {
         if (!orig_place_id || !destination_place_id) {
+            return;
+        }
+        if (travel_mode == 'AIRPLANE') {
+            $('#route-error').html('Google Maps does not support travel by plane. You can view weather and Zika info in the other tabs and look up flights <a target=\'_blank\' href=\'https://www.expedia.com/Flights\'>here</a>.');
+            $('#route-error').show();
+            $('#route-info').hide();
             return;
         }
 
