@@ -1,9 +1,5 @@
 /* jshint -W083 */
 
-var test;
-var test2;
-var test3;
-
 var local_msg;
 var travel_msg;
 var pop_msg;
@@ -410,7 +406,6 @@ function initMap() {
                                 dest.long_addr = results[0].formatted_address;
                             }
                             var temp = results[0].address_components;
-                            console.log(temp);
                             for (var c = 0; c < temp.length; c++) {
                                 if (temp[c].types[0] == 'postal_code') {
                                     var postal_code = temp[c].short_name;
@@ -512,8 +507,6 @@ function initMap() {
         var columns = [];
         var temp_weather_range = weather_range.slice();
         temp_weather_range.shift();
-        console.log(weather_range);
-        console.log(temp_weather_range);
         $('#orig-weather-chart').hide();
         $('#dest-weather-chart').hide();
         if (orig_zika.travel !== null && dest_zika.travel !== null) {
@@ -524,11 +517,11 @@ function initMap() {
                 conditions.push({
                     'date': temp_weather_range[i],
                     'orig': '<img src=\"' + orig.temp.images[i + 1] +
-                            '\" title=\"' + orig.temp.conditions[i + 1] +
-                            '\" alt=\"' + orig.temp.conditions[i + 1] + '\">',
+                        '\" title=\"' + orig.temp.conditions[i + 1] +
+                        '\" alt=\"' + orig.temp.conditions[i + 1] + '\">',
                     'dest': '<img src=\"' + dest.temp.images[i + 1] +
-                            '\" title=\"' + dest.temp.conditions[i + 1] +
-                            '\" alt=\"' + dest.temp.conditions[i + 1] + '\">'
+                        '\" title=\"' + dest.temp.conditions[i + 1] +
+                        '\" alt=\"' + dest.temp.conditions[i + 1] + '\">'
                 });
             }
             columns = [{
@@ -552,8 +545,8 @@ function initMap() {
                 conditions.push({
                     'date': temp_weather_range[j],
                     'orig': '<img src=\"' + orig.temp.images[j + 1] +
-                            '\" title=\"' + orig.temp.conditions[j + 1] +
-                            '\" alt=\"' + orig.temp.conditions[j + 1] + '\">'
+                        '\" title=\"' + orig.temp.conditions[j + 1] +
+                        '\" alt=\"' + orig.temp.conditions[j + 1] + '\">'
                 });
             }
             columns = [{
@@ -572,8 +565,8 @@ function initMap() {
                 conditions.push({
                     'date': temp_weather_range[k],
                     'dest': '<img src=\"' + dest.temp.images[k + 1] +
-                            '\" title=\"' + dest.temp.conditions[k + 1] +
-                            '\" alt=\"' + dest.temp.conditions[k + 1] + '\">'
+                        '\" title=\"' + dest.temp.conditions[k + 1] +
+                        '\" alt=\"' + dest.temp.conditions[k + 1] + '\">'
                 });
             }
             columns = [{
@@ -588,11 +581,14 @@ function initMap() {
         }
 
         d3.select('#weather-clouds-chart').select('table').remove();
+        d3.select('#weather-clouds-chart').select('p').remove();
+
+        cloudInfo = d3.select('#weather-clouds-chart')
+            .append('p')
+            .html('Mouse over a weather icon for a description.');
 
         cloudTable = d3.select('#weather-clouds-chart')
             .append('table').style('margin', 'auto');
-
-        console.log(conditions);
 
         // create table header
         cloudTable.append('thead').append('tr')
@@ -609,15 +605,13 @@ function initMap() {
             .append('tr')
             .selectAll('td')
             .data(function(row, i) {
-                var test4 = columns.map(function(c) {
+                return columns.map(function(c) {
                     var cell = {};
                     d3.keys(c).forEach(function(k) {
                         cell[k] = typeof c[k] == 'function' ? c[k](row, i) : c[k];
                     });
                     return cell;
                 });
-                console.log(test4);
-                return test4;
             }).enter()
             .append('td')
             .html(ƒ('html'))
@@ -877,20 +871,20 @@ function initMap() {
                 }
                 risk_percent = risk_count / risk_total;
             }
-                console.log(risk_percent);
-                if (risk_percent >= 0 && risk_percent < 0.34) {
-                    risk_msg = "Overall, your risk of Zika infection for this trip is <span class='green'>LOW</span>.";
-                } else if (risk_percent >= 0.34 && risk_percent < 0.67) {
-                    risk_msg = "Overall, your risk of Zika infection for this trip is <span class='yellow'>SOMEWHAT LOW</span>.";
-                } else if (risk_percent >= 0.67 && risk_percent <= 1) {
-                    risk_msg = "Overall, your risk of Zika infection for this trip is <span class='red'>SOMEWHAT HIGH</span>.";
-                }
-                if (risk_msg) {
-                    $('#zika-summary').html(risk_msg);
-                    $('#zika-reminder').show();
-                    $('#zika-summary').show();
-                    $('#zika-details').show();
-                }
+            console.log(risk_percent);
+            if (risk_percent >= 0 && risk_percent < 0.34) {
+                risk_msg = "Overall, your risk of Zika infection for this trip is <span class='green'>LOW</span>.";
+            } else if (risk_percent >= 0.34 && risk_percent < 0.67) {
+                risk_msg = "Overall, your risk of Zika infection for this trip is <span class='yellow'>SOMEWHAT LOW</span>.";
+            } else if (risk_percent >= 0.67 && risk_percent <= 1) {
+                risk_msg = "Overall, your risk of Zika infection for this trip is <span class='red'>SOMEWHAT HIGH</span>.";
+            }
+            if (risk_msg) {
+                $('#zika-summary').html(risk_msg);
+                $('#zika-reminder').show();
+                $('#zika-summary').show();
+                $('#zika-details').show();
+            }
         } else if (orig_zika.travel !== null) {
             $('#orig-zika-info').hide();
         } else if (dest_zika.travel !== null) {
@@ -937,10 +931,8 @@ function initMap() {
         var orig_query;
         if (orig.postal_code && orig.country == 'US') {
             orig_query = orig.postal_code;
-            console.log("postal code: " + orig_query);
         } else if (orig.addr) {
             orig_query = orig.addr;
-            console.log("addr: " + orig_query);
         }
         if (orig_query) {
             url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + orig_query + ".json";
@@ -993,10 +985,8 @@ function initMap() {
         var dest_query;
         if (dest.postal_code && dest.country == 'US') {
             dest_query = dest.postal_code;
-            console.log("postal code: " + dest_query);
         } else if (dest.addr) {
             dest_query = dest.addr;
-            console.log("addr: " + dest_query);
         }
         if (dest_query) {
             url = "http://api.wunderground.com/api/" + wunderground_key + "/forecast10day/q/" + dest_query + ".json";
@@ -1150,10 +1140,8 @@ function initMap() {
     function prcpInfoOrigin() {
         var dateToday, dateLastWeek, url;
         if (orig.postal_code) {
-            console.log("origin: " + orig.postal_code);
             dateToday = moment().format('YYYY-MM-DD');
             dateLastWeek = moment().subtract(7, 'days').format('YYYY-MM-DD');
-            console.log(dateToday + ", " + dateLastWeek);
             url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + orig.postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=5&sortfield=date&sortorder=desc&includemetadata=false";
 
             httpGetAsync(url, tokenHeader, function(data) {
@@ -1168,10 +1156,8 @@ function initMap() {
     function prcpInfoDest() {
         var dateToday, dateLastWeek, url;
         if (dest.postal_code) {
-            console.log("dest: " + dest.postal_code);
             dateToday = moment().format('YYYY-MM-DD');
             dateLastWeek = moment().subtract(7, 'days').format('YYYY-MM-DD');
-            console.log(dateToday + ", " + dateLastWeek);
             url = "http://www.ncdc.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&datatypeid=PRCP&locationid=ZIP:" + dest.postal_code + "&startdate=" + dateLastWeek + "&enddate=" + dateToday + "&limit=5&sortfield=date&sortorder=desc&includemetadata=false";
             tokenHeader = [];
             tokenHeader.push({
@@ -1191,17 +1177,12 @@ function initMap() {
         var xmlHttp = new XMLHttpRequest();
         xmlHttp.onreadystatechange = function() {
             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-                //console.log("YEP: " + url);
                 callback(xmlHttp.responseText);
-            } else {
-                //console.log("NOPE: " + url);
             }
         };
         xmlHttp.open("GET", url, true); // true for asynchronous
         if (headers) {
-            console.log(headers);
             for (var i = 0; i < headers.length; i++) {
-                console.log("header " + i);
                 xmlHttp.setRequestHeader(headers[i].key, headers[i].value);
             }
         }
