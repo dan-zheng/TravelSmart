@@ -407,6 +407,10 @@ th.num {
     a {
         font-style: italic;
     }
+    img {
+        display: block;
+        margin: 10px auto;
+    }
 }
 
 #myModal {
@@ -418,6 +422,13 @@ th.num {
     }
     li {
         font-size: $subtitle-font-size * 0.5;
+    }
+}
+
+#contactModal {
+    h4 {
+        font-style: normal;
+        margin-bottom: 20px;
     }
 }
 

@@ -162,6 +162,12 @@ $('#go-to-app').on('click', function() {
     $.fn.fullpage.moveTo('app');
 });
 
+$('#contact-submit').on('click', function() {
+    var subject = $('#contact-subject').val();
+    var body = $('#contact-body').val();
+    window.location.href = "mailto:zheng321@purdue.edu?subject=" + subject + "&body=" + body;
+});
+
 /*$('#data-tabs').on('click', function() {
     console.log('hi');
     $(".data-tab").map(function() {
@@ -372,7 +378,7 @@ function initMap() {
         if (!orig_place_id || !destination_place_id) {
             return;
         }
-        if (travel_mode == 'AIRPLANE') {
+        if (travel_mode == 'Flight') {
             $('#route-error').html('Google Maps does not support travel by plane. You can view weather and Zika info in the other tabs and look up flights <a target=\'_blank\' href=\'https://www.expedia.com/Flights\'>here</a>.');
             $('#route-error').show();
             $('#route-info').hide();
