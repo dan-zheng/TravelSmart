@@ -125,6 +125,7 @@ $(document).ready(function() {
     $('#zika-cases').hide();
     $('#zika-pop').hide();
     $('#zika-summary').hide();
+    $('#zika-reminder').hide();
     /*var maxHeight = Math.max.apply(null, $(".data-tab").map(function() {
         console.log($(this).height() );
         return $(this).height() - 16;
@@ -171,6 +172,20 @@ $('#weather-spline').on('click', function() {
     }
     if (chart_weather_dest) {
         chart_weather_dest.transform('area-spline');
+    }
+});
+
+$('#weather-bar').on('click', function() {
+    $('#weather-bar').addClass('active');
+    $('#weather-spline').removeClass('active');
+    $('#orig-weather-chart').show();
+    $('#dest-weather-chart').show();
+    $('#weather-clouds-chart').hide();
+    if (chart_weather_orig) {
+        chart_weather_orig.transform('bar');
+    }
+    if (chart_weather_dest) {
+        chart_weather_dest.transform('bar');
     }
 });
 
@@ -841,6 +856,7 @@ function initMap() {
                 }
                 if (risk_msg) {
                     $('#zika-summary').html(risk_msg);
+                    $('#zika-reminder').show();
                     $('#zika-summary').show();
                     $('#zika-details').show();
                 }

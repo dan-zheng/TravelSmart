@@ -72,6 +72,9 @@ block content
                                     ul#zika-pop Population
                                         li#zika-pop-info
                                     div#zika-summary
+                                    div#zika-reminder Click 
+                                        a(href='#', onclick='return false;', data-toggle='modal', data-target='#zikaModal') here 
+                                        | for more information about the Zika virus.
                                 div#orig-zika
                                     span.no-info#orig-zika-info Please select an origin location.
                                 div#dest-zika
@@ -98,6 +101,7 @@ block content
                         span(aria-hidden='true') ×
                     h3#myModalLabel.modal-title About
                 .modal-body
+                    p TravelSmart is a web app that helps people make informed travel decisions, focusing on reducing the risk of Zika infection. The app draws from a variety of datasets, including climate, population, and Zika case count data to help users enjoy the safest journey possible.
                     ul Datasets
                         li
                             | Google Maps JavaScript API: 
@@ -109,7 +113,48 @@ block content
                             | Wunderground: 
                             a(href='https://www.wunderground.com/weather/api/') 10-Day Forecast API
                         li
+                            | US Census:
+                            a(href='http://www.census.gov/data/developers/data-sets/acs-1yr.2015.html') US County Population Data
+                        li
                             | CDC: 
                             a(href='https://www.cdc.gov/zika/intheus/maps-zika-us.html') Maps of Zika in the United States
+                    ul Resources
+                        li
+                            a(href='https://www.cdc.gov/zika/about/index.html') About Zika
+                        li
+                            a(href='https://www.cdc.gov/zika/prevention/index.html') Preventing Zika
+                        li
+                            a(href='https://www.cdc.gov/zika/geo/united-states.html') Case counts of Zika in the US
+                    ul Technology
+                        li Node, NPM
+                        li D3.js
+                        li C3.js
+                .modal-footer
+                    button.btn.btn-primary(type='button', data-dismiss='modal') Close
+                    
+    #zikaModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='zikaModalLabel', aria-hidden='true')
+        .modal-dialog(role='document')
+            .modal-content
+                .modal-header
+                    button.close(type='button', data-dismiss='modal', aria-label='Close')
+                        span(aria-hidden='true') ×
+                    h3#myModalLabel.modal-title Zika Information
+                .modal-body
+                    p Zika is a virus that is primarly transmitted to people through the bites of the 
+                        a(href='https://en.wikipedia.org/wiki/Aedes_aegypti') Aedes species mosquito
+                        |. These are the same mosquitoes that spread dengue and yellow fever. They prefer living in warm climates near the equator.
+                    p Many people infected with Zika report no symptoms or only mild ones, including fever, rash, joint pain, and red eyes. If you think you have Zika, you should go see a doctor.
+                    p Zika virus outbreaks have been reported in many countries, including the continental United States. In particular, many mosquito-borne Zika infections have been reported in Florida. Try to avoid travelling to areas with Zika outbreaks to reduce your risk of infection. You can click 
+                        a(href='https://www.cdc.gov/zika/geo/united-states.html') here 
+                        | to get more info about Zika cases in the US.
+                    p There exists no vaccine for Zika: the best way to reduce your risk of getting Zika is to avoid mosquito bites. Some preventation measures include:
+                    ul
+                        li Use insect repellant
+                        li Wear long-sleeved shirts and long pants
+                        li Use screens on windows and use air conditioning when possible
+                        li Clean or throw away items that hold water, as mosquitoes lay eggs in water
+                    p Click 
+                        a(href='https://www.cdc.gov/zika/index.html') here 
+                        | for more information about the Zika virus.
                 .modal-footer
                     button.btn.btn-primary(type='button', data-dismiss='modal') Close

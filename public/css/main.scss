@@ -337,8 +337,6 @@ th.num {
     }
 }
 
-
-
 #zika-local, #zika-travel, #zika-pop-info {
     font-weight: normal;
     text-align: left;
@@ -354,7 +352,7 @@ th.num {
     }
 }
 
-#zika-summary {
+#zika-summary, #zika-reminder {
     text-align: left;
     font-size: 14px;
     width: 90%;
@@ -373,8 +371,8 @@ th.num {
     font-weight: 700;
 }
 
-.orange {
-    color: #f4c542;
+.yellow {
+    color: #a97a1c;
     font-weight: 700;
 }
 
@@ -383,10 +381,19 @@ th.num {
     font-weight: 700;
 }
 
-#myModal {
+.modal {
     button {
         padding-top: 5px;
         padding-bottom: 5px;
+    }
+    a {
+        font-style: italic;
+    }
+}
+
+#myModal {
+    p {
+        font-size: $subtitle-font-size * 0.55;
     }
     ul {
         font-size: $subtitle-font-size * 0.6;
